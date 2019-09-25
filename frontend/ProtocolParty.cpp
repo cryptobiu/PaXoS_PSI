@@ -4,7 +4,7 @@
 
 #include "ProtocolParty.h"
 
-ProtocolParty::ProtocolParty(int argc, char* argv[]) : Protocol("ObliviousDictionary", argc, argv)
+ProtocolParty::ProtocolParty(int argc, char* argv[]) : Protocol("PSI", argc, argv)
 {
 
     partyId = stoi(this->getParser().getValueByKey(arguments, "partyID"));
@@ -21,7 +21,7 @@ ProtocolParty::ProtocolParty(int argc, char* argv[]) : Protocol("ObliviousDictio
     cout << "zero mask: " << (int)zeroMask << "  " << std::bitset<8>(zeroMask) << endl;
 
     gamma = 60;
-    vector<string> subTaskNames{"Online"};
+    vector<string> subTaskNames{"Online", "CreateDictionary", "OT", "ComputeXors", "ReceiveAndCalc"};
     timer = new Measurement(*this, subTaskNames);
 
     MPCCommunication comm;
@@ -156,7 +156,9 @@ void Receiver::runOnline() {
     auto start = high_resolution_clock::now();
     auto t1 = high_resolution_clock::now();
 
+    timer->startSubTask("CreateDictionary", iteration);
     auto sigma = createDictionary();
+    timer->endSubTask("CreateDictionary", iteration);
     auto t2 = high_resolution_clock::now();
 
     auto duration = duration_cast<milliseconds>(t2-t1).count();
@@ -164,7 +166,9 @@ void Receiver::runOnline() {
 //    checkVariables(sigma);
     t1 = high_resolution_clock::now();
 
+    timer->startSubTask("OT", iteration);
     runOOS(sigma);
+    timer->endSubTask("OT", iteration);
     t2 = high_resolution_clock::now();
 
     duration = duration_cast<milliseconds>(t2-t1).count();
@@ -172,16 +176,18 @@ void Receiver::runOnline() {
 
 
     t1 = high_resolution_clock::now();
-
+    timer->startSubTask("ComputeXors", iteration);
     computeXors();
+    timer->endSubTask("ComputeXors", iteration);
     t2 = high_resolution_clock::now();
 
     duration = duration_cast<milliseconds>(t2-t1).count();
     cout << "computeXors took in milliseconds: " << duration << endl;
 
     t1 = high_resolution_clock::now();
-
+    timer->startSubTask("ReceiveAndCalc", iteration);
     receiveSenderXors();
+    timer->endSubTask("ReceiveAndCalc", iteration);
     t2 = high_resolution_clock::now();
 
     duration = duration_cast<milliseconds>(t2-t1).count();
