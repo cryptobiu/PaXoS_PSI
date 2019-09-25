@@ -1,0 +1,5 @@
+## ./do-check-mul.sh -b . -m ./check_4_4_1_fbc8042f.mul
+n1 = 4 ; n2=4 ; v=fbc8042f
+## ./check-mul 4 4
+## expected output: 4 4 fbc8042f
+PASS check_4_4_1_fbc8042f.mul (exit status: 0)

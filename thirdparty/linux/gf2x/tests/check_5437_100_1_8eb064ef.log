@@ -1,0 +1,5 @@
+## ./do-check-mul.sh -b . -m ./check_5437_100_1_8eb064ef.mul
+n1 = 5437 ; n2=100 ; v=8eb064ef
+## ./check-mul 5437 100
+## expected output: 5437 100 8eb064ef
+PASS check_5437_100_1_8eb064ef.mul (exit status: 0)

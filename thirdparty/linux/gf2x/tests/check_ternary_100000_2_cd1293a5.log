@@ -1,0 +1,4 @@
+## ./do-check-fft.sh -b . -m ./check_ternary_100000_2_cd1293a5.fft
+## ./check_ternary --n 100000 --k 2 --crc
+## expected output: 100000 2 cd1293a5
+PASS check_ternary_100000_2_cd1293a5.fft (exit status: 0)

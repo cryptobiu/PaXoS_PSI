@@ -1,0 +1,5 @@
+## ./do-check-mul.sh -b . -m ./check_9_9_1_a499e414.mul
+n1 = 9 ; n2=9 ; v=a499e414
+## ./check-mul 9 9
+## expected output: 9 9 a499e414
+PASS check_9_9_1_a499e414.mul (exit status: 0)

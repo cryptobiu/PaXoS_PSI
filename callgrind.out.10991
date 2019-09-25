@@ -1,0 +1,21 @@
+# callgrind format
+version: 1
+creator: callgrind-3.13.0
+pid: 10991
+cmd:  ./bin/frontend.exe -partyID 0 -hashSize 1000000 -fieldSize 132 -partiesFile bin/Parties.txt -reportStatistics 0 -internalIterationsNumber 1
+part: 1
+
+
+desc: I1 cache: 
+desc: D1 cache: 
+desc: LL cache: 
+
+desc: Timerange: Basic block 0 - 0
+desc: Trigger: Program termination
+
+positions: line
+events: Ir
+summary: 0
+
+
+totals: 0

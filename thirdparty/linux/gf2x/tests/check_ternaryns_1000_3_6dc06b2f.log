@@ -1,0 +1,4 @@
+## ./do-check-fft.sh -b . -m ./check_ternaryns_1000_3_6dc06b2f.fft
+## ./check_ternaryns --n 1000 --k 3 --crc
+## expected output: 1000 3 6dc06b2f
+PASS check_ternaryns_1000_3_6dc06b2f.fft (exit status: 0)

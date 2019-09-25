@@ -1,0 +1,5 @@
+## ./do-check-mul.sh -b . -m ./check_6_6_1_f7fa48ac.mul
+n1 = 6 ; n2=6 ; v=f7fa48ac
+## ./check-mul 6 6
+## expected output: 6 6 f7fa48ac
+PASS check_6_6_1_f7fa48ac.mul (exit status: 0)

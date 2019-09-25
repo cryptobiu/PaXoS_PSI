@@ -1,0 +1,4 @@
+## ./do-check-fft.sh -b . -m ./check_ternaryns_100000_1_fca70ced.fft
+## ./check_ternaryns --n 100000 --k 1 --crc
+## expected output: 100000 1 fca70ced
+PASS check_ternaryns_100000_1_fca70ced.fft (exit status: 0)

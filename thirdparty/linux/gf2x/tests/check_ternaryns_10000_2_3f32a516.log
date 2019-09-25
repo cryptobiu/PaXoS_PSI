@@ -1,0 +1,4 @@
+## ./do-check-fft.sh -b . -m ./check_ternaryns_10000_2_3f32a516.fft
+## ./check_ternaryns --n 10000 --k 2 --crc
+## expected output: 10000 2 3f32a516
+PASS check_ternaryns_10000_2_3f32a516.fft (exit status: 0)

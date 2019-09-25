@@ -1,0 +1,4 @@
+## ./do-check-fft.sh -b . -m ./check_ternary_10000_1_2706ca53.fft
+## ./check_ternary --n 10000 --k 1 --crc
+## expected output: 10000 1 2706ca53
+PASS check_ternary_10000_1_2706ca53.fft (exit status: 0)

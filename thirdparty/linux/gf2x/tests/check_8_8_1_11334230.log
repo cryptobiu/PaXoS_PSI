@@ -1,0 +1,5 @@
+## ./do-check-mul.sh -b . -m ./check_8_8_1_11334230.mul
+n1 = 8 ; n2=8 ; v=11334230
+## ./check-mul 8 8
+## expected output: 8 8 11334230
+PASS check_8_8_1_11334230.mul (exit status: 0)

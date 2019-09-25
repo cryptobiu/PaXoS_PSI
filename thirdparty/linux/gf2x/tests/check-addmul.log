@@ -1,0 +1,2 @@
+Checking gf2x_mul_1_n against gf2x_addmul_1_n...ok
+PASS check-addmul (exit status: 0)

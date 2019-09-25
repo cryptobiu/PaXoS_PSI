@@ -1,0 +1,5 @@
+## ./do-check-mul.sh -b . -m ./check_7_7_1_39d1a8b9.mul
+n1 = 7 ; n2=7 ; v=39d1a8b9
+## ./check-mul 7 7
+## expected output: 7 7 39d1a8b9
+PASS check_7_7_1_39d1a8b9.mul (exit status: 0)

@@ -1,0 +1,3139 @@
+commit 6a40623ffd93e7b412ffceab80184ef39c3426a7
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu Jun 29 17:17:11 2017 +0200
+
+    move some headers
+
+commit cc98894b7677325f249fa4ccb71c3f8bd774394a
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Thu Jun 29 15:05:33 2017 +0200
+
+    fixed -Warray-bounds error (found on gcc20)
+
+commit 8ab3eaa38085e1de3a0275b4a65f48ef678cf5e6
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Thu Jun 29 14:57:42 2017 +0200
+
+    removed mulcount (never used)
+
+commit e60834e2c53e0461a17481376fe9ee5f2451910f
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Thu Jun 29 14:38:00 2017 +0200
+
+    fix compiler warning on 32-bit processor
+
+commit ca19a1fa39a5cb85430596203e8e34c013d6cbf7
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu Jun 29 12:03:40 2017 +0200
+
+    update comment
+
+commit 9ec3a263b2b7d3d53bdafe12415712254f1448cf
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu Jun 29 11:49:26 2017 +0200
+
+    important file for FFT & C++
+
+commit b806f2885564cde35f40632533628fef86c0df6e
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu Jun 29 11:46:28 2017 +0200
+
+    remove cruft
+
+commit ba3b285834059ddaf1ba169d37eecaf1777c59a3
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu Jun 29 11:42:19 2017 +0200
+
+    remove cruft, added some comments
+
+commit 7b6def8fa583febbf285ab9291699d9e064c7327
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu Jun 29 11:18:42 2017 +0200
+
+    Also uncomment unused stuff in mpfq.h
+
+commit bec144cf89c525940e160cc28d1b08829f384090
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu Jun 29 11:08:28 2017 +0200
+
+    forgot to uncomment the patch stuff...
+
+commit 76b5ae8643267e960b9341aec912d844d42b8940
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu Jun 29 10:08:18 2017 +0200
+
+    test without any gmp whatsoever
+
+commit 9fa8b75df684c149c2a9845ea9ed45647e4b8a8d
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Wed Jun 28 17:53:43 2017 +0200
+
+    another note
+
+commit 2bc1bc69f0aabef4cd2d2232d4ddc2e70330ae2c
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Wed Jun 28 17:48:23 2017 +0200
+
+    added note in README
+
+commit d1c0c9548ad0ceff8de99df2bef43c07dab0b941
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed Jun 28 17:37:19 2017 +0200
+
+    update BUGS
+
+commit 0dea576c6381b4b2ff49eabb369985e18d1e9cbc
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed Jun 28 17:36:13 2017 +0200
+
+    update README
+
+commit 930c80d7670772d23192fe1b4aed39fc590817a0
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed Jun 28 16:16:26 2017 +0200
+
+    fix a corner case with out-of-source + relative path (actually any path with .)
+
+commit d652acee0b77fa20987db9a204efc938e6b97b1c
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed Jun 28 14:59:23 2017 +0200
+
+    housekeeping: provide make dist and make dist-LGPL
+
+commit 4210b06a4819c26ef94987ebcb06d864e3426a80
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed Jun 28 14:23:52 2017 +0200
+
+    Improve previous commit: use libtool's -no-install flag.
+    
+    This is better in that we spare some of the complexity by not bothering
+    with the binary's behaviour in the installed location, when in fact it's
+    not installed anywhere beyond the source tree.
+
+commit 799afa342c1cf744cacd6987f28b9baef75faacf
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Tue Jun 27 19:24:33 2017 +0200
+
+    use LD_LIBRARY_PATH_RPATH for FreeBSD
+
+commit efdaa0aa1b0dc987f4a95427ca5600e8cd4fbbcd
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Tue Jun 27 19:24:21 2017 +0200
+
+    fix message in script
+
+commit 3510b866324b860911277cfbb58d4004e0eeb1ff
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Mon Jun 26 23:27:12 2017 +0200
+
+    boring fix
+
+commit 8a6e2a1e3e7322b2063be24e4f1dc4b3d58c4a42
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Mon Jun 26 23:25:30 2017 +0200
+
+    boring fix
+
+commit baa941a442c964de906726248d65c131a1b9a55f
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Mon Jun 26 23:21:02 2017 +0200
+
+    fix test
+
+commit f0755710e09796e0ab16a96197f4cd19f3056f33
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Mon Jun 26 23:15:52 2017 +0200
+
+    fix test, and expand to specific machines
+
+commit 58bae1e02f630d7c9a5accf224cb00254209d64a
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Mon Jun 26 23:01:46 2017 +0200
+
+    fix warning
+
+commit 92489683bc9635b51150b3faef0701c6a2b32118
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Mon Jun 26 23:00:08 2017 +0200
+
+    add provision for jenkins tests to run ancillary tests as well
+
+commit 07749513ce1f7f77a928c17ac6bf7bb04f71fdbb
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Mon Jun 26 22:59:11 2017 +0200
+
+    new test -- this one fails on freebsd
+
+commit a1e21c9760e4d222af261aa8779048e4e1893b5b
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Mon Jun 26 17:20:57 2017 +0200
+
+    new test
+
+commit 3628818fa04bda73af5e3737a2de1d481b253851
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Mon Jun 26 11:43:24 2017 +0200
+
+    missing include
+
+commit 5904f1cfd1f16d4ebff8e32ad1923693b3e7d5cc
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Mon Jun 26 11:40:41 2017 +0200
+
+    another exit(1) that slipped through in 76bb8d
+
+commit d5ac736268a37a2619ed49f5869f2932e60f3f1a
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Mon Jun 26 11:38:10 2017 +0200
+
+    Previous commit had wrong reference link. Oh, BTW this fixes #16830.
+    
+    https://github.com/sagemath/sage/blob/develop/build/pkgs/gf2x/patches/0001-Trac-15014-Let-gf2x-build-a-shared-library-on-Cygwin.patch
+
+commit 51f0120598d16a91f2f860a24f7d183310c809cc
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Mon Jun 26 11:34:40 2017 +0200
+
+    Add -no-undefined
+    
+    (this has been used for years in sage:
+    
+    https://github.com/sagemath/sage/blob/develop/build/pkgs/gf2x/patches/0005-Update-autotooled-files.patch#L21
+    )
+
+commit ee2d96d935e30fbf7c8aa848198f1ffa4a404ddb
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Mon Jun 26 10:59:48 2017 +0200
+
+    it makes sense to check AC_PROG_CPP *after* AC_PROG_CC_C99
+
+commit 74dea40f7961c5a99ac8fd6b417eca8d60693487
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Mon Jun 26 10:54:27 2017 +0200
+
+    Fix #21377
+
+commit b153a003277455c3aa262b8cdb7eb312bf129bd4
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Mon Jun 12 15:22:23 2017 +0200
+
+    fix for TOOMU threshold
+    
+    (cf https://trac.sagemath.org/ticket/18882 for issue with gf2x-1.1)
+
+commit 1c96d865ff56d81fbf8c0cd193e77679042d77e5
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Tue Jun 6 11:12:13 2017 +0200
+
+    gcc-7 updates
+
+commit f80e5732cf9c674601ec7d1f7052e94b3de3ccff
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Tue Jun 6 10:22:05 2017 +0200
+
+    added comment
+
+commit d319a8d9e12fcd1a04b83b1ea971ad66fa66f570
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed Jan 4 10:03:18 2017 +0100
+
+    rename jenkins job
+
+commit 676c1b0467dd3c044f131e03c81731720e966f08
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Tue Jan 3 16:01:43 2017 +0100
+
+    removed strange character
+
+commit 53ada40981acf52c582903de764c9009d20cdedf
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Tue Jan 3 15:17:06 2017 +0100
+
+    rather use explicit volatile to avoid constant folding
+
+commit 911ead9f3b29bff928c78f87913d7a6323ca1487
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Tue Jun 7 14:37:26 2016 +0200
+
+    fix #20385
+
+commit 2162972a2a0f2b1c69f538cce6e7005f6d0f5148
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Tue Mar 29 16:45:50 2016 +0200
+
+    fix for CLOCKS_PER_SEC < 1000
+
+commit 2a71fe9cdd8dab50815ffad1e52e2258e416f028
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Fri Mar 25 22:12:47 2016 +0100
+
+    reintroduce -s ... for tunetoom (for machines with large MINTIME)
+
+commit ff327c5666f0f57ec1832a16d10629b81909b8f3
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Fri Mar 25 21:42:47 2016 +0100
+
+    ensure stk is 128-bit aligned and simplify code
+
+commit 43e31873349a8dc2a609efd2007e7b25a1e1a905
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Fri Mar 25 20:26:11 2016 +0100
+
+    fixed compiler warnings
+
+commit ac6235dfa322f763c94d08d824db9a3bf202b34c
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Fri Mar 25 14:17:03 2016 +0100
+
+    fixed printed timer resolution
+
+commit d88660d7c0c90bfd0c58f4981d199bc199e636f8
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Fri Mar 25 14:10:14 2016 +0100
+
+    workaround for small CLOCKS_PER_SEC
+
+commit 5f7f8986053becb8894c692a183ec16f81f5dad8
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Fri Mar 25 14:00:27 2016 +0100
+
+    avoid too large MINTIME
+
+commit d707ce6a09cb533d5a7dda97f20893bc98ce1c63
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Fri Mar 25 13:41:36 2016 +0100
+
+    use tc3x only when HAVE_KARAX is defined
+
+commit a4adb7d4033dc6185ff0b5493e294b833d6e2f9b
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Fri Mar 25 13:29:38 2016 +0100
+
+    fixed bugs in tc3x and speed-up in tune-toom
+
+commit 8312b940a7e5f7e51c9a23571aa4150aeda98af9
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Fri Mar 25 08:39:47 2016 +0100
+
+    added new variant TC3X (work in progress)
+
+commit 2deb66de1797fe9fad8ad5e93a3131416a68cc5a
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Thu Mar 24 15:37:50 2016 +0100
+
+    replace getrusage() by clock() (more precise on modern processors)
+
+commit 2969050b536cbe3e8d63942dc2febd0545ee0461
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Thu Mar 24 14:32:11 2016 +0100
+
+    use intrinsics everywhere to avoid Seg. faults due to misalignment
+
+commit bc6a7d9c76269967683ded3054b4a78ff25cf838
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Thu Mar 24 12:53:07 2016 +0100
+
+    fixed bug in toom128.c when odd=1 (and added Intel intrinsics)
+
+commit 8fe5f02c6ade8bd146d4b31a7ebbe26b1ac47483
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Thu Mar 24 09:09:37 2016 +0100
+
+    print certificate (like irred) with -m 1 -q 1 -f 0
+
+commit c5858051c7f2af41edee669746f788fcd27a9867
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Wed Mar 23 22:09:06 2016 +0100
+
+    further simplification of karax
+
+commit 4de6a489025860e5459722cc5198af6810b9a96e
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Wed Mar 23 21:36:16 2016 +0100
+
+    new version of karax without alignment (no penalty apparently)
+
+commit 030ac13d581220e832017a4620bc8e23d039d86d
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Wed Mar 23 16:26:39 2016 +0100
+
+    improvements suggested by Emmanuel T.
+
+commit f0b517e0ad575e039ca239513ad9716f1ef73094
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Wed Mar 23 12:33:40 2016 +0100
+
+    don't print TC2X timings when karax is not defined
+
+commit 4c4d6b7093dbb377a7e0451f0386125a8cd38667
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Wed Mar 23 12:12:16 2016 +0100
+
+    use __m128i instead of __uint128_t
+
+commit 1095ee3b22e105dd79ae8c81182d0d0c6f2dd2fe
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Wed Mar 23 11:25:22 2016 +0100
+
+    better check for alloca()
+
+commit 70da093919449859c34baf155d24327eee9db574
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Wed Mar 23 10:30:23 2016 +0100
+
+    check for HAVE_ALLOCA should be done *after* including gf2x.h
+
+commit a3230ad54440f3b0b654b22a9740954af8090129
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Wed Mar 23 09:51:55 2016 +0100
+
+    added assert() to find failure on fedora-20-amd64
+
+commit 36e34008cac8f8bc5f8be968cd6c969b398c10ee
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Wed Mar 23 09:33:42 2016 +0100
+
+    check for __uint128_t
+
+commit 93fe906055c2281bff2e61346fc91e26f0f1e872
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Wed Mar 23 08:55:55 2016 +0100
+
+    workaround when alloca() is not present
+
+commit cfb17d6b351cc8030cfc16b564bfd6e7ad786953
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Tue Mar 22 23:35:15 2016 +0100
+
+    fixed memory leak in karax
+
+commit 631bde867fae48b95a64f486fa71de9326d9375a
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Tue Mar 22 23:17:05 2016 +0100
+
+    fixed memory leak
+
+commit ff0748cb7295eedbcc9c33bb98cd5af96322ab65
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Tue Mar 22 22:22:42 2016 +0100
+
+    replaced switch() hard-coded numbers by corresponding macros
+
+commit e7cb84a7df176a8d9f11bbc337c952f81c0a4fae
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Tue Mar 22 22:03:32 2016 +0100
+
+    simplified temporary space requirement for operands of same size
+
+commit 8a0534c5ca5b9b1d86ea01fee3008ed2356b579d
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Tue Mar 22 17:00:05 2016 +0100
+
+    new version gf2x_mul_karax() with 128-bit words (work in progress)
+
+commit 8d879e205b818b17fd5964c95abeacb4cccd9c0d
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Mon Mar 21 16:52:32 2016 +0100
+
+    better sse-4.1 test
+
+commit a1ce631740daec519511f85b9519205d45a5e4ba
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Mon Mar 21 09:18:47 2016 +0100
+
+    allow -f 0 to mimic irred (with -m 1 -q 1)
+
+commit 6f31f35e9bfde2dfe8ccc0cead25973ebe2a3010
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Fri Mar 18 15:45:27 2016 +0100
+
+    small improvement of the fft code
+
+commit 3e0236751083078330d30037eb05793448a68948
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Fri Mar 18 13:57:16 2016 +0100
+
+    simplified evaluation code in gf2x_mul_tc3w()
+
+commit fb24e90e7af7aaa77c8b018560930f4d3f62dacc
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Fri Mar 18 13:12:07 2016 +0100
+
+    improved DivOnePlusX2 like DivOnePlusX
+
+commit 6dba6f9a45f00db8e84a1ef454991b466cb640d1
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Fri Mar 18 11:34:56 2016 +0100
+
+    use pclmul in DivOnePlusX
+
+commit eb7d81b3797dc654512567f34202d7b9591bc2d6
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Fri Mar 18 10:32:09 2016 +0100
+
+    do not consistency check when NDEBUG is defined
+
+commit 04ec5e6ac8f53648fa0232b84a2f181dd1f60fdf
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Fri Mar 18 09:45:56 2016 +0100
+
+    get rid of USE_GMP: it does not save after all
+
+commit 6cf72a1ec5df255e86c0a47f0f591cfff5373370
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Fri Mar 18 09:40:03 2016 +0100
+
+    shift count must be > 0 in mpn_lshift and mpn_rshift
+
+commit d7b0ad06b37e5fe59fbba4c5038bc4d4a2bf2b3d
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Fri Mar 18 09:28:41 2016 +0100
+
+    generate full 64-inputs for the tuning on 64-bit processors
+
+commit 5eafcea7d2e064b4af7277d1da4fe3e79407a295
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Thu Mar 17 12:16:01 2016 +0100
+
+    further simplification in gf2x_mul_tc3()
+
+commit 5b6e8e9bbca7f7b4a942ae350ec540e9bfd59663
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Thu Mar 17 11:40:56 2016 +0100
+
+    slightly improved gf2x_mul_tc3
+
+commit 73e016e10691b15eb8143fa3d57b5012a2c59cc5
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu Mar 17 10:39:24 2016 +0100
+
+    fix stupid (minor) bug in script
+
+commit a4d1bd293f0732f15b2f719c7de35caaff641fef
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu Mar 17 10:27:19 2016 +0100
+
+    dirty hack to avoid the -march=native failure on the CI platform
+
+commit be1c4a6874b525fe71d928c83dba955d1791d0eb
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu Mar 17 01:19:09 2016 +0100
+
+    marginally improved mul5
+
+commit 887ba7847be4a15021bf24806e5b42c8cd26711a
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu Mar 17 01:03:52 2016 +0100
+
+    missing include
+
+commit 463c2a0dc8bcb3857a443ed2f1e0937c519eed88
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu Mar 17 00:52:48 2016 +0100
+
+    Added systematic checking of all low-level routines
+
+commit 60993e9fb44804b36328557f2894d54024f66868
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu Mar 17 00:39:10 2016 +0100
+
+    fix generate-test-list.pl
+
+commit 0899d3fafe9b766d6490c76872fc989dddf36928
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu Mar 17 00:19:17 2016 +0100
+
+    fix bug in mul9clk2.c
+
+commit becd7e390442d29c7b19c42e61d224e1fd824e56
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed Mar 16 23:41:07 2016 +0100
+
+    better autoconf macros
+
+commit 58be981564e07b92f028c3e251f4b7eb0c6db425
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed Mar 16 15:16:21 2016 +0100
+
+    add -march=native and -mtune=native to default CFLAGS
+    
+    not done if --disable-hardware-specific-code is passed.
+    -march=native -mtune=native are not passed either if CFLAGS have been
+    overridden on the command line or the environment.
+
+commit bb99bdc59b57c7b82fe0c1904c9e7b4a332212f3
+Merge: 6ec54bf a9a50b0
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed Mar 16 15:05:22 2016 +0100
+
+    Merge branch 'master' of git+ssh://scm.gforge.inria.fr/git/gf2x/gf2x
+
+commit a9a50b08cd0e82830a309f9847a235d0a9f6764c
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Wed Mar 16 14:54:37 2016 +0100
+
+    use GMP's mpn_lshift for Lsh1() if available
+
+commit 08e1b62a9858ac11f9a99466d313a6c1bee24fc1
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Wed Mar 16 13:56:59 2016 +0100
+
+    patch to use GMP low-level routines
+
+commit 6ec54bff95fe4f564c44c080693748092f532b10
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Tue Mar 15 17:33:35 2016 +0100
+
+    simple change to a simple bench program
+
+commit 8c615c37cffefe2ade9006ffdfa5a315acae560f
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Tue Mar 15 09:34:05 2016 +0100
+
+    new parallel version of factor.cpp (for one trinomial only)
+
+commit 6342074e1d09dc0c79520ca73d3c1c5d9088147d
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Wed Mar 9 17:52:23 2016 +0100
+
+    cleanup of the fastsqr_pdep() code
+
+commit a229523e03f6d16ef5bc65347f30abb909017f7f
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Fri Mar 4 23:12:27 2016 +0100
+
+    new squaring code using _pdep_u64()
+
+commit f388363b773875891dde5ba83c6bf83529a18d35
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Fri Mar 4 11:39:43 2016 +0100
+
+    added comments about parallel version
+
+commit 48ec3998abe7fd1c36f34c9166c0df6256e066be
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Thu Feb 4 10:25:48 2016 +0100
+
+    now we can also give input values of s on stdin
+
+commit 41476ebe48453e591698a6a577144525a2a1c327
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Wed Jan 27 14:07:28 2016 +0100
+
+    added comments
+
+commit 31e1b443ce580730b6bfcd6f5d21e851009fa190
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Tue Jan 26 16:29:49 2016 +0100
+
+    since NTL produces a static library by default, link with libntl.a
+
+commit 8f0882547a43b88c0af15db39037c4bb25c9c439
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Tue Jan 26 14:33:30 2016 +0100
+
+    added NTL install path in apps/Makefile.am
+
+commit dd8bd101f8e768a1ebac720fad3fef3b755ac6f0
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Tue Jan 26 14:31:17 2016 +0100
+
+    tuning for fastmulmod was wrong (if not done by gf2x)
+
+commit 5494df03546090a7fb58702e620e3705d6a8ff51
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Mon Jan 25 17:41:24 2016 +0100
+
+    fixed multi-thread issue
+
+commit 368169520afad7cdef6bfd3191af3ad9a040d694
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Mon Jan 25 17:04:19 2016 +0100
+
+    -fopenmp is needed in CPPFLAGS
+
+commit 5401a8782dd64e8d6a80de8adb1f77b83ad40594
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Mon Jan 25 16:19:02 2016 +0100
+
+    first steps toward making factor.cpp multi-thread
+
+commit 5b2b9b08e4a056f30503d4de0cfc3c76063b187c
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Mon Jan 25 11:29:42 2016 +0100
+
+    fixed bug (index test should be made before)
+
+commit c2d440a77f43eda67c15ef99ac877c63a84a240a
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed Jan 6 17:43:39 2016 +0100
+
+    fix off-by-one in 32-bit
+
+commit 02887c40e3b0195829f1d08107beb67469431966
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Sat Dec 5 00:14:48 2015 +0100
+
+    battle cache associativity mishaps
+
+commit 0f02a0a5d3735e0d3cce09ee40dec9f792922cb6
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Sat Dec 5 00:14:27 2015 +0100
+
+    improve gf2x_cantor_fft_addcompose_n
+
+commit b6ee723e066d28faca2929508853a4e07af213e3
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Fri Dec 4 22:20:39 2015 +0100
+
+    This file had intentionally been deleted in commit 1274585.
+    
+    The checking mechanism does not use this file anymore, it's a relic. I
+    mistakenly revived it.
+
+commit eeb8df288addf8eb3a528671a0103f9c8933bbc7
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Fri Dec 4 21:43:42 2015 +0100
+
+    new function addcompose_n for fft interface
+
+commit b3b88c0008eeae9c2f24ba6c3f515a698ef4350f
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Fri Dec 4 20:57:20 2015 +0100
+
+    backport changes which were made in cado-nfs
+
+commit 5cf6386b38e7d57a89ee1caba248956ef2365ac9
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu Nov 26 10:34:12 2015 +0100
+
+    ggrr
+
+commit f966d6ca8c5d295be764366650c7e4181c1c8eb2
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu Nov 26 10:32:23 2015 +0100
+
+    fix for 32-bit gcc on 64-bit platform
+
+commit aaf5a7366c550e05d6b3d9f03f1d55201b4922eb
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Fri Nov 6 11:45:40 2015 +0100
+
+    fix bogus function names
+
+commit b21288bc07e1ab5040aeb935adf8732e2f4cdb80
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Fri Nov 6 11:38:57 2015 +0100
+
+    mpfq update (come on, sizeof(char) is 1)
+
+commit adcf8937f14b4456ab325ac5bb230a85542bc6a0
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Fri Nov 6 11:16:25 2015 +0100
+
+    Get rid of HAVE_GF2X within GF2X itself. It's absurd.
+
+commit 6fa8ca8dc7eeeb7f374dcf3714669fdbf05badee
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Thu Oct 8 14:45:52 2015 +0200
+
+    enable AM_MAINTAINER_MODE (to be disabled for releases)
+
+commit 0afb6f66d8c9efefb056302ec76ca345e4ce85b6
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Thu Oct 8 10:34:40 2015 +0200
+
+    use clock() when getrusage() not available
+
+commit 12898d74ab0d6c9a049be40bff6e51486d8de68d
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Fri Sep 11 22:15:22 2015 +0200
+
+    add comment (which just fixed the out-of-source build failure on the rpi).
+
+commit 789bc459098bb59fd3dd655bf62976304d522e43
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Fri Sep 11 16:30:09 2015 +0200
+
+    fix problem in case GF2X_MUL_FFT_TABLE was undefined. Reduce checking effort on 32-bit
+
+commit d019f4b1ff0726299fd813e4620579d2c3659557
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Fri Sep 11 13:45:23 2015 +0200
+
+    fix --disable-sse2 for 32-bit
+
+commit d3e4031be36ffb0ac00036996bf762cdcf9fd3bc
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Fri Sep 11 00:02:05 2015 +0200
+
+    fixed --disable-sse2
+
+commit fae0388239ee5cdd3e33598e4c582c8e3d2428b8
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu Sep 10 23:36:48 2015 +0200
+
+    fix bug in config check
+
+commit d05a7bee6ace42c65ec68441bdacf8c21ce76adf
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu Sep 10 23:23:56 2015 +0200
+
+    copy the instruction set checks from cado-nfs, and chain them as we do
+    there.
+
+commit f4d233b22cdc567f4cfe0627d963616a6b517442
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu Sep 10 16:02:35 2015 +0200
+
+    get rid of references to v2di
+
+commit 7d128f734f34e3dddc911f65df87e91f97954b99
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu Sep 10 15:40:47 2015 +0200
+
+    mpfq update
+
+commit 965f61463b6b3bb50b7c9c39fdece943ce9666bd
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu Sep 10 13:00:22 2015 +0200
+
+    get rid of HAVE_ctzl and friends
+
+commit 87db5545f2a938816dd2896f13f148cb4d790898
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu Sep 10 12:54:24 2015 +0200
+
+    make our ctz/clz/parity helper functions private
+
+commit db0d83bcce289a229c6c9837cea725daf4dbc9f2
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu Sep 10 09:45:55 2015 +0200
+
+    protect names of static functions in the mpfq files when used standalone.
+
+commit 34281d8f82f6b861b4373ef023811976dc44b1a1
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed Sep 9 23:02:12 2015 +0200
+
+    improve previous patch
+
+commit ea10b412494809e7f413ede010f2dd110ce21bdb
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed Sep 9 22:20:21 2015 +0200
+
+    mpfq update, + patch update
+
+commit fbc25f1be0eec2ae61cea37c1ba3b48c664e8647
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Mon Aug 17 22:57:19 2015 +0200
+
+    typo
+
+commit 86c9eccdaa87a77b29afab2ce146a4376f96b382
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Mon Aug 17 22:37:02 2015 +0200
+
+    Ooops. 6966f6f broke tuning, ci has been running for 2 months.
+
+commit c7fe1296aa3ac4493346e7bb51f357aa084ecfb8
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Fri Jun 19 17:48:06 2015 +0200
+
+    remove unused #include
+
+commit 4f3bb447673b206245e32358c6e7ed61d5f67bdc
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Fri Jun 19 16:24:09 2015 +0200
+
+    fixed wrong types in printf
+
+commit c89f956307257d411ce46ff54e465804cd3f9420
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Fri Jun 19 16:19:25 2015 +0200
+
+    expose gmp/mpir header flags to the config-export file
+
+commit 45548abcabe5d6ee0503a0f07fed3197177c42d6
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Fri Jun 19 16:13:53 2015 +0200
+
+    update mpfq patch
+
+commit 7f8ffd84888c729d7f003b028e964eecefda595d
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Fri Jun 19 15:41:10 2015 +0200
+
+    support MPIR
+
+commit 6966f6f9ab36f58ed9b4605aae59f7849998e575
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Fri Jun 19 15:13:36 2015 +0200
+
+    new config check
+
+commit ebfea298de5e935669978897e6c531bb2a3764dd
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Fri Jun 19 10:03:44 2015 +0200
+
+    propagate mpfq change
+
+commit 900dad83effb5f4d99f6c6095b66ddb865f99b8e
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu Jun 18 15:19:35 2015 +0200
+
+    missing functions
+
+commit 18343ddda4c1119be5eeca5eea700e96da47979c
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu Jun 18 14:59:02 2015 +0200
+
+    remove some cruft
+
+commit e95bbe1f19b7f34dcaedf02a13ab81cf7af1a2ad
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu Jun 18 12:33:39 2015 +0200
+
+    fix fft includes for external use
+
+commit 7b9a9b45db9877369844570efacb66580874bd17
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu Jun 18 12:02:44 2015 +0200
+
+    trivial commit, test hooks
+
+commit fe615afbaa3b1edd5c701d1f6fef8687a68b14c8
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu Jun 18 11:58:24 2015 +0200
+
+    add no-distribute.txt
+
+commit db61d7fe3fc79fd7e63d14948f957d3fa7c59f60
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Mon May 18 16:12:27 2015 +0200
+
+    With --enable-fft-interface, now we don't compile cantor at all.
+
+commit 88a82d312cda8311b209a078fa24c92254cb8832
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Mon May 18 10:19:27 2015 +0200
+
+    re-enable ternary fft tests.
+
+commit 651468fef8926e9a97c6a54786a0845bcc2cd494
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Mon May 18 10:12:08 2015 +0200
+
+    Temporarily revert Paul's changes for the ternary fft.
+    
+    This reverts the following commits:
+    
+    1219487d700d45491fde594ddf3e14b4d1e0a965
+    b70511ec4f4428592793be6f670ac4c296b99859
+    6d781062bff33b1daf4dd46e6814e35e93a01682
+
+commit 24bed40452d140ab1dac6bb3279445d56de77463
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Fri May 15 16:16:42 2015 +0200
+
+    as an option, test without --enable-fft-interface (which otherwise becomes the default)
+
+commit 046e38f5049f86a20cb78b9be99d395603dc0560
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Fri May 15 15:14:45 2015 +0200
+
+    fix bug
+
+commit 6185661900be923f12170ddf5f1fcc364399d64f
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Fri May 15 14:52:36 2015 +0200
+
+    fix
+
+commit 5b558b7e68948d3f2f1911437d3d68439091e1ea
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Fri May 15 14:33:40 2015 +0200
+
+    try to fix 32-bit+cantor64
+
+commit 574c57950c00b8d11c91dacd169abc78d038443d
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu May 14 01:06:53 2015 +0200
+
+    test 32-bits + CANTOR_BASE_FIELD_SIZE==64 (currently failing)
+    
+    This feature was coded but never tested. Easier now that we have 32-bit
+    bots runnings.
+
+commit 4d4583fa9b2925fd2714abb1b82dc4c5fa7330b4
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu May 14 01:17:19 2015 +0200
+
+    regenerate mpfq files. Update patch. Remove SSE dependency.
+
+commit 82fcb930943f7681508248f75107823a219bc243
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu May 14 10:09:06 2015 +0200
+
+    missing files in 6334f4
+
+commit c21ac7ade3bbbb7aeb76c1615001a86772412c5b
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu May 14 10:07:54 2015 +0200
+
+    Revert "test 32-bits + CANTOR_BASE_FIELD_SIZE==64"
+    
+    This reverts commit 9719c08b226f090a39eeb6ac21ec0acb84319f0f.
+
+commit 7febff5223ab70f1f897b2a34fe10e5aea9957f7
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu May 14 10:07:51 2015 +0200
+
+    Revert "regenerate mpfq files. Update patch. Remove SSE dependency."
+    
+    This reverts commit 6da2079967b02e88ddd9b81493da8cc1b4fb6607.
+
+commit 6da2079967b02e88ddd9b81493da8cc1b4fb6607
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu May 14 01:17:19 2015 +0200
+
+    regenerate mpfq files. Update patch. Remove SSE dependency.
+
+commit 9719c08b226f090a39eeb6ac21ec0acb84319f0f
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu May 14 01:06:53 2015 +0200
+
+    test 32-bits + CANTOR_BASE_FIELD_SIZE==64
+    
+    This feature was coded but never tested. Easier now that we have 32-bit
+    bots runnings.
+
+commit 6334f4f50f6970d2fd70f5ee803095593fe17b84
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed May 13 17:31:55 2015 +0200
+
+    Several build fixes: EXTRA_DIST here and there, header location, OOS tests.
+
+commit 82167123e935c9ddc06758ebadf31c6254f37238
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed May 13 15:23:22 2015 +0200
+
+    allow gmp in /usr/local
+
+commit d26b684dffd545e42b593aa3c90c7df1b574702e
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed May 13 15:15:27 2015 +0200
+
+    oops
+
+commit f6431cbf520e4210c2c93ee10b2ab6bb47bcc2f3
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed May 13 15:04:09 2015 +0200
+
+    use --with-gmp in jenkins scripts
+
+commit 934c1c13f3f5937ff0bd48c79ff10d1ec745aa6b
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed May 13 14:48:41 2015 +0200
+
+    doc about --with-gmp
+
+commit 9bc9f7241d74433c2294eb9e682edaea76f16dc1
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed May 13 14:39:16 2015 +0200
+
+    Check for GMP
+    
+    GMP is required (mildly) by the mpfq source code. We could do without,
+    but I have only very little motivation for doing so.
+
+commit 9a4b24bc21fd3ee6dd76ad9d6d118ff4bf52c89f
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu May 7 23:12:54 2015 +0200
+
+    fixed bug with non-truncated cantor.
+
+commit 74260c6c22d7ecd47f5aeb86b452e21fb26e732f
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu May 7 21:44:07 2015 +0200
+
+    autogenerate many tests
+
+commit 1274585c89ac450429b4613422c8199838557f3f
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu May 7 21:13:11 2015 +0200
+
+    extend testing mechanism
+
+commit aab0563b52257ca6aaa67b9820e7e486ca868a3e
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu May 7 15:16:50 2015 +0200
+
+    missing subdir
+
+commit ebc4cfb1783b7a3a2350d93323975b3586e7bba9
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu May 7 15:14:42 2015 +0200
+
+    missing file
+
+commit 16d3971649ebc681bc6d47d778207d0713485242
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu May 7 15:13:02 2015 +0200
+
+    silence warning
+
+commit 9383e2837d53741280175f72e1d7f670a4db27c7
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu May 7 15:08:46 2015 +0200
+
+    Fix #16578
+
+commit af9d868ad7ab339520facfb8ea532c378a056277
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Tue May 5 10:23:52 2015 +0200
+
+    still work in progress -- but postponed to later
+    
+    make check doesn't correctly recurse in the fft/ subdir.
+    I'm not terribly happy with the names so far.
+    the tests in fft/Makefile.am would need to be done about the same way
+    they're done in tests/Makefile.am, with externally-generated checksum.
+    We'd need to make the generation code a common base.
+
+commit e5c900c11e07d98c3074aea88a72e4107c2b3a8b
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Mon May 4 11:30:11 2015 +0200
+
+    merge gf2x-fft as a distributed child of gf2x, and renamed some stuff
+    
+    This simplifies things greatly.
+
+commit 7efc2cc373a765ba531c7fef1a697629fe479b30
+Merge: e2c041e 6532c3f
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Mon May 4 09:30:33 2015 +0200
+
+    Merge branch 'fft-branch'
+
+commit e2c041eadda2c569ee31b9dbacbad3e4b3564fde
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Sun May 3 23:23:19 2015 +0200
+
+    new script
+
+commit 00737708732caa2546247224f0f9870429d617c5
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Sun May 3 22:49:17 2015 +0200
+
+    Apparently "." and "source" behave differently with openbsd
+
+commit 79853fb1111144c8a71c891b94f410d75c0901ee
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Sun May 3 22:30:22 2015 +0200
+
+    modify scripts to better account for roaming CI jobs.
+
+commit 95a742d02e0f1b3703a8062fd084f2130c580b78
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Sun May 3 22:10:41 2015 +0200
+
+    cute little bug
+
+commit 6ee943185b25de9e39fb46e1178b13caaffa39b4
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Sun May 3 22:01:04 2015 +0200
+
+    new script
+
+commit 0a89e324806bc3e0b167692e7dddbd0ec1ada01e
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Sun May 3 10:44:50 2015 +0200
+
+    adapt to various versions of aclocal
+
+commit c9e95437a6e6fb04f8d7578743c163790aa5eb1d
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Sun May 3 10:39:58 2015 +0200
+
+    new slave
+
+commit 0c63b9fa556f4c7b7290bd4144aa2e244c4a5fb5
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Sun May 3 10:32:56 2015 +0200
+
+    functional (albeit failing) macos test
+
+commit 2e12a2d9d2ba694f3fed3b2ad4c4bb8ae6308ea1
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Sat May 2 23:23:21 2015 +0200
+
+    modify script
+
+commit dbd0ed7df22f7d2f527aa7cd497f3772f845591f
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Sat May 2 23:17:27 2015 +0200
+
+    modify script
+
+commit b1206e0d3dacf35f3a004ef9cbc1cffe9606b5a6
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Sat May 2 23:05:48 2015 +0200
+
+    more scripts
+
+commit fb3a8a7e35c6c1bd25f5534eda6e7bb478a926c9
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Fri May 1 22:47:47 2015 +0200
+
+    fixed leftover stuff
+
+commit c95eaf7e99908c8dbc3f58ff79ff9d15c65ce900
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Fri May 1 22:40:06 2015 +0200
+
+    change gpl-untaint logic
+
+commit d9fbb2cfa24111862f55174ac300b299c1e6713c
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Fri May 1 22:26:48 2015 +0200
+
+    fixed error in html escaping
+
+commit e9ea9df4acc25d8b569ab7335b32ae3fe9507827
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Fri May 1 22:22:43 2015 +0200
+
+    commit jenkins scripts
+
+commit 26f0712d76305ca970ddccd02304f18fbef49ee8
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Fri May 1 17:27:43 2015 +0200
+
+    fix some paths
+
+commit 6c9ca45672c77378e05122944e08694b90695792
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Fri May 1 17:11:00 2015 +0200
+
+    fix 32-bit bug
+
+commit a0f32e9a52d8bb9a94599c3412bf03cab59a4c66
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Fri May 1 16:53:52 2015 +0200
+
+    fixed minor stuff, + we require automake 1.13 for creating the makefiles
+
+commit 0048a9615c8884ed9342bc3b826d6787f9574c93
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Fri May 1 16:45:23 2015 +0200
+
+    fix autotools error
+
+commit adfd87b24af276f946f097aa7a7fc99074d3ff09
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Fri May 1 16:40:50 2015 +0200
+
+    more missing things
+
+commit cd62e01f3a9355a3fe9943e549a0a80fb91235e4
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Fri May 1 16:35:31 2015 +0200
+
+    some more
+
+commit ed8452a8b912c0bad6209c356174d53fb8d7583d
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Fri May 1 16:33:34 2015 +0200
+
+    missing macros
+
+commit b08ebcab8ddfb0cbee87f5ba627f44accc9c62eb
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Fri May 1 16:06:44 2015 +0200
+
+    fixed mistake
+
+commit e9733c85c60ae74795671016dc706b9c050ab19f
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Fri May 1 15:54:35 2015 +0200
+
+    fixed failing tests
+
+commit de079282fd90297031cc7702b301058537c6fa22
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Fri May 1 15:48:21 2015 +0200
+
+    added new header files, and improved tests
+
+commit 2741ddd4dc808108267d50168c406793724b5ef7
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu Apr 30 16:56:05 2015 +0200
+
+    missing file
+
+commit f36c9ea61648b031e677f6790c2a22b1d20e092f
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu Apr 30 11:50:11 2015 +0200
+
+    autotools tweaks
+
+commit f01b7e38b43c28640b91e6c32b22e98a4d24b036
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu Apr 30 11:28:08 2015 +0200
+
+    rename HAVE_PCLMUL_SUPPORT and HAVE_SSE2_SUPPORT and add a header.
+
+commit 6532c3f2eb2dfbe2034a0fe9727a6f414bfb62fc
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed Apr 29 18:48:20 2015 +0200
+
+    more fixes
+
+commit d3c6c92f9fd03b55cd66abe8cfc14f697e58f7b9
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed Apr 29 18:46:07 2015 +0200
+
+    missing includes
+
+commit 16009c3c3d887e43aa58be4e44152f1416feebd0
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed Apr 29 18:43:52 2015 +0200
+
+    tmp
+
+commit 82b886dcebdfcb143c0e4541b98972c701d0360e
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed Apr 29 18:40:23 2015 +0200
+
+    propagate -lgf2x
+
+commit bbd07fe71c0f040ec18dfdd143e858c230977824
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed Apr 29 18:37:47 2015 +0200
+
+    move include
+
+commit 040fd5a770af9f890e56a96a351aa72ee2dbcd7e
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed Apr 29 18:12:11 2015 +0200
+
+    remove a const
+
+commit 7278872793ebdd63e3e7c99ee4d2ad3e32f7fec3
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed Apr 29 17:58:57 2015 +0200
+
+    allow gf2x-fft to be a child of gf2x
+
+commit 369cbe00bb1d771d50aa6667e0e05fd3bca98530
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed Apr 29 17:55:09 2015 +0200
+
+    add missing function
+
+commit aa0c0a46f13cdb2fd4e8714d865ad5fbc2aefe9a
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed Apr 29 17:40:53 2015 +0200
+
+    fix types in cantor
+
+commit 3e1e1ca395eb4feebf238eaae2881c856810f9ea
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed Apr 29 17:11:20 2015 +0200
+
+    use gf2x-thresholds.h to get GF2X_WORDSIZE
+
+commit 9957123a422bc15ae44556a36fc393d3e3742e8e
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed Apr 29 17:06:01 2015 +0200
+
+    include mpfq subdir
+
+commit f95522099bbe73f7d9e2d23e656f210b29b2d323
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed Apr 29 17:03:09 2015 +0200
+
+    fix bug
+
+commit 2ab156ee87e8921d839f34083e927eeb6552f0b5
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed Apr 29 16:37:27 2015 +0200
+
+    Better patch.
+
+commit 69b6aad9dbe60b0aaacb701b2a16413f34d8d5cf
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed Apr 29 13:54:27 2015 +0200
+
+    add mpfq patch
+
+commit 607cfd23d7f4597e15b02807ede8649914f4ecc4
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed Apr 29 11:58:12 2015 +0200
+
+    generate new mpfq code
+
+commit 17cff197f7c69f03e2e35589d4a30e4ea7ce9dfb
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed Apr 29 11:03:46 2015 +0200
+
+    tmp
+
+commit c3e6ce8cc0712d076a444763abccfd02e7c68e05
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed Apr 29 10:51:14 2015 +0200
+
+    fix warning
+
+commit dd6050a4f32be81f25870b9f9053eddc27ca90af
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed Apr 29 10:51:11 2015 +0200
+
+    more trial and error
+
+commit 48d66e951bb1eee75f08ab2d2722849b1bd81af4
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed Apr 29 10:42:05 2015 +0200
+
+    wrong include
+
+commit d7c9448f91e0850427e8647a8d77883d4408b8f8
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed Apr 29 10:33:01 2015 +0200
+
+    fix warning
+
+commit 2532e904465035267410292979b381a5cb27745c
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed Apr 29 10:29:18 2015 +0200
+
+    fix bugs
+
+commit 9e7e73ecd2099cbbda0b1ba18577dc1299423bb8
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed Apr 29 10:03:58 2015 +0200
+
+    Let mpfq_2_128_mul_ur work both with and without gf2x being available...
+
+commit 13e8d124c7598d3b0e51ee7cb385435cd2ec57f5
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed Apr 29 09:58:12 2015 +0200
+
+    fix #18889
+
+commit 23fe655c1598be336acca8008d8bf9a4976aa1a5
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu Apr 23 00:23:48 2015 +0200
+
+    hmm. this is awkward.
+    
+    gf2x includes its impl and config headers in the "small" multiplication
+    files it exports. This inconditionally exposes and redefines the
+    PACKAGE__* and such variables for the user. This is bad.
+    
+    cantor.h uses (was using) the gf2xfft-config.h ; as a fix to the previous
+    one, we have a relatively easy time getting rid of it, since it's equally
+    bad.
+    
+    cantor.h includes mpfq/<whichever>.h though, and that includes inline
+    assembly code. If gf2x is available, it makes sense to use the gf2x
+    optimized routine in this case. But HAVE_GF2X_H_ is defined in
+    gf2xfft-config.h only.
+    
+    and mpfq/XXXX.h pretending a one-size-fits-all implementation suffices is
+    really problematic for fownstream users.
+
+commit 3317a24493f9229368416922e922270f2cb3f4a2
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu Apr 23 00:09:55 2015 +0200
+
+    ahem
+
+commit 10e5097dd2c4b8190609f20f23032980dca07bf2
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu Apr 23 00:00:52 2015 +0200
+
+    oops. Fixed leftover c128's here and there.
+
+commit 143a94fe8c8f769ddd8a97d2bed0b3cca69322c4
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed Apr 22 23:53:20 2015 +0200
+
+    added new argument --with-parent-gf2x
+
+commit 8f3b48c2742dad64c1bcd93fcccd81ca86e8f4b2
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed Apr 22 22:23:34 2015 +0200
+
+    forward-port 5b03ae21c52aa2a7108ef2b525e11bfce6d47fb1 and 5fa6926bc7912522e2aa7b0c5f4766b3a4985dfd from cado-nfs
+
+commit 7bcbabb0330317be47a05d2ddde3662cb46efd83
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed Apr 22 22:21:42 2015 +0200
+
+    forward-port cde209d1946868c3b35f83c7618d2256ba5579a7 from cado-nfs
+
+commit 21e2b18042dc0c2c8d8168c1a50527e7a06fc77f
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed Apr 22 22:11:55 2015 +0200
+
+    halfway to synchronized gf2x-fft from the copy in cado
+
+commit 6d781062bff33b1daf4dd46e6814e35e93a01682
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Thu Apr 9 12:21:10 2015 +0200
+
+    forgot to use the return value of gf2x_tfft_init()...
+
+commit b70511ec4f4428592793be6f670ac4c296b99859
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Thu Apr 9 12:14:11 2015 +0200
+
+    now gf2x_mul_fft() performs only one bug malloc() call
+
+commit 0196eee06f78803e2d6493d5b31263b09b114b2a
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed Apr 8 21:05:04 2015 +0200
+
+    sync
+
+commit ae999e527aef9f5af3e05f185af2781a465e91b4
+Merge: 1219487 36ba567
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Wed Apr 8 17:20:58 2015 +0200
+
+    Merge branch 'master' of git+ssh://scm.gforge.inria.fr/git/gf2x/gf2x
+
+commit 36ba56733beea3efc692b38554982c07659335b4
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed Apr 8 17:18:28 2015 +0200
+
+    Got rid of v2di's.
+    
+    Some improvements, along with it:
+    
+    before:
+    
+    mul4 -> mul4cl1.c [ 12.3 ns ] **BEST**
+    mul6 -> mul6clk2.c [ 23.5 ns ] **BEST** (previous) -> no change
+    mul8 -> mul8k.c [ 42.7 ns ] **BEST** (previous) -> no change
+    mul9 -> mul9clk2.c [ 48.2 ns ] **BEST**
+    
+    after:
+    
+    mul4 -> mul4clk.c [ 8.7 ns ] **BEST** (previous) -> no change
+    mul6 -> mul6clk2.c [ 17.7 ns ] **BEST** (previous) -> no change
+    mul8 -> mul8k.c [ 40.4 ns ] **BEST** (previous) -> no change
+    mul9 -> mul9cl.c [ 42.6 ns ] **BEST** (previous) -> no change
+
+commit 1219487d700d45491fde594ddf3e14b4d1e0a965
+Author: Paul Zimmermann <Paul.Zimmermann@inria.fr>
+Date:   Wed Apr 8 17:18:22 2015 +0200
+
+    group all dynamic memory allocations of gf2x_mul_fft
+    
+    into the single function gf2x_tfft_init(). This is a first step towards
+    a function that would do no dynamic memory allocation at all.
+
+commit 91b0d85b820ee9d33d34dedfb8cdef8eccdb11dd
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed Apr 8 11:04:22 2015 +0200
+
+    oops. We really need the lgpl-2.1 version of gmp's config.guess file.
+
+commit cb6a60399d9a688474e3da7e2d64e472f79e29e8
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Wed Apr 8 00:07:47 2015 +0200
+
+    no tuning in LGPL case
+
+commit 1d3bacda44aa1f59a53eacb97d609432f9efd9bc
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Tue Apr 7 23:49:30 2015 +0200
+
+    avoid warning
+
+commit 2a2eec7423601e4a5b1c5c5051351204da35171c
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Tue Apr 7 23:47:00 2015 +0200
+
+    avoid lrand48
+
+commit 75d1626b82985663ec8d31b46dd3ea9f0e96d98e
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Tue Apr 7 23:34:29 2015 +0200
+
+    activate GPL- and non-GPL code divergence
+
+commit 4b556f6f7119def3c3ca0e8f2017a60943c95456
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Tue Apr 7 23:23:07 2015 +0200
+
+    update configfsf.guess (not GPL-tainting as per explicit exception)
+    
+    wget 'http://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.guess;hb=HEAD' -O config/configfsf.guess
+    wget 'http://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.sub;hb=HEAD' -O config/configfsf.sub
+    
+    The GMP config.guess and config.sub are still those from the latest
+    LGPL-2.1 gmp.
+
+commit 717ada264e7de79ad73ff92a63ae27bf20207c62
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Tue Apr 7 23:14:25 2015 +0200
+
+    more license wording updates
+
+commit 73cc3ca81a3d7741f976e8158d30baa2990b9b3a
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Tue Apr 7 22:44:36 2015 +0200
+
+    recognize arm7vl
+
+commit 70a48a77b94a927869a3a05619b451855cc36d2e
+Author: Pierrick Gaudry <pierrick.gaudry@loria.fr>
+Date:   Sun Mar 22 13:07:53 2015 +0100
+
+    Add gf2x tuning for armv7l (raspberry pi 2).
+
+commit 5287eff9e78be0e71833c5834f8a0dc3ba945cdd
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Tue Apr 7 22:33:10 2015 +0200
+
+    forgot two files in the distribution...
+
+commit e8beb9def23a1d21b1fc091a1632d18ae14d3cc0
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Tue Apr 7 22:25:59 2015 +0200
+
+    bump version number, preparation for next release
+
+commit 0a7f111ae4244579230b747df0ab8fc1488059b3
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Tue Apr 7 22:23:07 2015 +0200
+
+    Get rid of global_pool. Now gf2x_mul is thread-safe as it should always
+    have been.
+
+commit 38041182c203b4964d2049f38ed9bb9a1e6986a5
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Tue Apr 7 22:16:43 2015 +0200
+
+    update copyright dates in files.
+    
+    for f in $(git ls-files '*.[ch]') ; do echo -ne "$f\t" ; git log --follow --pretty=format:%ad $f | perl -ne '/(20\d\d)/ && print "$1\n";' | uniq | while read x ; do echo $x ; if [ $x = 2009 ] ; then echo 2008 ; echo 2007 ; fi ; done | uniq | tac  | xargs perl -e 'print join(", ", @ARGV), "\n";' ; done  | while read f dates ; do if ! test -L $f ; then sed -e 's/^\( *Copyright\) *[0-9, ]*$/\1 '"$dates/" -i $f  ; fi ; done
+
+commit c3bd47df55db18f7560b5fcde4239eda52fac058
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Tue Apr 7 22:12:34 2015 +0200
+
+    reworded license text
+
+commit 8eb3e1be477b54c411398f0b067edcebbc37dd5d
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Tue Apr 7 21:55:14 2015 +0200
+
+    Fix dangling symlinks.
+
+commit 871f022485c890bba041d58e9639aa797db1c368
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Fri Nov 28 14:29:11 2014 +0100
+
+    Accept NULL as a gf2x_mul_pool parameter in gf2x_mul_r
+
+commit 4a27f83bd7c4ed11bea0e195c5dbc7903621d121
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Tue Nov 18 22:57:33 2014 +0100
+
+    Force -msse2 instead of believing it's unnecessary if gcc seems to grok.
+    
+    Under some circumstances, it seems that on i386 we get:
+    
+    ./gf2x/gf2x_mul3.h:69:19: warning: SSE vector return without SSE enabled
+    changes the ABI [-Wpsabi]
+
+commit 4e86413ea8c628f9df4cd96fa616fb8811d06dd5
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Tue Nov 18 10:02:55 2014 +0100
+
+    get rid of ntl-5.4 related stuff
+
+commit 9955ed17070d4697556e4aa608dd14e6c388b7de
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Tue Nov 18 09:44:04 2014 +0100
+
+    test commit -- fixing a trivial error btw
+
+commit 5db480ed87b46e801165ad043858e8504755b56a
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Tue Nov 18 09:39:52 2014 +0100
+
+    fix and update gf2x changelog
+
+commit 5a489a13010d07db456f27116665c8f41bb1d9c7
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Tue Nov 18 09:36:59 2014 +0100
+
+    test commit
+
+commit 9cbd0cf7d0a524de423d35cdbda2ba9ecc0c479e
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Fri Nov 15 15:20:12 2013 +0000
+
+    made enable-hardware-specific-code the default. Added haswell.
+    
+    Also recognized other hardware platforms as recognized by gmp's enhanced
+    cpu detection system
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@167 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 87619ef66c1e46c4ef2ee451baa6ecaeb1900352
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Fri Nov 15 15:20:09 2013 +0000
+
+    Imported config{,fsf}.{sub,guess} from gmp
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@166 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 295f8cf79ca2c66b96c7320311c18736681a79a2
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Fri Nov 15 15:20:05 2013 +0000
+
+    Changed to GPLv3.
+    
+    Updated copyright lines and dates in source files. Used automated scripts
+    for that.
+    
+    for f in $(git ls-files '*.c') ; do echo -ne "$f\t" ; git log --follow --pretty=format:%ad $f | perl -ne '/(20\d\d)/ && print "$1\n";' | uniq | tac  | xargs perl -e 'print join(", ", @ARGV), "\n";' ; done  | while read f dates ; do sed -e 's/^\( *Copyright\) *[0-9, ]*$/\1 '"$dates/" -i $f  ; done
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@165 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 5be24cfbc0d666f930543b426a289dfdfa997ff8
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Fri Nov 15 15:19:57 2013 +0000
+
+    Changed tune-lowlevel slightly so that the library is always rebuilt afresh
+    
+    This cures the oddity of mul8k showing absurd timings because of source
+    files dependencies not being properly caught by the building system while
+    doing the tuning.
+    
+    The time it takes to build the library itself is relatively negligible
+    compared to the time we invest in tuning, so it makes sense to proceed
+    like this.
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@164 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit ab6c4cbe8aa6325b473a596adb8e272320710163
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Fri Nov 15 12:53:16 2013 +0000
+
+    Split generic/gf2x-thresholds.h in two variants
+    
+    The "generic" (in comparison to generic32 or generic64) lacked a proper
+    WORDSIZE field, which caused some bugs.
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@163 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 2be797fc4d34472d14d0d6f2d06e5bc539fe4241
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Tue Oct 22 17:53:26 2013 +0000
+
+    added --disable-hardware-specific-code
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@162 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit b39d7c28e625834e9f7c497657a4c677fc942bae
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Tue Oct 22 17:02:39 2013 +0000
+
+    avoid using tr -d -c 0-9, which is not portable enough...
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@161 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 63b37fd1bf5573a6af40c9c0d688c1fc114002c1
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Oct 14 11:53:48 2013 +0000
+
+    improve sse-2 check
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@160 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit f56d398a092c4be785e0aaf49a969843114db7d1
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Tue Sep 24 09:02:20 2013 +0000
+
+    one more try.
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@159 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 19f1d86190ddc736a6a79b2086b8d2c6912c02d3
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Tue Sep 24 07:35:49 2013 +0000
+
+    gcc-4.8 + outsmarts our sse-2 test with -O4. Fix this.
+    
+    This is in fact rather problematic, since constant folding is very likely
+    to affect many of our instruction set tests in this way.
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@158 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 90d4d900497df3a4b5c5be4c1aa8f3f2177273fb
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Sep 23 21:57:25 2013 +0000
+
+    Recent fix for out-of-source build did not work relative oos.
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@157 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 86233420942f8eabce9abb67a3c0881b303e7821
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Sep 23 21:57:23 2013 +0000
+
+    Better sse-2 test
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@156 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 76bb8d6bbeecff318fb96180ce32e1beddd0cefe
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Sep 23 21:57:22 2013 +0000
+
+    Made library aborts use abort(), not exit().
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@155 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit e16c1cce8d3b27436d56fdf0668beaf7a2cb49c4
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Sep 23 21:57:20 2013 +0000
+
+    Sanitize Makefile.am ; we were using a variable wrongly.
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@154 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 902ac7f4c3f7bb8d1fbb706c354c9b4bfca6984f
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Fri Jul 12 14:52:20 2013 +0000
+
+    Fix message
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@153 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit ff64742dacec236cdd1d1d145ddf20d210a0ed83
+Author: zimmerma <zimmerma@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Thu Jun 6 16:57:18 2013 +0000
+
+    fixed a few compiler warnings
+    
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@152 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit ef7118ae91edc089cb5249d3c487a491e629a1f1
+Author: zimmerma <zimmerma@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Thu Jun 6 06:44:36 2013 +0000
+
+    feedback from Sage developers, see
+    http://trac.sagemath.org/sage_trac/ticket/2114#comment:32
+    
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@151 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit ca3be9b1269d00d8217e86ebc8611cfd8e47c38b
+Author: zimmerma <zimmerma@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Wed Jun 5 12:30:42 2013 +0000
+
+    TOOM_TUNING_LIMIT must be at least 30
+    
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@150 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 738474490b109f73b339dd44bda8a30833f4e7ed
+Author: zimmerma <zimmerma@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Wed Jun 5 12:06:27 2013 +0000
+
+    ensure GF2X_MUL_TOOM4_ALWAYS_THRESHOLD >= 30
+    
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@149 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit aa233ac42345d7c6208f774c3081620b7e5edc19
+Author: zimmerma <zimmerma@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Fri May 24 13:47:19 2013 +0000
+
+    [NEWS] updated
+    
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@148 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit b76de45b6a07d6badc52a1e80dfd2839f56ebef2
+Author: zimmerma <zimmerma@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Fri Apr 26 12:58:55 2013 +0000
+
+    replaced "unsigned int" by "unsigned long" everywhere
+    
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@147 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 8083ff09da8a8737cd73723e48e390adaf970af7
+Author: gaudry <gaudry@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Wed Sep 26 07:01:51 2012 +0000
+
+    Update README: tuning subdir does not exist anymore
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@146 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit b770957661946869cf9e8cb6bf5b8aaeed08cc3f
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Wed Sep 5 14:16:14 2012 +0000
+
+    Changed tune-lowlevel.pl script to also include the timings for the non-winning functions.
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@145 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 5d5a3c6e9ecdb52d442657b733b4bf61a0fb16fb
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Wed Sep 5 14:16:13 2012 +0000
+
+    make mul2t2 more intel-intrinsics friendly. This happens to improve the performance a great deal with gcc-4.6, at least when using -march=native
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@144 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit e71d1c76803ea33c264dc29a4eceffebdb1aeb8c
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Thu May 31 20:59:49 2012 +0000
+
+    updated ChangeLog
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@143 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 1c7cdcfe27f7b96bff5266d77df797fb189e3936
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Thu May 31 20:59:48 2012 +0000
+
+    release gf2x-1.1
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@142 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit bde2f41fe14ce0fc67c5691b29a4e452571ca593
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Thu Apr 5 07:52:35 2012 +0000
+
+    Port cado-nfs patch 00293ca08fc2813d5e9ba05f5b31820ecde64de5
+    
+    This fixes a GNU make idiom
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@141 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 7003f3e69cf0bcf2957e45b139403ad461a73291
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Thu Apr 5 07:47:27 2012 +0000
+
+    changed mul9 default for x86_64_pclmul
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@140 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 1d75feed6eecae189f01f3a65a67a3ad15b9e784
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Thu Apr 5 07:47:26 2012 +0000
+
+    removed extraneous newline in generated files
+    
+    This caused tune-lowlevel to erroneously report tuning as yielding
+    results different from the preselected choice.
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@139 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 80025d02b762e252f7e97e2c44debebdd2dec3ca
+Author: gaudry <gaudry@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Wed Apr 4 21:04:23 2012 +0000
+
+    Avoid potential error message during make tune-lowlevel.
+    
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@138 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 18fe7bd9041d1411bcf96fe4c44e762adaf8ac69
+Author: zimmerma <zimmerma@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Wed Apr 4 10:55:50 2012 +0000
+
+    [README] improved description
+    
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@137 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit b8083f3a0f2e1d9bfda999a95f4cc27761c7930e
+Author: zimmerma <zimmerma@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Wed Apr 4 10:50:35 2012 +0000
+
+    [src/tune-lowlevel.pl] fixed typo
+    
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@136 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 6503c8e35267e16371ff13e35247275756ed5d90
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Wed Apr 4 09:34:59 2012 +0000
+
+    Prepare for release gf2x-1.1 (bugfix)
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@135 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit c2e7f8cad2b11de7ea1559464b11062d8bb72143
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Wed Apr 4 09:34:58 2012 +0000
+
+    Added clarification about why GF2X_FUNC exists
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@134 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 2b1a75bce01d90b1e9a2c62e641faeb1ddf871d0
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Wed Apr 4 09:34:57 2012 +0000
+
+    Uniformize inner functions.
+    
+    All static inline functions in mul*.c should be named <basename of the
+    source file>_mul<what it does exactly>. So for example: mul7k3_mul2c. And
+    GF2X_FUNC() should be used for all of these.
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@133 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 38951ff7bb70d53e76c24f0f4efc19df8518b0df
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Wed Apr 4 09:34:56 2012 +0000
+
+    Fix for out-of-source build
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@132 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 0616d15dfc070e1f98ef452a77c5008ccc628b98
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Wed Apr 4 08:54:00 2012 +0000
+
+    Fixed naming of local functions in some files.
+    
+    This repairs a build failure if mul5k3 ever happens to be chosen.
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@131 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit e1f18ef403ed2221f0dff9e928564777eb02388e
+Author: zimmerma <zimmerma@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Wed Mar 21 17:02:37 2012 +0000
+
+    [config/acinclude.m4] check not only if we can compile sse2 code, but also if
+                          we can run it
+    
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@130 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit e5ba3ff23b534710f9a98a039194e8263b3af9e3
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Fri Mar 9 15:27:20 2012 +0000
+
+    autotools fix
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@129 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 5504503188f19fd87dccdf1b47e6e11dc5da4178
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Fri Mar 9 15:27:18 2012 +0000
+
+    new tuning
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@128 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit b9ccf1edad68d88d4211ac2a82140e0d40723fed
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Fri Mar 9 15:27:17 2012 +0000
+
+    trap bad arguments to gf2x_tfft_init
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@127 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit df98d65bdc979521ea25889133ce870660fb1d5c
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Fri Mar 9 15:27:15 2012 +0000
+
+    placate autoconf
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@126 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit a41d119fbece652f1c99d60278d47e632d056239
+Author: Emmanuel Thomé <Emmanuel.Thome@inria.fr>
+Date:   Thu Mar 8 15:20:12 2012 +0100
+
+    Let this live in its own repo
+
+commit 0b5fdf041de5b2936e0a2001dbf68b7c72cebfda
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Nov 28 21:36:29 2011 +0000
+
+    typo in generate-test-list.pl
+    
+    Patch contributed by Nicolas Estibals
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@125 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 1fc34ab296f862c18504bf8071d1c08f7df2bf88
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Nov 28 21:36:28 2011 +0000
+
+    new mul4 from eprint.iacr.org/2011/589.
+    
+    Patch contributed by Nicolas Estibals
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@124 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 9ecdb8163546aa0a9b938f7722722a6e9073d091
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Sat Dec 11 22:35:45 2010 +0000
+
+    support cross-compilation of gf2x
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@123 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit a194a7c60cd9e6df6f692e361c3d86a2d4939aa2
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Sat Dec 11 21:08:43 2010 +0000
+
+    release gf2x-1.0
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@122 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit c2792b1cbabed8efae3043ce530305796ab03ebc
+Author: zimmerma <zimmerma@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Nov 29 08:54:14 2010 +0000
+
+    [toom2.c] Marco Bodrato agreed to release the code he was involved in
+              under GPL v2+
+    M    toom2.c
+    
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@121 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit ac3b5df89ba97fcbbc45c5f67520e228258dbc4e
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Fri Nov 26 10:08:54 2010 +0000
+
+    Changed license text in gf2x source files.
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@120 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 5585fe9150beeabca20770cbca99cf2bc7bb124b
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Fri Nov 26 10:08:49 2010 +0000
+
+    move the utility routines for toom functions into toom2.c
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@119 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit a00676c43b6f6440d5c177876abec964ff5bb0ea
+Author: zimmerma <zimmerma@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Fri Nov 26 08:47:06 2010 +0000
+
+    [toom2.c] new file with GPL code
+    [toom.c] now only contains LGPL code
+    
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@118 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 23c9012758545e34120f0f38a0f5d9b75afab96e
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Nov 22 12:38:29 2010 +0000
+
+    release gf2x-1.0
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@117 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 0f5088d096589c995ff2abbc86c707a704081dc8
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Nov 22 12:30:22 2010 +0000
+
+    silenced last warnings.
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@116 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 0fb5e2e92726e68a2929e946d27d67bb3b017363
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Nov 22 12:30:21 2010 +0000
+
+    release gf2x-1.0
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@115 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit e9e02c58115094db71059381f5474ad93f621f37
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Fri Nov 19 13:06:46 2010 +0000
+
+    shortened readme lines to avoid untidy linewrap.
+    also changed the encoding to utf-8, it's more usual.
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@114 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 1cbb10f6ea91b56ad814ba66bf800dfcd6a75167
+Author: zimmerma <zimmerma@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Fri Nov 19 12:58:22 2010 +0000
+
+    licence -> license
+    
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@113 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 15a25f248192d5095182cc2bf0372b978f3c34bb
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Fri Nov 19 12:29:02 2010 +0000
+
+    added a few more calls to the tfft api, to accomodate cado needs
+    
+    (this change used to exist in the cado tree only, no reason not to have
+    it here as well).
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@112 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit b243d9ecf82bdfdd530b7c653f490488607ce817
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Fri Nov 19 12:16:06 2010 +0000
+
+    release gf2x-1.0
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@111 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit ff8c2bfca3d6367d60ee1cb360026b875b4a7d9d
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Fri Nov 19 12:12:47 2010 +0000
+
+    various automake changes so that make dist does the right thing.
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@110 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 69a0554e60a77387e8c2d89285ceb411d75ad070
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Fri Nov 19 10:35:46 2010 +0000
+
+    modified include path ; out-of-source builds had been broken at some
+    point.
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@109 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 501bde004568b23be8aa98a15a281ca0605f2d07
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Fri Nov 19 10:35:44 2010 +0000
+
+    updated version number in configure.ac to 1.0
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@108 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit cf186c14f5f462b948bc859408066ec1246deddc
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Tue Oct 5 15:26:13 2010 +0000
+
+    disabling mul3k3, as it's really a time bomb. As is, if it wins, it
+    breaks the code.
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@107 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 90ee49a5cc3f4c83b140a7f124ce869ef97a7e32
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Tue Oct 5 15:21:37 2010 +0000
+
+    configfsf* files are gone now
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@106 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 9cf18eb814081927f59fe5521e0ec717acbe3adf
+Author: zimmerma <zimmerma@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Tue Sep 21 09:46:11 2010 +0000
+
+    [mul9cl.c] optimized with Maple codegen[optimize] function
+               (now mul9cl takes 199.5ns, whereas mul9k3 takes 197.6, we are
+                close)
+    
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@105 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 27ed99d7d616fd7d2b1c9bb5bb64ba878a2676c6
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Tue Sep 21 09:08:07 2010 +0000
+
+    some pxors, yields an improvement.
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@104 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit b3d0b6470edb88b854c29ce9d23c024d2dda9ca2
+Author: gaudry <gaudry@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Sep 20 17:37:33 2010 +0000
+
+    mul9 in 30 mul1.
+    Terribly slow; showed probably write common subexpression optimization
+    manually. Use maple's "optimize" functionality ?
+    
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@103 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit a7d72cbab209543401a123e0362ae358da3a772e
+Author: zimmerma <zimmerma@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Sep 20 15:42:29 2010 +0000
+
+    added references and comments
+    
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@102 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit eff6fea6ca5caaf3b0aefb50aba3fe3da1ae50a6
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Thu Sep 16 14:09:18 2010 +0000
+
+    just having fun with sse-2.
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@101 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 8f881ee5fc6d747dc49808a9f337697cd4ad10d4
+Author: zimmerma <zimmerma@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Thu Sep 16 12:44:06 2010 +0000
+
+    added mul7k3 and mul9k3
+    mul9k3 wins:
+    mul9 -> mul9k.c [ 214.5 ns ]
+    mul9 -> mul9k3.c [ 197.6 ns ]
+    
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@100 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit b4388a44c6b9ec566f0b2977e58843e2698a1949
+Author: zimmerma <zimmerma@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Thu Sep 16 11:57:18 2010 +0000
+
+    added mul5k3 (14 muls vs 13 for mul5clk_c)
+    ./tune_mul5clk_c : 74.0 ns
+    ./tune_mul5k3 : 80.9 ns
+    
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@99 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 760ae82a4caaab60e842e9d2cbab8a2ce32d34d1
+Author: zimmerma <zimmerma@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Thu Sep 16 08:16:54 2010 +0000
+
+    [mul2cl.c,mul3k3.c] gross hack to avoid duplicating code from mul2cl.c, feel
+                        free to revert or to improve!
+                        The idea is to be able to easily replace mul2cl by say
+                        mul2cl2 in mul3k3. Ideally if each function has a carry
+                        and a borrow variant, we could directly call mul2carry
+                        and mul2borrow.
+    
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@98 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 04f1645f73539ef13de5d0a472bc255f509acfc1
+Author: zimmerma <zimmerma@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Thu Sep 16 07:36:50 2010 +0000
+
+    [mul3k3.c] oups, I forgot to reuse the cached product! Current timings are
+    promising:
+    ./tune_mul3k : 63.3 ns
+    ./tune_mul3k2 : 38.5 ns
+    ./tune_mul3k3 : 37.2 ns
+    ./tune_mul3cl : 34.7 ns
+    Maybe somebody can improve mul3k3 to beat mul3cl. In the meantime I will
+    work on a mul5 version.
+    
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@97 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 36d5c3773f91fed9038f866599f49e3d84346871
+Author: zimmerma <zimmerma@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Thu Sep 16 07:32:09 2010 +0000
+
+    [mul3k3.c] new mul3 code using Montgomery's variant for the odd case
+    
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@96 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 57341db7b73c822c773d06a04c6730209bb42a7f
+Author: gaudry <gaudry@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Tue Sep 14 13:35:59 2010 +0000
+
+    configure tries pclmul support by default
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@95 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 30d6dafec2cc095ce270c719a71b0767b35110f8
+Author: gaudry <gaudry@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Tue Sep 14 13:22:33 2010 +0000
+
+    tuned on crumble
+    
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@94 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit e1de68a9772c7c5f4ae9f85a7caef9704b3352ca
+Author: gaudry <gaudry@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Tue Sep 14 10:04:19 2010 +0000
+
+    how did it work before???
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@93 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 6a4368294148f5c24d00f206be045b475ad45c19
+Author: gaudry <gaudry@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Tue Sep 14 09:34:03 2010 +0000
+
+    tuning for westmere
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@92 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 5320c53e3d01d6e26bdeb08b46ce19aea569daf0
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Tue Sep 14 09:02:35 2010 +0000
+
+    tuning for core2
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@91 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit ee26c8507ce27baea1544b70757d982a80d5bb18
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Tue Sep 14 07:29:14 2010 +0000
+
+    bugfix in tune-lowlevel script
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@90 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 90748b5d3da7c0fa6edced7e821fd7ca4a758728
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Tue Sep 14 07:21:54 2010 +0000
+
+    move mul3cl and mul7cl in the right place
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@89 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit e13fdc0f70e4a4bb0c5eb264241515f2dba46068
+Author: gaudry <gaudry@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Sep 13 18:39:55 2010 +0000
+
+    mul7 in 22, a la Mgy
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@88 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit b9f63939d3f0fe0fe9ccd1134eced25f461ba56d
+Author: gaudry <gaudry@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Sep 13 13:44:35 2010 +0000
+
+    faster mul3 with pclmul, about 10%
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@87 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 704dd217aeb6c5bfd9f5ed3b8ecab866df403aef
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Sep 13 13:39:10 2010 +0000
+
+    renamed local functions, and protect them for re-tuning.
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@86 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 3b4abf7844eda1c371bc49f43bd183e9881dd9d3
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Sep 13 13:21:44 2010 +0000
+
+    25% improvement on mul4
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@85 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 18bb34316cfa58d1e5180a8ed5edb35cf8712dc0
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Sep 13 13:08:48 2010 +0000
+
+    ahem. Better not have a function which does not support f(foo,foo,bar), right ?
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@84 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 432c53c68015a362c086c43b06bd987c11bae3a7
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Sep 13 12:49:31 2010 +0000
+
+    new mul5
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@83 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit a7e43c40eb8b2ca8b2141e7126abfd40b1173801
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Sep 13 12:19:58 2010 +0000
+
+    fixed a few copyright strings
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@82 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 1e2d3b367b20bff33c8cd45d69e46b1be2ebac06
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Sep 13 12:19:56 2010 +0000
+
+    also remove src/.libs when cleaning up stuff
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@81 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 6ff1578cb9c87b61fdaef9da9b4395e24c714b2e
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Sep 13 11:55:34 2010 +0000
+
+    yet another code, for mul6
+    
+    manipulates sse-2 data for as long as possible.
+    
+    also removed cruft in several files.
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@80 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit c717411c5fb6329dc2f47940673e3fe0a41afa4b
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Sep 13 11:41:55 2010 +0000
+
+    who says a file is missing ?
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@79 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit fe6c40077513fb8d35b76adbf444933a1f36a3e0
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Sep 13 11:34:56 2010 +0000
+
+    avoid warning
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@78 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 6268614ea648323b4be2571076514e60f40ebc5a
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Sep 13 11:34:55 2010 +0000
+
+    test another variant of mul2cl
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@77 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit ad6d0d73e276f267e455714004baf3e59248a64a
+Author: gaudry <gaudry@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Sep 13 11:01:51 2010 +0000
+
+    another mul5, with 13 mul1 (try again)
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@76 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 4f183118884dcffc00aa043cfa5a5eba6e204b84
+Author: gaudry <gaudry@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Sep 13 11:01:19 2010 +0000
+
+    another mul5, with 13 mul1
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@75 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 2556afab32e58ac53934cf9a61d325dc32d7651c
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Sep 13 10:44:01 2010 +0000
+
+    improved mul1cl by about 10% ;-)
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@74 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 28b1ef425590fedc9098220a4fb9b7fbe53a5c86
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Sep 13 10:07:05 2010 +0000
+
+    be more explicit.
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@73 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit dfb567eb16b32cadd47aea7241d269fec8d203b4
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Sep 13 09:59:28 2010 +0000
+
+    two new codes.
+    
+    mul5k_d.c: downgrade mul6k_c to a mul5 (previously mul6k_c was faster
+    than the best mul5...)
+    mul2t2.c: use the load/store intrinsics for movdqu. On i7's, it's
+    probably faster.
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@72 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit b20d3618a554c93fa5fc024e14f86560367d0c0e
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Sep 13 09:38:46 2010 +0000
+
+    removed the ``only one possibility'' test skipping
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@71 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 541565a294d856f8661b9786837b0e5fa7b9a5bd
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Sep 13 09:33:45 2010 +0000
+
+    faster mul9
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@70 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit b107c81f4bcb1d102c2993d2ccaca77383fcdf1a
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Sep 13 09:22:22 2010 +0000
+
+    changed default CFLAGS
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@69 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 522451101a11c582de2f296293e914cfd60e246e
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Sep 13 09:11:46 2010 +0000
+
+    new mul6 variant, sligthly faster than mul6k_a
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@68 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit d98b7a2e5716399f6161b776a38725d274a13f82
+Author: gaudry <gaudry@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Sep 13 09:03:54 2010 +0000
+
+    _mm_loadu_si128 is our friend (removed asm).
+    
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@67 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 1ae206b94e053be70e8a18c8b0a358ca90a5f380
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Sep 13 08:40:30 2010 +0000
+
+    see if it's any nicer.
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@66 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 8412737dba0e2d8946da18ae4e8e472fefde289a
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Sun Sep 12 13:02:49 2010 +0000
+
+    well, after all fixing the bug wasn't so hard.
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@65 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit f0e315ed986e1fc1cc700e2df1d4d0ee8137cacd
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Sun Sep 12 12:57:48 2010 +0000
+
+    temporarily disable buggy asm version for mul2cl
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@64 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 1b5a641525f5e2d9fc626ffde6e9c88063b4c45f
+Author: zimmerma <zimmerma@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Sun Sep 12 12:49:17 2010 +0000
+
+    [src/tuneup_pre.c] improved error message
+    
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@63 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit c253ff9effbe6260aa2e2f2ea79d335f16bf80ae
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Sat Sep 11 15:57:40 2010 +0000
+
+    include all mul5 to mul9 in the tuning mechanism.
+    
+    This kills the middle man.
+    
+    NOTE: Either the mul[56]k_a versions are buggy, or they're revealing a
+    bug in the asm constraints used for mul2cl. Presently tune-lowlevel fails
+    on westmere.
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@62 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 6b988f8ecc7db02ae7d735860ab7f89bd2c1df80
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Sat Sep 11 15:24:25 2010 +0000
+
+    removed unneeded lines and dependencies in mul3k2.c
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@61 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit ef447456c528f6767daecf5d2e8670ccfa7bc47d
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Sat Sep 11 15:24:23 2010 +0000
+
+    fixed bug in tune-lowlevel
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@60 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit e0ea1400eae224d7e46acdf3882bdafff93affc3
+Author: gaudry <gaudry@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Sat Sep 11 09:18:57 2010 +0000
+
+    broken link in previous commit
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@59 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 70c9d0cf241ecd8a2384ccf472645a244488c34f
+Author: gaudry <gaudry@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Sat Sep 11 05:45:46 2010 +0000
+
+    renamed mul3cl.c since it is generic code
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@58 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 59eda05437d721811e294c5937f6dd621738e2ec
+Author: zimmerma <zimmerma@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Fri Sep 10 19:16:56 2010 +0000
+
+    [config/acinclude.m4] fixed typo
+    
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@57 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 59004aada90f4b5469d72a4a30f842e19e86630d
+Author: gaudry <gaudry@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Fri Sep 10 15:26:27 2010 +0000
+
+    retuned westmere
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@56 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 1960075db008fe95e6db17daf130b0bedd7a0de7
+Author: gaudry <gaudry@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Fri Sep 10 14:07:29 2010 +0000
+
+    fixed make distclean
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@55 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit f0eaf3d6e273a456133351c92ab2942e656e9aca
+Author: zimmerma <zimmerma@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Fri Sep 10 13:58:19 2010 +0000
+
+    [src/tuneup_pre.c] typo
+    
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@54 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 5d696b32287df85b150370126af368b38dcbec2b
+Author: gaudry <gaudry@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Fri Sep 10 13:38:37 2010 +0000
+
+    time spend in tune-lowlevel controlled by environment
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@53 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit cc223ca1ee76ef75b9fdfa333936b3283abed1e7
+Author: gaudry <gaudry@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Fri Sep 10 13:06:32 2010 +0000
+
+    fixed buggy asm
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@52 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 3f5cad80d913405ca15c5a050bb51eaee8d4c1b1
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Fri Sep 10 11:55:33 2010 +0000
+
+    also remove already_tuned/tuned files on make distclean
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@51 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 6f2ce8c4d0a70e62dfb8644811071b38d8577581
+Author: gaudry <gaudry@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Fri Sep 10 11:49:33 2010 +0000
+
+    slight improvement in mul2cl
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@50 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit e6149b4b5e2b73b85a67e736c25ca780c473b9a7
+Author: gaudry <gaudry@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Thu Sep 9 18:45:31 2010 +0000
+
+    tuned values for westmere (merguez)
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@49 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 0f9c50e3028aebc32b03c8c56d12535fa722515b
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Thu Sep 9 15:27:58 2010 +0000
+
+    new doc
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@48 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit bf47dbe5ef086d2c5b28a6af525b1f398fd7f897
+Author: gaudry <gaudry@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Thu Sep 9 15:17:40 2010 +0000
+
+    activate mul3cl in tuning
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@47 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit b090fa9564081b141510f650ad3d4cb3805398b2
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Thu Sep 9 14:36:32 2010 +0000
+
+    tuning/ -> src/ , and hardware/ -> already_tuned/
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@44 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 05ccde47241ae440fbf0ceb552c5e8f8061aa3d6
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Thu Sep 9 14:36:28 2010 +0000
+
+    now files under tuning/ are real sources
+    
+    and they are going to move to src/ really soon.
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@43 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit eca379dbb73f0d124b2fd8ea7e9722b2840946a1
+Author: zimmerma <zimmerma@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Thu Sep 9 13:25:05 2010 +0000
+
+    [check-addmul.c] fixed test according to semantics of gf2x_mul_1_n and gf2x_addmul_1_n
+    
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@42 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit eccb9df19818759a545279a162a3e3bfed539875
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Thu Sep 9 13:22:29 2010 +0000
+
+    plugged in Paul's test. reveals a core2 bug ?
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@41 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 96d373816b4e55bde8899bf94057d1677610d0ef
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Thu Sep 9 13:22:28 2010 +0000
+
+    included Changelog info for previous release (0.9.6)
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@40 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit f496b24c6213834ea31995b5880427fa7c4c2e89
+Author: gaudry <gaudry@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Thu Sep 9 09:32:13 2010 +0000
+
+    kara variant for mul3, not tested
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@39 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit d982c3e7d2ecd5788d99da255ce0dcee6e66dcb7
+Author: gaudry <gaudry@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Thu Sep 9 09:09:45 2010 +0000
+
+    kara for mul2
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@38 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit e4f19fa98de9dc67b0245903351d795daea081cb
+Author: zimmerma <zimmerma@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Thu Sep 9 08:45:09 2010 +0000
+
+    added test check-addmul.c
+    
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@37 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 580a212a672c513ab8286b3683bfc5881f83b75e
+Author: gaudry <gaudry@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Thu Sep 9 08:11:42 2010 +0000
+
+    fix bug in mul_1n
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@36 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit c9c7a70966928cb2f3927ab467f22b6e510da2a2
+Author: zimmerma <zimmerma@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Thu Sep 9 06:43:26 2010 +0000
+
+    [configure.ac] improved the output of configure --help
+    
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@35 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit f3a0febeb1a2c66e79f909cc10b5f286c9366218
+Author: gaudry <gaudry@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Wed Sep 8 22:19:37 2010 +0000
+
+    Some tuning for westmere with pclmulqdq.
+    The code is still experimental: not really tested.
+    
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@34 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 997f6f2d694f84aac05bb2774c546342c2c498bd
+Author: gaudry <gaudry@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Wed Sep 8 20:50:29 2010 +0000
+
+    Here comes pclmulqdq support.
+    Not yet set by default (use --enable-pclmul).
+    Not yet tuned.
+    
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@33 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 77d6ecb9ad3a2948fcda922a6ab19a9aa7de5897
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Thu Nov 26 10:00:45 2009 +0000
+
+    fft2 disappeared, using new interface
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@32 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 187347e1c1d691b9d8727c78ed0caa93ffb4c6d0
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Nov 9 15:45:15 2009 +0000
+
+    oops
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@31 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit d48b8a62f11cd8f72bd2c5cd8f12de3f70371d69
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Nov 9 15:36:39 2009 +0000
+
+    prepare rev 0.9.6
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@30 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 5ec267c425127efbac1b5412af23f5e9170c9421
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Nov 9 15:36:36 2009 +0000
+
+    changed license GPLv2+ --> LGPLv2+ except for apps/ which remains GPLv2+
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@29 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 3cbc68050ef3081877f0eb98e54380297555cdfc
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Nov 9 15:36:34 2009 +0000
+
+    experimental interface for fft transform caching.
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@28 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 36160c3629c73271c562006c54f48ddfbb95ad92
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Nov 9 15:36:33 2009 +0000
+
+    for some reason the TODO file wasn't checked in.
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@27 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit df19686c91f7023dde7c5de581d5187b72f2db70
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Nov 9 15:36:32 2009 +0000
+
+    s/echo/AC_MSG_NOTICE, for configure --silent
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@26 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 7bd11dbec5c9dcb08f6804d0b6364a34ba167902
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Apr 27 19:30:20 2009 +0000
+
+    release gf2x-0.9.5
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@25 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit e0804f8ff8391615a2555bc45361eab9260cf1c4
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Apr 27 19:27:33 2009 +0000
+
+    bump version number.
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@24 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 99bf6c1dacd828d1c56b978ece4a27f09261aa78
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Apr 27 19:27:31 2009 +0000
+
+    Fixed extremely stupid bug in fft.
+    
+    That caused largeish multiplications to call toom above the max tuned fft
+    size (!).
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@23 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 4d7baed74b4de3c31ba660f9f688ddbbf0a8e3ae
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Apr 27 19:27:30 2009 +0000
+
+    minor changes, now using libtool 2.2.
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@22 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 4b74c6fd6c50caa044c513a104af52a3e125b025
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Apr 27 19:27:28 2009 +0000
+
+    release gf2x-0.9.4
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@21 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit dea67119bbcd4bec91e922b86fb64e68e5cd3e79
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Apr 27 19:27:27 2009 +0000
+
+    release gf2x-0.9.4
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@20 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit f70cc1d103050fe9d6f8c610eb28bf0d37551e1f
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Thu Apr 2 14:34:42 2009 +0000
+
+    increased release number to 0.9.4
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@19 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 02f34e4c8113b691fbb79f9a0d7e706deb3a4e65
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Thu Apr 2 14:33:41 2009 +0000
+
+    Fixed aggressive hwdir selection.
+    
+    The configure program was too happily selecting the hardware subdir based
+    on the cpu name -- the ABI needs to be checked as well.
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@18 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 7f4ae8ba5f0a8a1121f11ff4fded77b26a1d7fd2
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Thu Apr 2 14:33:40 2009 +0000
+
+    release gf2x-0.9.3
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@17 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 8a33ac568af058cc2cce18c249d454640f8a7cac
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Tue Mar 31 11:14:58 2009 +0000
+
+    bumped version number
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@16 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit d895c83aee802a1eae3de2975194c68f0393e75f
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Tue Mar 31 10:11:58 2009 +0000
+
+    very smart -- forgotten another include...
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@15 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 4af36fffe93b0ab7dc3b4f45fe04a92f5f6c75b1
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Tue Mar 31 10:11:57 2009 +0000
+
+    release gf2x-0.9.2
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@14 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 6fdaa515220c0d03e928d704e313eaf320105231
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Tue Mar 31 09:41:47 2009 +0000
+
+    fixed carriage return problem
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@13 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 22a47cd7c0ad6ec805185e1dcc5835b5a501a8dd
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Tue Mar 31 09:41:46 2009 +0000
+
+    forgotten header
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@12 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 89cc47ff2def5e82cd703e00d9335c7b31995373
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Tue Mar 31 09:18:30 2009 +0000
+
+    doc fix, + headers cleanup
+    
+    Most notably, gf2x.h does not need gf2x-thresholds.h at all. It rather
+    belongs to gf2x-impl.h
+    
+    Also moved the gcc version check relative to sse-2 to the files actually
+    using sse-2.
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@11 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit d086691ee97597a2e619b9eb7ccab9c5010a6597
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Mar 30 13:59:56 2009 +0000
+
+    checks were never failing...
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@10 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 1ddadf0f42c03f88ffdf81018e07dbab936f94e4
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Mar 30 13:36:22 2009 +0000
+
+    primitive ABI selection.
+    
+    lots of trivial changes to fix typography in copyright blobs...
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@9 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 726841a074c9e47cbb50864009256d3a2bbdeded
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Mar 30 13:36:20 2009 +0000
+
+    doc fix.
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@8 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 66fb42655ebe3240696d45c3fffc5b2e1fd5bbc7
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Mon Mar 30 13:36:18 2009 +0000
+
+    release gf2x-0.9.1
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@7 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit b12dfdca3d0d38ee7003b0d248137bb308c34191
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Fri Mar 27 15:01:40 2009 +0000
+
+    preparation for 0.9.1
+    
+        essentially some portability fixes:
+    
+        solaris: accomodate for contrived libc and stupid make
+        windows: add $(EXEEXT) here and there
+        mac os x: added extern statements to header files (a real bug)
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@6 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 405cc80c2678d45aeb94f65cfb18bacff43440f2
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Fri Mar 27 00:49:34 2009 +0000
+
+    added a version.sh script, and corrected a pattern rule
+    
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@5 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit ec080a6451930448cd5d84a111e3b5e4cfb73ec2
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Fri Mar 27 00:10:20 2009 +0000
+
+    some autotools improvements.
+    
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@4 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit 56716df4f967b7cf1e295c3a858bd9c75b41206f
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Thu Mar 26 16:24:30 2009 +0000
+
+    woops -- bug in tune-lowlevel.pl
+    
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@3 e5c1114b-a573-4582-9dac-f72f410959ce
+
+commit - 29b13131cfaf95132f6a0602d3e0575694359d11
+Author: thome <thome@e5c1114b-a573-4582-9dac-f72f410959ce>
+Date:   Thu Mar 26 15:43:38 2009 +0000
+
+    first import into the svn tree, from my devel tree.
+    
+    
+    git-svn-id: svn+ssh://scm.gforge.inria.fr/svn/gf2x@1 e5c1114b-a573-4582-9dac-f72f410959ce

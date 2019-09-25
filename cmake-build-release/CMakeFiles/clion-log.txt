@@ -1,0 +1,2 @@
+Cannot generate 'Release' into /home/moriya/PaXoS_PSI_New/cmake-build-release
+CMakeCache.txt is found in the project dir, only in-source generation will be performed.

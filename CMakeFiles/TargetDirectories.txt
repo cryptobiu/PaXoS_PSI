@@ -1,0 +1,11 @@
+/home/moriya/PaXoS_PSI_New/CMakeFiles/rebuild_cache.dir
+/home/moriya/PaXoS_PSI_New/CMakeFiles/edit_cache.dir
+/home/moriya/PaXoS_PSI_New/libPSI/CMakeFiles/rebuild_cache.dir
+/home/moriya/PaXoS_PSI_New/libPSI/CMakeFiles/libPSI.dir
+/home/moriya/PaXoS_PSI_New/libPSI/CMakeFiles/edit_cache.dir
+/home/moriya/PaXoS_PSI_New/Tests/CMakeFiles/rebuild_cache.dir
+/home/moriya/PaXoS_PSI_New/Tests/CMakeFiles/libOTe_Tests.dir
+/home/moriya/PaXoS_PSI_New/Tests/CMakeFiles/edit_cache.dir
+/home/moriya/PaXoS_PSI_New/frontend/CMakeFiles/rebuild_cache.dir
+/home/moriya/PaXoS_PSI_New/frontend/CMakeFiles/frontend.exe.dir
+/home/moriya/PaXoS_PSI_New/frontend/CMakeFiles/edit_cache.dir

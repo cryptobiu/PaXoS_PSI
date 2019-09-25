@@ -1,0 +1,5 @@
+## ./do-check-mul.sh -b . -m ./check_10000_5437_1_b337c8eb.mul
+n1 = 10000 ; n2=5437 ; v=b337c8eb
+## ./check-mul 10000 5437
+## expected output: 10000 5437 b337c8eb
+PASS check_10000_5437_1_b337c8eb.mul (exit status: 0)

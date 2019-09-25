@@ -1,0 +1,5 @@
+## ./do-check-mul.sh -b . -m ./check_3_3_1_14aac2f1.mul
+n1 = 3 ; n2=3 ; v=14aac2f1
+## ./check-mul 3 3
+## expected output: 3 3 14aac2f1
+PASS check_3_3_1_14aac2f1.mul (exit status: 0)

@@ -1,0 +1,18 @@
+/home/moriya/CLion-2018.3.2/clion-2018.3.2/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Release -G "CodeBlocks - Unix Makefiles" /home/moriya/PaXoS_PSI_New
+-- NTL  /usr/lib/libntl.so
+-- NTL  /home/moriya/PaXoS_PSI_New/thirdparty/linux/ntl/include/
+-- NTL  /home/moriya/PaXoS_PSI_New/thirdparty/linux/ntl/src/
+-- GMP  /usr/lib/x86_64-linux-gnu/libgmp.so
+-- GMP  /home/moriya/PaXoS_PSI_New/thirdparty/linux/gmp/include/
+-- GMP  /home/moriya/PaXoS_PSI_New/thirdparty/linux/gmp/lib/
+statusgf2x  /home/moriya/PaXoS_PSI_New/thirdparty/linux/gf2x/lib/libgf2x.a
+statusgf2x /home/moriya/PaXoS_PSI_New/thirdparty/linux/gf2x/include/
+statusgf2x /home/moriya/PaXoS_PSI_New/thirdparty/linux/gf2x/lib/
+-- Boost  found.
+-- Found Boost components:
+   system;thread
+Found Boost at 
+Miracl at  /home/moriya/PaXoS_PSI_New/libOTe/cryptoTools/thirdparty/linux/miracl/miracl/source/libmiracl.a
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/moriya/PaXoS_PSI_New
