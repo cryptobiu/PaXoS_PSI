@@ -9,6 +9,10 @@
 #include <libPSI/PRTY2/PrtyMOtReceiver.h>
 #include <libPSI/PRTY2/PrtyMOtSender.h>
 #include <libPSI/Tools/mx_132_by_583.h>
+#include <libPSI/Tools/mx_72_by_462.h>
+#include <libPSI/Tools/mx_84_by_495.h>
+#include <libPSI/Tools/mx_90_by_495.h>
+#include <libPSI/Tools/mx_65_by_448.h>
 #include <libOTe/Tools/Tools.h>
 #include <libOTe/Tools/LinearCode.h>
 #include <cryptoTools/Network/Channel.h>
@@ -41,6 +45,7 @@ protected:
     int numOTs, tableRealSize, hashSize, fieldSize, fieldSizeBytes;
     int reportStatistics = 0;
     int gamma;
+    bool isMalicious;
 
     PrgFromOpenSSLAES prg;
     EVP_CIPHER_CTX* aes;
@@ -81,8 +86,6 @@ private :
 
     vector<byte> createDictionary();
 
-    void runOT(vector<byte> & sigma);
-
     void runOOS(vector<byte> & sigma);
 
     void computeXors();
@@ -105,7 +108,6 @@ private :
 
     vector<uint64_t> xors;
 
-    void runOT();
     void runOOS();
 
     void computeXors();

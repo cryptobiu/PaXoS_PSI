@@ -28,7 +28,8 @@ ProtocolParty::ProtocolParty(int argc, char* argv[]) : Protocol("ObliviousDictio
     string partiesFile = this->getParser().getValueByKey(arguments, "partiesFile");
 
     reportStatistics = stoi(this->getParser().getValueByKey(arguments, "reportStatistics"));
-
+    isMalicious = stoi(this->getParser().getValueByKey(arguments, "malicious")) == 0 ? false : true;
+cout<<"malicious = "<<isMalicious<<endl;
 
     if(reportStatistics==0) {
     otherParty = comm.setCommunication(io_service, partyId, 2, partiesFile)[0];
@@ -237,10 +238,33 @@ void Receiver::runOOS(vector<byte> & sigma){
 //    auto sendChl = ep0.addChannel(name, name);
 
     LinearCode code;
-    code.load(mx132by583, sizeof(mx132by583));
+    switch(fieldSize){
+        case 64:
+            code.load(mx65by448, sizeof(mx65by448));
+            cout<<"load mx65by448"<<endl;
+            break;
+        case 72:
+            code.load(mx72by462, sizeof(mx72by462));
+            cout<<"load mx72by462"<<endl;
+            break;
+        case 84:
+            code.load(mx84by495, sizeof(mx84by495));
+            cout<<"load mx84by495"<<endl;
+            break;
+        case 90:
+            code.load(mx90by495, sizeof(mx90by495));
+            cout<<"load mx90by495"<<endl;
+            break;
+        case 132:
+            code.load(mx132by583, sizeof(mx132by583));
+            cout<<"load mx132by583"<<endl;
+            break;
+
+
+    }
 
 //    PrtyMOtSender sender;
-    recv.configure(true, 40, 132);
+    recv.configure(isMalicious, 40, fieldSize);
 
     //Base OT - simulated
     PRNG prng0(_mm_set_epi32(4253465, 3434565, 234435, 23987045));
@@ -452,11 +476,34 @@ void Sender::runOOS(){
 //    auto recvChl = ep1.addChannel(name, name);
     auto sendChl = ep0.addChannel(name, name);
 
-    code.load(mx132by583, sizeof(mx132by583));
+    switch(fieldSize){
+        case 64:
+            code.load(mx65by448, sizeof(mx65by448));
+            cout<<"load mx65by448"<<endl;
+            break;
+        case 72:
+            code.load(mx72by462, sizeof(mx72by462));
+            cout<<"load mx72by462"<<endl;
+            break;
+        case 84:
+            code.load(mx84by495, sizeof(mx84by495));
+            cout<<"load mx84by495"<<endl;
+            break;
+        case 90:
+            code.load(mx90by495, sizeof(mx90by495));
+            cout<<"load mx90by495"<<endl;
+            break;
+        case 132:
+            code.load(mx132by583, sizeof(mx132by583));
+            cout<<"load mx132by583"<<endl;
+            break;
+
+
+    }
 
 
 //    PrtyMOtReceiver recv;
-    sender.configure(true, 40, 132);
+    sender.configure(isMalicious, 40, fieldSize);
 
     //Base OT - simulated
     PRNG prng0(_mm_set_epi32(4253465, 3434565, 234435, 23987045));
@@ -553,329 +600,5 @@ void Sender::sendXors(){
     otherParty->getChannel()->write((byte*)&size, 8);
     otherParty->getChannel()->write((byte*)xors.data(), size*8);
 }
-//
-//void Receiver::runOT(vector<byte> & sigma){
-//
-//
-//    setThreadName("Sender");
-//    PRNG prng0(_mm_set_epi32(4253465, 3434565, 234435, 23987045));
-//    PRNG prng1(_mm_set_epi32(4253465, 3434565, 234435, 23987025));
-//
-//    u64 setSize = 1 << 5;
-//    u64 numBin = 2.4 * setSize;
-////    u64 sigma = 40;
-//
-//    std::cout << "input_size = " << setSize << "\n";
-//    std::cout << "bin_size = " << numBin << "\n";
-//
-//    std::vector<block> inputs(setSize);
-//    prng0.get(inputs.data(), inputs.size());
-//
-//    std::vector<std::array<block, prty2SuperBlkSize>> yInputs(setSize), cuckooTables;
-//
-//    for (int idxItem = 0; idxItem < inputs.size(); idxItem++)
-//    {
-//        for (int k = 0; k < prty2SuperBlkSize; k++)
-//            yInputs[idxItem][k] = inputs[idxItem];  // H1(x)
-//    }
-//
-//    // Generate a cuckoo table
-////    Cuckoo_encode(inputs, yInputs, cuckooTables, numBin, sigma);
-//
-//    //===================================================
-//    //=========================OOS========================
-//    //===================================================
-//
-//    cuckooTables.resize(numBin);
-//    u64 numOTs = cuckooTables.size();
-//    std::cout << "OT = " << numOTs << "\n";
-//
-//    std::string name = "n";
-//    IOService ios(0);
-//    Session ep0(ios, "localhost", 1212, SessionMode::Server, name);
-//    Session ep1(ios, "localhost", 1212, SessionMode::Client, name);
-//    auto recvChl = ep1.addChannel(name, name);
-//    auto sendChl = ep0.addChannel(name, name);
-//
-//
-//    LinearCode code;
-//    code.load(mx132by583, sizeof(mx132by583));
-//
-//    PrtyMOtSender sender;
-//    PrtyMOtReceiver recv;
-//
-//    sender.configure(true, 40, 132);
-//    recv.configure(true, 40, 132);
-//    u64 baseCount = sender.getBaseOTCount();
-//    //u64 codeSize = (baseCount + 127) / 128;
-//
-//    //Base OT
-//    std::vector<block> baseRecv(baseCount);
-//    std::vector<std::array<block, 2>> baseSend(baseCount);
-//    BitVector baseChoice(baseCount);
-//    baseChoice.randomize(prng0);
-//
-//    prng0.get((u8*)baseSend.data()->data(), sizeof(block) * 2 * baseSend.size());
-//    for (u64 i = 0; i < baseCount; ++i)
-//    {
-//        baseRecv[i] = baseSend[i][baseChoice[i]];
-//    }
-//
-//    sender.setBaseOts(baseRecv, baseChoice);
-//    recv.setBaseOts(baseSend);
-//
-//    std::vector<block> oosEncoding1(numOTs), oosEncoding2(numOTs);
-//
-//    // perform the init on each of the classes. should be performed concurrently
-//    auto thrd = std::thread([&]() {
-//        setThreadName("Sender");
-//        sender.init(numOTs, prng0, sendChl);
-//
-//        // Get the random OT messages
-//        for (u64 i = 0; i < numOTs; i += stepSize)
-//        {
-//            auto curStepSize = std::min<u64>(stepSize, numOTs - i);
-//            sender.recvCorrection(sendChl, curStepSize);
-//            for (u64 k = 0; k < curStepSize; ++k)
-//            {
-//                sender.otCorrection(i + k);
-//            }
-//        }
-//    });
-//
-//
-//    recv.init(numOTs, prng1, recvChl);
-//    for (u64 i = 0; i < numOTs; i += stepSize)
-//    {
-//        auto curStepSize = std::min<u64>(stepSize, numOTs - i);
-//        for (u64 k = 0; k < curStepSize; ++k)
-//        {
-//            recv.otCorrection(i + k, &cuckooTables[k + i]);
-//
-//        }
-//
-//        recv.sendCorrection(recvChl, curStepSize);
-//    }
-//
-//    thrd.join();
-//
-//    // Check OOS
-//    for (u64 i = 0; i < numOTs; i++)
-//    {
-//        // check that we do in fact get the same value
-//        if (neq(oosEncoding1[i], oosEncoding2[i]))
-//        {
-//            std::cout << oosEncoding1[i] << " vs " << oosEncoding2[i] << "\n";
-////            throw UnitTestFail("ot[" + ToString(i) + "] not equal " LOCATION);
-//                cout<<"ot[" + ToString(i) + "] not equal "<<endl;
-//        }
-//    }
-//
-//    //=========================================================
-//    //=====================compute PSI encoding============
-//    std::vector<block> prtyEncoding1(inputs.size()), prtyEncoding2(inputs.size());
-//
-//    thrd = std::thread([&]() {
-//        //=====Sender
-//        Cuckoo_decode(inputs, sender.mQx, sender.mT, numBin, sigma); //geting Decode(Q,x)
-//        std::cout << sender.mQx[0][0] << " sender.mQx\n";
-//
-//
-//        for (u64 i = 0; i < inputs.size(); i += stepSize)
-//        {
-//            auto curStepSize = std::min<u64>(stepSize, inputs.size() - i);
-//            for (u64 k = 0; k < curStepSize; ++k)
-//            {
-//                //compute prtyEncoding1= H2(x, Decode(Q,x) +C(H1(x))*s)
-//                sender.encode_prty(i + k, &yInputs[k + i], (u8*)& prtyEncoding1[k + i], sizeof(block));
-//            }
-//        }
-//    });
-//
-//    //==========receiver
-//    Cuckoo_decode(inputs, recv.mRy, recv.mT0, numBin, sigma); //Decode(R,y)
-//    std::cout << recv.mRy[0][0] << " recv.mRy\n";
-//
-//
-//    for (u64 i = 0; i < inputs.size(); i += stepSize)
-//    {
-//        auto curStepSize = std::min<u64>(stepSize, inputs.size() - i);
-//        for (u64 k = 0; k < curStepSize; ++k)
-//        {
-//            // compute prtyEncoding1=H2(y, Decode(R,y))
-//            recv.encode_prty(i + k, &inputs[k + i], (u8*)& prtyEncoding2[k + i], sizeof(block));
-//        }
-//    }
-////    thrd.join();
-//
-//    // Check PRTY encoding
-//    for (u64 i = 0; i < inputs.size(); i++)
-//    {
-//        // check that we do in fact get the same value
-//        if (neq(prtyEncoding1[i], prtyEncoding2[i]))
-//        {
-//            std::cout << i << ": " << prtyEncoding1[i] << " vs " << prtyEncoding2[i] << "\n";
-////				throw UnitTestFail("prty[" + ToString(i) + "]  not equal " LOCATION);
-//        }
-//    }
 
-//    cout<<"in runOT receiver"<<endl;
-//
-//    PRNG prng0(_mm_set_epi32(4253465, 3434565, 234435, 23987045));
-//
-//    u64 numOTs = sigma.size()/fieldSizeBytes;
-//
-//    OosNcoOtReceiver* recv = new OosNcoOtReceiver;
-//    recv->configure(true, 40, fieldSize);
-//
-//    std::string name = "n";
-//    IOService ios(0);
-//    Session ep1(ios, "localhost", 1212, SessionMode::Client, name);
-//    auto recvChl = ep1.addChannel(name, name);
-//
-////    setBaseOts(sender, recv, sendChl, recvChl);
-//    u64 baseCount = recv->getBaseOTCount();
-//
-//    std::vector<std::array<block, 2>> baseSend(baseCount);
-//    prng0.get((u8*)baseSend.data()->data(), sizeof(block) * 2 * baseSend.size());
-//
-//    osuCrypto::NaorPinkas base;
-//    base.send(baseSend, prng0, recvChl, 2);
-//    recv->setBaseOts(baseSend, prng0, recvChl);
-//
-//    auto messageCount = 1ull << fieldSize;
-////    Matrix<block> sendMessage(numOTs, messageCount);
-//    std::vector<block> recvMessage(numOTs);
-//
-//    std::vector<u64> choices(numOTs);
-//    for (u64 i = 0; i < choices.size(); ++i)
-//    {
-////        choices[i] = *(u64*)(sigma.data() + i*fieldSizeBytes);
-//        choices[i] = i*1000;
-//    }
-//
-//    span<u64> temp(choices.data(), numOTs);
-//    span<block> tempmsg(recvMessage.data(), numOTs);
-//    recv->receiveChosen(messageCount, tempmsg, temp, prng0, recvChl);
-
-//    setThreadName("Sender");
-//
-//    PRNG prng0(_mm_set_epi32(4253465, 3434565, 234435, 23987045));
-//    PRNG prng1(_mm_set_epi32(4253465, 3434565, 234435, 23987025));
-//
-//    u64 numOTs = 128 * 2;
-//
-//
-//    std::string name = "n";
-//    IOService ios(0);
-//    Session ep0(ios, "localhost", 1212, SessionMode::Server, name);
-//    Session ep1(ios, "localhost", 1212, SessionMode::Client, name);
-//    auto recvChl = ep1.addChannel(name, name);
-//    auto sendChl = ep0.addChannel(name, name);
-//
-//
-//    OosNcoOtSender sender;
-//    OosNcoOtReceiver recv;
-//
-//    sender.configure(true, 40, 76);
-//    recv.configure(true, 40, 76);
-//
-//    if (1)
-//    {
-//        setBaseOts(sender, recv, sendChl, recvChl);
-//        //for (u64 i = 0; i < sender.mBaseChoiceBits.size(); ++i)
-//        //{
-//        //    auto b = sender.mBaseChoiceBits[i];
-//        //    if (neq(sender.mGens[i].getSeed(), recv.mGens[i][b].getSeed()))
-//        //        throw RTE_LOC;
-//        //}
-//    }
-//    else
-//    {
-//        u64 baseCount = sender.getBaseOTCount();
-//        //u64 codeSize = (baseCount + 127) / 128;
-//
-//        std::vector<block> baseRecv(baseCount);
-//        std::vector<std::array<block, 2>> baseSend(baseCount);
-//        BitVector baseChoice(baseCount);
-//        baseChoice.randomize(prng0);
-//
-//        prng0.get((u8*)baseSend.data()->data(), sizeof(block) * 2 * baseSend.size());
-//        for (u64 i = 0; i < baseCount; ++i)
-//        {
-//            baseRecv[i] = baseSend[i][baseChoice[i]];
-//        }
-//
-//        auto a = std::async([&]() {sender.setBaseOts(baseRecv, baseChoice, sendChl); });
-//        recv.setBaseOts(baseSend, prng0, recvChl);
-//        a.get();
-//    }
-//
-//cout<<"after setBaseOts"<<endl;
-//    testNco(sender, numOTs, prng0, sendChl, recv, prng1, recvChl);
-//cout<<"after test"<<endl;
-////    auto v = std::async([&] {
-////        recv.check(recvChl, toBlock(322334));
-////    });
-////
-////    try {
-////        sender.check(sendChl,toBlock(324));
-////    }
-////    catch (...)
-////    {
-////        //sendChl.mBase->mLog;
-////    }
-////    v.get();
-////
-//    auto sender2 = sender.split();
-//    auto recv2 = recv.split();
-//
-//    testNco(*sender2, numOTs, prng0, sendChl, *recv2, prng1, recvChl);
-//    cout<<"after test 2"<<endl;
-
-
-//}
-
-
-void Sender::runOT(){
-//    cout<<"in runOT sender"<<endl;
-//    PRNG prng0(_mm_set_epi32(4253465, 3434565, 234435, 23987025));
-//
-//    u64 numOTs = 314;
-//
-//    OosNcoOtSender sender;
-//    sender.configure(true, 40, fieldSize);
-//
-//    std::string name = "n";
-//    IOService ios(0);
-//    Session ep0(ios, "localhost", 1212, SessionMode::Server, name);
-//    auto sendChl = ep0.addChannel(name, name);
-//
-////    setBaseOts(sender, recv, sendChl, recvChl);
-//    u64 baseCount = sender.getBaseOTCount();
-//
-//    std::vector<block> baseRecv(baseCount);
-//    BitVector baseChoice(baseCount);
-//    baseChoice.randomize(prng0);
-//
-//    NaorPinkas base;
-//    base.receive(baseChoice, baseRecv,prng0, sendChl, 2);
-//
-//    sender.setBaseOts(prng0, sendChl);
-//
-//
-//    auto messageCount = 1ull << fieldSize;
-//    Matrix<block> sendMessage(numOTs, messageCount);
-//
-//    prng0.get(sendMessage.data(), sendMessage.size());
-//
-//
-//    sender.sendChosen(sendMessage, prng0, sendChl);
-
-//    for (u64 i = 0; i < choices.size(); ++i)
-//    {
-//        if (neq(recvMessage[i], sendMessage(i, choices[i])))
-//            cout<<"bad message"<<endl;
-//    }
-}
 
