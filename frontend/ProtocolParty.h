@@ -47,6 +47,9 @@ protected:
     int gamma;
     bool isMalicious;
 
+    string addressForOT;
+    int portForOT;
+
     PrgFromOpenSSLAES prg;
     EVP_CIPHER_CTX* aes;
 

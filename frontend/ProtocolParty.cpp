@@ -32,8 +32,28 @@ ProtocolParty::ProtocolParty(int argc, char* argv[]) : Protocol("ObliviousDictio
 cout<<"malicious = "<<isMalicious<<endl;
 
     if(reportStatistics==0) {
-    otherParty = comm.setCommunication(io_service, partyId, 2, partiesFile)[0];
+        otherParty = comm.setCommunication(io_service, partyId, 2, partiesFile)[0];
 
+        ConfigFile cf(partiesFile);
+
+        string portString, ipString;
+        vector<int> ports(2);
+        vector<string> ips(2);
+
+        for (int i = 0; i < 2; i++) {
+            portString = "party_" + to_string(i) + "_port";
+            ipString = "party_" + to_string(i) + "_ip";
+
+            //get partys IPs and ports data
+            ports[i] = stoi(cf.Value("", portString));
+            ips[i] = cf.Value("", ipString);
+        }
+        //osuCrypto::IOService ios(0);
+        addressForOT = ips[1];
+        portForOT = ports[1] + 1;
+
+        cout<<"addressForOT = "<<addressForOT<<endl;
+        cout<<"portForOT = "<<portForOT<<endl;
 
         string tmp = "init times";
         //cout<<"before sending any data"<<endl;
@@ -233,7 +253,7 @@ void Receiver::runOOS(vector<byte> & sigma){
     std::string name = "n";
     IOService ios(0);
 //    Session ep0(ios, "localhost", 1212, SessionMode::Server, name);
-    Session ep1(ios, "localhost", 1212, SessionMode::Client, name);
+    Session ep1(ios, addressForOT, portForOT, SessionMode::Client, name);
     auto recvChl = ep1.addChannel(name, name);
 //    auto sendChl = ep0.addChannel(name, name);
 
@@ -430,7 +450,6 @@ void Sender::runOnline() {
     auto start = high_resolution_clock::now();
     auto t1 = high_resolution_clock::now();
 
-//    dic->readData(otherParty);
     runOOS();
     auto t2 = high_resolution_clock::now();
 
@@ -471,7 +490,7 @@ void Sender::runOOS(){
 
     std::string name = "n";
     IOService ios(0);
-    Session ep0(ios, "localhost", 1212, SessionMode::Server, name);
+    Session ep0(ios, addressForOT, portForOT, SessionMode::Server, name);
 //    Session ep1(ios, "localhost", 1212, SessionMode::Client, name);
 //    auto recvChl = ep1.addChannel(name, name);
     auto sendChl = ep0.addChannel(name, name);
