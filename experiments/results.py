@@ -3,6 +3,11 @@
 # Always run the command with -r 0 first (this is the server) because we measure the time of the client, and we don't want the client to wait for the server, this adds time to the run
 # **********************
 
+## bandwidth
+#wan2:
+# [ ID] Interval       Transfer     Bandwidth
+# [  3]  0.0-10.0 sec  65.9 MBytes  55.1 Mbits/sec
+
 
 # The versions are:
 results = {}
@@ -44,8 +49,8 @@ results['ecdh-c0']['lan'][20] = 0.0 # more than 3:47 minutes
 results['ecdh-c0']['wan1'][12] = 0.0
 results['ecdh-c0']['wan1'][16] = 0.0
 results['ecdh-c0']['wan1'][20] = 0.0 # more than 3:47 minutes
-results['ecdh-c0']['wan2'][12] = 0.0
-results['ecdh-c0']['wan2'][16] = 0.0
+results['ecdh-c0']['wan2'][12] = 36979.1
+results['ecdh-c0']['wan2'][16] = 80775.974
 results['ecdh-c0']['wan2'][20] = 0.0 # more than 3:47 minutes
 # *****   -c 1  ******
 results['ecdh-c1']['lan'][12] = 8797.2
@@ -54,8 +59,8 @@ results['ecdh-c1']['lan'][20] = 0.0 # more than 3:47 minutes
 results['ecdh-c1']['wan1'][12] = 0.0
 results['ecdh-c1']['wan1'][16] = 0.0
 results['ecdh-c1']['wan1'][20] = 0.0 # more than 3:47 minutes
-results['ecdh-c1']['wan2'][12] = 0.0
-results['ecdh-c1']['wan2'][16] = 0.0
+results['ecdh-c1']['wan2'][12] = 17641.965
+results['ecdh-c1']['wan2'][16] = 150703.494
 results['ecdh-c1']['wan2'][20] = 0.0 # more than 3:47 minutes
 
 
@@ -73,10 +78,10 @@ results['kkrt']['lan'][24] = 0.0  # doesn't run
 results['kkrt']['wan1'][12] = 0.0
 results['kkrt']['wan1'][16] = 0.0
 results['kkrt']['wan1'][20] = 0.0
-results['kkrt']['wan1'][24] = 0.0 # doesn't run
-results['kkrt']['wan2'][12] = 0.0
-results['kkrt']['wan2'][16] = 0.0
-results['kkrt']['wan2'][20] = 0.0
+results['kkrt']['wan1'][24] = 0.0
+results['kkrt']['wan2'][12] = 932
+results['kkrt']['wan2'][16] = 1983
+results['kkrt']['wan2'][20] = 22887
 results['kkrt']['wan2'][24] = 0.0 # doesn't run
 
 
@@ -94,9 +99,9 @@ results['spot-low']['lan'][16] = 10173.3
 results['spot-low']['lan'][20] = 0.0 # more than 200 secs
 results['spot-low']['wan1'][12] = 0.0
 results['spot-low']['wan1'][16] = 0.0
-results['spot-low']['wan1'][20] = 0.0 # more than 200 secs
-results['spot-low']['wan2'][12] = 0.0
-results['spot-low']['wan2'][16] = 0.0
+results['spot-low']['wan1'][20] = 0.0
+results['spot-low']['wan2'][12] = 5425.4
+results['spot-low']['wan2'][16] = 22152.8
 results['spot-low']['wan2'][20] = 0.0 # more than 200 secs
 
 results['spot-fast']['lan'][12] = 460.7
@@ -106,10 +111,10 @@ results['spot-fast']['lan'][24] = 0.0 # doesn't run
 results['spot-fast']['wan1'][12] = 0.0
 results['spot-fast']['wan1'][16] = 0.0
 results['spot-fast']['wan1'][20] = 0.0
-results['spot-fast']['wan1'][24] = 0.0 # doesn't run
-results['spot-fast']['wan2'][12] = 0.0
-results['spot-fast']['wan2'][16] = 0.0
-results['spot-fast']['wan2'][20] = 0.0
+results['spot-fast']['wan1'][24] = 0.0
+results['spot-fast']['wan2'][12] = 9565.7
+results['spot-fast']['wan2'][16] = 11088.2
+results['spot-fast']['wan2'][20] = 36187.8
 results['spot-fast']['wan2'][24] = 0.0 # doesn't run
 
 # RR17b {rrv1,rrv2}
@@ -136,10 +141,10 @@ results['rrv1']['lan'][24] = 0.0 # doesn't run
 results['rrv1']['wan1'][12] = 0.0
 results['rrv1']['wan1'][16] = 0.0
 results['rrv1']['wan1'][20] = 0.0
-results['rrv1']['wan1'][24] = 0.0 # doesn't run
-results['rrv1']['wan2'][12] = 0.0
-results['rrv1']['wan2'][16] = 0.0
-results['rrv1']['wan2'][20] = 0.0
+results['rrv1']['wan1'][24] = 0.0
+results['rrv1']['wan2'][12] = 4320
+results['rrv1']['wan2'][16] = 12979
+results['rrv1']['wan2'][20] = 161632
 results['rrv1']['wan2'][24] = 0.0 # doesn't run
 # server:
 # ./bin/frontend.exe -rr17b-sm -r 1 -nn 16 -s 4 -b 64
@@ -152,8 +157,8 @@ results['rrv2']['lan'][20] = 0.0 # doesn't run
 results['rrv2']['wan1'][12] = 0.0
 results['rrv2']['wan1'][16] = 0.0
 results['rrv2']['wan1'][20] = 0.0 # doesn't run
-results['rrv2']['wan2'][12] = 0.0
-results['rrv2']['wan2'][16] = 0.0
+results['rrv2']['wan2'][12] = 14867
+results['rrv2']['wan2'][16] = 161868
 results['rrv2']['wan2'][20] = 0.0 # doesn't run
 
 
