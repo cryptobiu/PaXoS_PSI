@@ -178,10 +178,10 @@ results['rrv2']['wan2'][20] = 0.0 # doesn't run
 # parameters: when -hashSize is x[i] then -fieldSize is y[i]
 # x = [ 4096, 65536, 1048576, 16777216 ], y = [ 72, 72, 84, 90 ]
 #
-results['paxos-ours-sh']['lan'][12] = 0.0
-results['paxos-ours-sh']['lan'][16] = 0.0
-results['paxos-ours-sh']['lan'][20] = 0.0
-results['paxos-ours-sh']['lan'][24] = 0.0
+results['paxos-ours-sh']['lan'][12] = 16
+results['paxos-ours-sh']['lan'][16] = 235
+results['paxos-ours-sh']['lan'][20] = 5378
+results['paxos-ours-sh']['lan'][24] = 0 # doesn't run
 results['paxos-ours-sh']['wan1'][12] = 0.0
 results['paxos-ours-sh']['wan1'][16] = 0.0
 results['paxos-ours-sh']['wan1'][20] = 0.0
@@ -195,11 +195,11 @@ results['paxos-ours-sh']['wan2'][24] = 0.0
 # same commands as semi-honest, but with the following parameters
 #
 # parameters: when -hashSize is x[i] then -fieldSize is y[i]
-# x = [ 4096, 65536, 1048576, 16777216 ], y = [ 144, 138, 138, 132 ]
+# x = [ 4096, 65536, 1048576, 16777216 ], y = [ 132, 132, 132, 132 ]
 #
-results['paxos-ours-mal']['lan'][12] = 0.0
-results['paxos-ours-mal']['lan'][16] = 0.0
-results['paxos-ours-mal']['lan'][20] = 0.0
+results['paxos-ours-mal']['lan'][12] = 20
+results['paxos-ours-mal']['lan'][16] = 257
+results['paxos-ours-mal']['lan'][20] = 5598
 results['paxos-ours-mal']['lan'][24] = 0.0
 results['paxos-ours-mal']['wan1'][12] = 0.0
 results['paxos-ours-mal']['wan1'][16] = 0.0
