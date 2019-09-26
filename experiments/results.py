@@ -186,13 +186,13 @@ results['paxos-ours-sh']['lan'][12] = 16
 results['paxos-ours-sh']['lan'][16] = 235
 results['paxos-ours-sh']['lan'][20] = 5378
 results['paxos-ours-sh']['lan'][24] = 0 # doesn't run
-results['paxos-ours-sh']['wan1'][12] = 0.0
-results['paxos-ours-sh']['wan1'][16] = 0.0
-results['paxos-ours-sh']['wan1'][20] = 0.0
+results['paxos-ours-sh']['wan1'][12] = 641
+results['paxos-ours-sh']['wan1'][16] = 1664
+results['paxos-ours-sh']['wan1'][20] = 17628
 results['paxos-ours-sh']['wan1'][24] = 0.0
-results['paxos-ours-sh']['wan2'][12] = 0.0
-results['paxos-ours-sh']['wan2'][16] = 0.0
-results['paxos-ours-sh']['wan2'][20] = 0.0
+results['paxos-ours-sh']['wan2'][12] = 1592
+results['paxos-ours-sh']['wan2'][16] = 4140
+results['paxos-ours-sh']['wan2'][20] = 40524
 results['paxos-ours-sh']['wan2'][24] = 0.0
 
 # Paxos ours malicious
@@ -205,13 +205,13 @@ results['paxos-ours-mal']['lan'][12] = 20
 results['paxos-ours-mal']['lan'][16] = 257
 results['paxos-ours-mal']['lan'][20] = 5598
 results['paxos-ours-mal']['lan'][24] = 0.0 # doesn't run
-results['paxos-ours-mal']['wan1'][12] = 0.0
-results['paxos-ours-mal']['wan1'][16] = 0.0
-results['paxos-ours-mal']['wan1'][20] = 0.0
+results['paxos-ours-mal']['wan1'][12] = 644
+results['paxos-ours-mal']['wan1'][16] = 1800
+results['paxos-ours-mal']['wan1'][20] = 18621
 results['paxos-ours-mal']['wan1'][24] = 0.0
-results['paxos-ours-mal']['wan2'][12] = 0.0
-results['paxos-ours-mal']['wan2'][16] = 0.0
-results['paxos-ours-mal']['wan2'][20] = 0.0
+results['paxos-ours-mal']['wan2'][12] = 1770
+results['paxos-ours-mal']['wan2'][16] = 4546
+results['paxos-ours-mal']['wan2'][20] = 40810
 results['paxos-ours-mal']['wan2'][24] = 0.0
 
 
