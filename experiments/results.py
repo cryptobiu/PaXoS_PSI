@@ -71,10 +71,10 @@ results['ecdh-c1']['wan2'][20] = 0.0 # more than 3:47 minutes
 # client:
 # ./bOPRFmain.exe -r 1  -ip 172.31.15.222:1212
 # no parameters
-results['kkrt']['lan'][12] = 0.0
-results['kkrt']['lan'][16] = 0.0
-results['kkrt']['lan'][20] = 0.0
-results['kkrt']['lan'][24] = 0.0
+results['kkrt']['lan'][12] = 177.0
+results['kkrt']['lan'][16] = 339.0
+results['kkrt']['lan'][20] = 4551
+results['kkrt']['lan'][24] = 0.0  # doesn't run
 results['kkrt']['wan1'][12] = 0.0
 results['kkrt']['wan1'][16] = 0.0
 results['kkrt']['wan1'][20] = 0.0
@@ -82,7 +82,7 @@ results['kkrt']['wan1'][24] = 0.0
 results['kkrt']['wan2'][12] = 932
 results['kkrt']['wan2'][16] = 1983
 results['kkrt']['wan2'][20] = 22887
-results['kkrt']['wan2'][24] = 0.0
+results['kkrt']['wan2'][24] = 0.0 # doesn't run
 
 
 # SpOT
@@ -92,22 +92,22 @@ results['kkrt']['wan2'][24] = 0.0
 # client:
 # ./bin/frontend.exe -r 1 -n 12 -t 1 -p 1 -ip 172.31.15.222:1212
 # parameters: -p {0,1}
-# if -p 1: -n {12,16,20}
-# if -p 0: -n {12,16,20, 24}
-results['spot-low']['lan'][12] = 0.0
-results['spot-low']['lan'][16] = 0.0
-results['spot-low']['lan'][20] = 0.0
+# spot-low:  if -p 1: -n {12,16,20}
+# spot-fast: if -p 0: -n {12,16,20, 24}
+results['spot-low']['lan'][12] = 898.5
+results['spot-low']['lan'][16] = 10173.3
+results['spot-low']['lan'][20] = 0.0 # more than 200 secs
 results['spot-low']['wan1'][12] = 0.0
 results['spot-low']['wan1'][16] = 0.0
 results['spot-low']['wan1'][20] = 0.0
 results['spot-low']['wan2'][12] = 5425.4
 results['spot-low']['wan2'][16] = 22152.8
-results['spot-low']['wan2'][20] = 0.0
+results['spot-low']['wan2'][20] = 0.0 # more than 200 secs
 
-results['spot-fast']['lan'][12] = 0.0
-results['spot-fast']['lan'][16] = 0.0
-results['spot-fast']['lan'][20] = 0.0
-results['spot-fast']['lan'][24] = 0.0
+results['spot-fast']['lan'][12] = 460.7
+results['spot-fast']['lan'][16] = 1964.6
+results['spot-fast']['lan'][20] = 24442.5
+results['spot-fast']['lan'][24] = 0.0 # doesn't run
 results['spot-fast']['wan1'][12] = 0.0
 results['spot-fast']['wan1'][16] = 0.0
 results['spot-fast']['wan1'][20] = 0.0
@@ -115,7 +115,7 @@ results['spot-fast']['wan1'][24] = 0.0
 results['spot-fast']['wan2'][12] = 9565.7
 results['spot-fast']['wan2'][16] = 11088.2
 results['spot-fast']['wan2'][20] = 36187.8
-results['spot-fast']['wan2'][24] = 0.0
+results['spot-fast']['wan2'][24] = 0.0 # doesn't run
 
 # RR17b {rrv1,rrv2}
 # cd ~/Ni/libPSI
@@ -132,10 +132,10 @@ results['spot-fast']['wan2'][24] = 0.0
 # client:
 # ./bin/frontend.exe -rr17b -r 1 -nn 20 -s 4
 # parameters: -nn {12,16,20,24}
-results['rrv1']['lan'][12] = 0.0
-results['rrv1']['lan'][16] = 0.0
-results['rrv1']['lan'][20] = 0.0
-results['rrv1']['lan'][24] = 0.0
+results['rrv1']['lan'][12] = 144.0
+results['rrv1']['lan'][16] = 828.0
+results['rrv1']['lan'][20] = 13996.0
+results['rrv1']['lan'][24] = 0.0 # doesn't run
 results['rrv1']['wan1'][12] = 0.0
 results['rrv1']['wan1'][16] = 0.0
 results['rrv1']['wan1'][20] = 0.0
@@ -143,18 +143,21 @@ results['rrv1']['wan1'][24] = 0.0
 results['rrv1']['wan2'][12] = 4320
 results['rrv1']['wan2'][16] = 12979
 results['rrv1']['wan2'][20] = 161632
-results['rrv1']['wan2'][24] = 0.0
+results['rrv1']['wan2'][24] = 0.0 # doesn't run
 # server:
 # ./bin/frontend.exe -rr17b-sm -r 0 -nn 16 -s 4 -b 64
 # client:
 # ./bin/frontend.exe -rr17b-sm -r 1 -nn 16 -s 4 -b 64
 # parameters: -nn {12,16}
-results['rrv2']['lan'][12] = 0.0
-results['rrv2']['lan'][16] = 0.0
+results['rrv2']['lan'][12] = 596.0
+results['rrv2']['lan'][16] = 7330
+results['rrv2']['lan'][20] = 0.0 # doesn't run
 results['rrv2']['wan1'][12] = 0.0
 results['rrv2']['wan1'][16] = 0.0
-results['rrv2']['wan2'][12] = 0.0
-results['rrv2']['wan2'][16] = 0.0
+results['rrv2']['wan1'][20] = 0.0 # doesn't run
+results['rrv2']['wan2'][12] = 14867
+results['rrv2']['wan2'][16] = 161868
+results['rrv2']['wan2'][20] = 0.0 # doesn't run
 
 
 # Paxos ours semi-honest
