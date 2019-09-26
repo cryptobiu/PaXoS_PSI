@@ -43,20 +43,20 @@ results['ecdh-c0']['lan'][16] = 73511.8
 results['ecdh-c0']['lan'][20] = 0.0 # more than 3:47 minutes
 results['ecdh-c0']['wan1'][12] = 0.0
 results['ecdh-c0']['wan1'][16] = 0.0
-results['ecdh-c0']['wan1'][20] = 0.0
+results['ecdh-c0']['wan1'][20] = 0.0 # more than 3:47 minutes
 results['ecdh-c0']['wan2'][12] = 0.0
 results['ecdh-c0']['wan2'][16] = 0.0
-results['ecdh-c0']['wan2'][20] = 0.0
+results['ecdh-c0']['wan2'][20] = 0.0 # more than 3:47 minutes
 # *****   -c 1  ******
-results['ecdh-c1']['lan'][12] = 0.0
-results['ecdh-c1']['lan'][16] = 0.0
-results['ecdh-c1']['lan'][20] = 0.0
+results['ecdh-c1']['lan'][12] = 8797.2
+results['ecdh-c1']['lan'][16] = 140507.2
+results['ecdh-c1']['lan'][20] = 0.0 # more than 3:47 minutes
 results['ecdh-c1']['wan1'][12] = 0.0
 results['ecdh-c1']['wan1'][16] = 0.0
-results['ecdh-c1']['wan1'][20] = 0.0
+results['ecdh-c1']['wan1'][20] = 0.0 # more than 3:47 minutes
 results['ecdh-c1']['wan2'][12] = 0.0
 results['ecdh-c1']['wan2'][16] = 0.0
-results['ecdh-c1']['wan2'][20] = 0.0
+results['ecdh-c1']['wan2'][20] = 0.0 # more than 3:47 minutes
 
 
 # KKRT
