@@ -8,6 +8,10 @@
 # [ ID] Interval       Transfer     Bandwidth
 # [  3]  0.0-10.0 sec  65.9 MBytes  55.1 Mbits/sec
 
+#wan1
+# [ ID] Interval       Transfer     Bandwidth
+# [  3]  0.0-10.0 sec   185 MBytes   155 Mbits/sec
+
 
 # The versions are:
 results = {}
