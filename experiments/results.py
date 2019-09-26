@@ -102,15 +102,15 @@ results['spot-low']['wan2'][20] = 0.0 # more than 200 secs
 results['spot-fast']['lan'][12] = 460.7
 results['spot-fast']['lan'][16] = 1964.6
 results['spot-fast']['lan'][20] = 24442.5
-results['spot-fast']['lan'][24] = 0.0
+results['spot-fast']['lan'][24] = 0.0 # doesn't run
 results['spot-fast']['wan1'][12] = 0.0
 results['spot-fast']['wan1'][16] = 0.0
 results['spot-fast']['wan1'][20] = 0.0
-results['spot-fast']['wan1'][24] = 0.0
+results['spot-fast']['wan1'][24] = 0.0 # doesn't run
 results['spot-fast']['wan2'][12] = 0.0
 results['spot-fast']['wan2'][16] = 0.0
 results['spot-fast']['wan2'][20] = 0.0
-results['spot-fast']['wan2'][24] = 0.0
+results['spot-fast']['wan2'][24] = 0.0 # doesn't run
 
 # RR17b {rrv1,rrv2}
 # cd ~/Ni/libPSI
