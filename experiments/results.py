@@ -19,7 +19,12 @@ results['paxos-ours-mal'] = {}
 results['paxos-ni-sh'] = {}
 results['paxos-ni-mal'] = {}
 
-for c in ['ecdh-c0', 'ecdh-c1', 'kkrt', 'spot-low', 'spot-fast', 'rrv1', 'rrv2', 'paxos-ours-sh', 'paxos-ours-mal', 'paxos-ni-sh', 'paxos-ni-mal']:
+results['sec2x'] = {}
+# results['sec3x'] = {}
+# results['sec4x'] = {}
+results['sec5x'] = {}
+
+for c in ['ecdh-c0', 'ecdh-c1', 'kkrt', 'spot-low', 'spot-fast', 'rrv1', 'rrv2', 'paxos-ours-sh', 'paxos-ours-mal', 'paxos-ni-sh', 'paxos-ni-mal', 'sec2x', 'sec5x']:
 	results[c]['lan'] = {}
 	results[c]['wan1'] = {}
 	results[c]['wan2'] = {}
@@ -189,4 +194,100 @@ results['paxos-ours-mal']['wan2'][12] = 0.0
 results['paxos-ours-mal']['wan2'][16] = 0.0
 results['paxos-ours-mal']['wan2'][20] = 0.0
 results['paxos-ours-mal']['wan2'][24] = 0.0
+
+
+
+# Paxos Ni semi-honest
+# cd ~/Ni/dfs
+# NOTE: always set -malicious 0 (because -malicious 1 has a bug)
+# NOTE2: set IP accordingly
+# server:
+# ./bin/frontend.exe -r 0 -n 12 -s 0 -ip 172.31.22.179:1212
+# client:
+# ./bin/frontend.exe -r 1 -n 12 -s 0 -ip 172.31.22.179:1212
+#
+# parameters: -n {12,16,20,24} -s {0,1}
+# -s 1 is malicious
+
+results['paxos-ni-sh']['lan'][12] = 0.0
+results['paxos-ni-sh']['lan'][16] = 0.0
+results['paxos-ni-sh']['lan'][20] = 0.0
+results['paxos-ni-sh']['lan'][24] = 0.0
+results['paxos-ni-sh']['wan1'][12] = 0.0
+results['paxos-ni-sh']['wan1'][16] = 0.0
+results['paxos-ni-sh']['wan1'][20] = 0.0
+results['paxos-ni-sh']['wan1'][24] = 0.0
+results['paxos-ni-sh']['wan2'][12] = 0.0
+results['paxos-ni-sh']['wan2'][16] = 0.0
+results['paxos-ni-sh']['wan2'][20] = 0.0
+results['paxos-ni-sh']['wan2'][24] = 0.0
+
+results['paxos-ni-mal']['lan'][12] = 0.0
+results['paxos-ni-mal']['lan'][16] = 0.0
+results['paxos-ni-mal']['lan'][20] = 0.0
+results['paxos-ni-mal']['lan'][24] = 0.0
+results['paxos-ni-mal']['wan1'][12] = 0.0
+results['paxos-ni-mal']['wan1'][16] = 0.0
+results['paxos-ni-mal']['wan1'][20] = 0.0
+results['paxos-ni-mal']['wan1'][24] = 0.0
+results['paxos-ni-mal']['wan2'][12] = 0.0
+results['paxos-ni-mal']['wan2'][16] = 0.0
+results['paxos-ni-mal']['wan2'][20] = 0.0
+results['paxos-ni-mal']['wan2'][24] = 0.0
+
+
+
+
+
+# Paxos security tradeoff - 
+# ***  sec2x   ****
+# cd ~/PaXoS_PSI
+# NOTE: always set -malicious 0 (because -malicious 1 has a bug)
+# server:
+# ./bin/frontend.exe -partyID 1 -hashSize x  -fieldSize y -partiesFile bin/Parties.txt -reportStatistics 0 -internalIterationsNumber 1 -malicious 0
+# client:
+# ./bin/frontend.exe -partyID 0 -hashSize x  -fieldSize y -partiesFile bin/Parties.txt -reportStatistics 0 -internalIterationsNumber 1 -malicious 0
+#
+# parameters: when -hashSize is x[i] then -fieldSize is y[i]
+# x = [ 4096, 65536, 1048576, 16777216 ], y = [ 238, 231, 217, 210 ]
+#
+results['sec2x']['lan'][12] = 0.0
+results['sec2x']['lan'][16] = 0.0
+results['sec2x']['lan'][20] = 0.0
+results['sec2x']['lan'][24] = 0.0
+results['sec2x']['wan1'][12] = 0.0
+results['sec2x']['wan1'][16] = 0.0
+results['sec2x']['wan1'][20] = 0.0
+results['sec2x']['wan1'][24] = 0.0
+results['sec2x']['wan2'][12] = 0.0
+results['sec2x']['wan2'][16] = 0.0
+results['sec2x']['wan2'][20] = 0.0
+results['sec2x']['wan2'][24] = 0.0
+
+# ***  sec5x   ****
+#
+# parameters: when -hashSize is x[i] then -fieldSize is y[i]
+# x = [ 4096, 65536, 1048576, 16777216 ], y = [ 144, 138, 138, 132 ]
+#
+# this is the same as paxos-ours-mal so not need to run again
+#
+results['sec5x']['lan'][12] = results['paxos-ours-mal']['lan'][12]
+results['sec5x']['lan'][16] = results['paxos-ours-mal']['lan'][16]
+results['sec5x']['lan'][20] = results['paxos-ours-mal']['lan'][20]
+results['sec5x']['lan'][24] = results['paxos-ours-mal']['lan'][24]
+results['sec5x']['wan1'][12] = results['paxos-ours-mal']['wan1'][12]
+results['sec5x']['wan1'][16] = results['paxos-ours-mal']['wan1'][16]
+results['sec5x']['wan1'][20] = results['paxos-ours-mal']['wan1'][20]
+results['sec5x']['wan1'][24] = results['paxos-ours-mal']['wan1'][24]
+results['sec5x']['wan2'][12] = results['paxos-ours-mal']['wan2'][12]
+results['sec5x']['wan2'][16] = results['paxos-ours-mal']['wan2'][16]
+results['sec5x']['wan2'][20] = results['paxos-ours-mal']['wan2'][20]
+results['sec5x']['wan2'][24] = results['paxos-ours-mal']['wan2'][24]
+
+
+
+
+
+
+
 
