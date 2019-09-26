@@ -127,29 +127,32 @@ results['spot-fast']['wan2'][24] = 0.0 # doesn't run
 # client:
 # ./bin/frontend.exe -rr17b -r 1 -nn 20 -s 4
 # parameters: -nn {12,16,20,24}
-results['rrv1']['lan'][12] = 0.0
-results['rrv1']['lan'][16] = 0.0
-results['rrv1']['lan'][20] = 0.0
-results['rrv1']['lan'][24] = 0.0
+results['rrv1']['lan'][12] = 144.0
+results['rrv1']['lan'][16] = 828.0
+results['rrv1']['lan'][20] = 13996.0
+results['rrv1']['lan'][24] = 0.0 # doesn't run
 results['rrv1']['wan1'][12] = 0.0
 results['rrv1']['wan1'][16] = 0.0
 results['rrv1']['wan1'][20] = 0.0
-results['rrv1']['wan1'][24] = 0.0
+results['rrv1']['wan1'][24] = 0.0 # doesn't run
 results['rrv1']['wan2'][12] = 0.0
 results['rrv1']['wan2'][16] = 0.0
 results['rrv1']['wan2'][20] = 0.0
-results['rrv1']['wan2'][24] = 0.0
+results['rrv1']['wan2'][24] = 0.0 # doesn't run
 # server:
 # ./bin/frontend.exe -rr17b-sm -r 0 -nn 16 -s 4 -b 64
 # client:
 # ./bin/frontend.exe -rr17b-sm -r 1 -nn 16 -s 4 -b 64
 # parameters: -nn {12,16}
-results['rrv2']['lan'][12] = 0.0
-results['rrv2']['lan'][16] = 0.0
+results['rrv2']['lan'][12] = 596.0
+results['rrv2']['lan'][16] = 7330
+results['rrv2']['lan'][20] = 0.0 # doesn't run
 results['rrv2']['wan1'][12] = 0.0
 results['rrv2']['wan1'][16] = 0.0
+results['rrv2']['wan1'][20] = 0.0 # doesn't run
 results['rrv2']['wan2'][12] = 0.0
 results['rrv2']['wan2'][16] = 0.0
+results['rrv2']['wan2'][20] = 0.0 # doesn't run
 
 
 # Paxos ours semi-honest
