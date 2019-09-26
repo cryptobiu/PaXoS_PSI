@@ -120,12 +120,14 @@ results['spot-fast']['wan2'][24] = 0.0 # doesn't run
 # *	 172.31.10.226 								*
 # *	 so either change it and re-compile 		*
 # *	 or change only the client's location		*
+#	NOTE that the roles -r 1, -r 0 might be then*
+#		opposite. (client and server switch)	*
 # ***********************************************
 # In RR - take run times from the server side.
 # server:
-# ./bin/frontend.exe -rr17b -r 0 -nn 20 -s 4
-# client:
 # ./bin/frontend.exe -rr17b -r 1 -nn 20 -s 4
+# client:
+# ./bin/frontend.exe -rr17b -r 0 -nn 20 -s 4
 # parameters: -nn {12,16,20,24}
 results['rrv1']['lan'][12] = 144.0
 results['rrv1']['lan'][16] = 828.0
@@ -140,9 +142,9 @@ results['rrv1']['wan2'][16] = 0.0
 results['rrv1']['wan2'][20] = 0.0
 results['rrv1']['wan2'][24] = 0.0 # doesn't run
 # server:
-# ./bin/frontend.exe -rr17b-sm -r 0 -nn 16 -s 4 -b 64
-# client:
 # ./bin/frontend.exe -rr17b-sm -r 1 -nn 16 -s 4 -b 64
+# client:
+# ./bin/frontend.exe -rr17b-sm -r 0 -nn 16 -s 4 -b 64
 # parameters: -nn {12,16}
 results['rrv2']['lan'][12] = 596.0
 results['rrv2']['lan'][16] = 7330
@@ -158,6 +160,7 @@ results['rrv2']['wan2'][20] = 0.0 # doesn't run
 # Paxos ours semi-honest
 # cd ~/PaXoS_PSI
 # NOTE: always set -malicious 0 (because -malicious 1 has a bug)
+# NOTE2: set the partyID as it appears in the bin/Parties.txt!
 # server:
 # ./bin/frontend.exe -partyID 1 -hashSize x  -fieldSize y -partiesFile bin/Parties.txt -reportStatistics 0 -internalIterationsNumber 1 -malicious 0
 # client:
