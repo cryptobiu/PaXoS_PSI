@@ -66,18 +66,18 @@ results['ecdh-c1']['wan2'][20] = 0.0 # more than 3:47 minutes
 # client:
 # ./bOPRFmain.exe -r 1  -ip 172.31.15.222:1212
 # no parameters
-results['kkrt']['lan'][12] = 0.0
-results['kkrt']['lan'][16] = 0.0
-results['kkrt']['lan'][20] = 0.0
-results['kkrt']['lan'][24] = 0.0
+results['kkrt']['lan'][12] = 177.0
+results['kkrt']['lan'][16] = 339.0
+results['kkrt']['lan'][20] = 4551
+results['kkrt']['lan'][24] = 0.0  # doesn't run
 results['kkrt']['wan1'][12] = 0.0
 results['kkrt']['wan1'][16] = 0.0
 results['kkrt']['wan1'][20] = 0.0
-results['kkrt']['wan1'][24] = 0.0
+results['kkrt']['wan1'][24] = 0.0 # doesn't run
 results['kkrt']['wan2'][12] = 0.0
 results['kkrt']['wan2'][16] = 0.0
 results['kkrt']['wan2'][20] = 0.0
-results['kkrt']['wan2'][24] = 0.0
+results['kkrt']['wan2'][24] = 0.0 # doesn't run
 
 
 # SpOT
