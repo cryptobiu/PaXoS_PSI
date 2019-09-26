@@ -87,21 +87,21 @@ results['kkrt']['wan2'][24] = 0.0 # doesn't run
 # client:
 # ./bin/frontend.exe -r 1 -n 12 -t 1 -p 1 -ip 172.31.15.222:1212
 # parameters: -p {0,1}
-# if -p 1: -n {12,16,20}
-# if -p 0: -n {12,16,20, 24}
-results['spot-low']['lan'][12] = 0.0
-results['spot-low']['lan'][16] = 0.0
-results['spot-low']['lan'][20] = 0.0
+# spot-low:  if -p 1: -n {12,16,20}
+# spot-fast: if -p 0: -n {12,16,20, 24}
+results['spot-low']['lan'][12] = 898.5
+results['spot-low']['lan'][16] = 10173.3
+results['spot-low']['lan'][20] = 0.0 # more than 200 secs
 results['spot-low']['wan1'][12] = 0.0
 results['spot-low']['wan1'][16] = 0.0
-results['spot-low']['wan1'][20] = 0.0
+results['spot-low']['wan1'][20] = 0.0 # more than 200 secs
 results['spot-low']['wan2'][12] = 0.0
 results['spot-low']['wan2'][16] = 0.0
-results['spot-low']['wan2'][20] = 0.0
+results['spot-low']['wan2'][20] = 0.0 # more than 200 secs
 
-results['spot-fast']['lan'][12] = 0.0
-results['spot-fast']['lan'][16] = 0.0
-results['spot-fast']['lan'][20] = 0.0
+results['spot-fast']['lan'][12] = 460.7
+results['spot-fast']['lan'][16] = 1964.6
+results['spot-fast']['lan'][20] = 24442.5
 results['spot-fast']['lan'][24] = 0.0
 results['spot-fast']['wan1'][12] = 0.0
 results['spot-fast']['wan1'][16] = 0.0
