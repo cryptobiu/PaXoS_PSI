@@ -38,9 +38,9 @@ for c in ['ecdh-c0', 'ecdh-c1', 'kkrt', 'spot-low', 'spot-fast', 'rrv1', 'rrv2',
 # ./bin/frontend.exe -r 1 -echd -c 0 -n 12 -ip 172.31.15.222:1212
 # parameters -c {0,1} -n {12,16,20}
 # *****   -c 0  ******
-results['ecdh-c0']['lan'][12] = 0.0
-results['ecdh-c0']['lan'][16] = 0.0
-results['ecdh-c0']['lan'][20] = 0.0
+results['ecdh-c0']['lan'][12] = 4597.4
+results['ecdh-c0']['lan'][16] = 73511.8
+results['ecdh-c0']['lan'][20] = 0.0 # more than 3:47 minutes
 results['ecdh-c0']['wan1'][12] = 0.0
 results['ecdh-c0']['wan1'][16] = 0.0
 results['ecdh-c0']['wan1'][20] = 0.0
