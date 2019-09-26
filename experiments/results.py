@@ -4,11 +4,15 @@
 # **********************
 
 ## bandwidth
-#wan2:
+#lan1: (n.virginia-n.virginia)
+#[ ID] Interval       Transfer     Bandwidth
+# [  3]  0.0-10.0 sec  5.79 GBytes  4.97 Gbits/sec
+
+#wan2: (n.virginia-sydney)
 # [ ID] Interval       Transfer     Bandwidth
 # [  3]  0.0-10.0 sec  65.9 MBytes  55.1 Mbits/sec
 
-#wan1
+#wan1 (n.virginia-oregon)
 # [ ID] Interval       Transfer     Bandwidth
 # [  3]  0.0-10.0 sec   185 MBytes   155 Mbits/sec
 
@@ -200,7 +204,7 @@ results['paxos-ours-sh']['wan2'][24] = 0.0
 results['paxos-ours-mal']['lan'][12] = 20
 results['paxos-ours-mal']['lan'][16] = 257
 results['paxos-ours-mal']['lan'][20] = 5598
-results['paxos-ours-mal']['lan'][24] = 0.0
+results['paxos-ours-mal']['lan'][24] = 0.0 # doesn't run
 results['paxos-ours-mal']['wan1'][12] = 0.0
 results['paxos-ours-mal']['wan1'][16] = 0.0
 results['paxos-ours-mal']['wan1'][20] = 0.0
@@ -212,7 +216,7 @@ results['paxos-ours-mal']['wan2'][24] = 0.0
 
 
 
-# Paxos Ni semi-honest
+# Paxos Ni
 # cd ~/Ni/dfs
 # NOTE: always set -malicious 0 (because -malicious 1 has a bug)
 # NOTE2: set IP accordingly
@@ -224,10 +228,10 @@ results['paxos-ours-mal']['wan2'][24] = 0.0
 # parameters: -n {12,16,20,24} -s {0,1}
 # -s 1 is malicious
 
-results['paxos-ni-sh']['lan'][12] = 0.0
-results['paxos-ni-sh']['lan'][16] = 0.0
-results['paxos-ni-sh']['lan'][20] = 0.0
-results['paxos-ni-sh']['lan'][24] = 0.0
+results['paxos-ni-sh']['lan'][12] = 94.7
+results['paxos-ni-sh']['lan'][16] = 838.8
+results['paxos-ni-sh']['lan'][20] = 17140.3
+results['paxos-ni-sh']['lan'][24] = 0.0 # doesn't run
 results['paxos-ni-sh']['wan1'][12] = 0.0
 results['paxos-ni-sh']['wan1'][16] = 0.0
 results['paxos-ni-sh']['wan1'][20] = 0.0
@@ -237,9 +241,9 @@ results['paxos-ni-sh']['wan2'][16] = 0.0
 results['paxos-ni-sh']['wan2'][20] = 0.0
 results['paxos-ni-sh']['wan2'][24] = 0.0
 
-results['paxos-ni-mal']['lan'][12] = 0.0
-results['paxos-ni-mal']['lan'][16] = 0.0
-results['paxos-ni-mal']['lan'][20] = 0.0
+results['paxos-ni-mal']['lan'][12] = 98.8
+results['paxos-ni-mal']['lan'][16] = 913.7
+results['paxos-ni-mal']['lan'][20] = 17903.6
 results['paxos-ni-mal']['lan'][24] = 0.0
 results['paxos-ni-mal']['wan1'][12] = 0.0
 results['paxos-ni-mal']['wan1'][16] = 0.0
