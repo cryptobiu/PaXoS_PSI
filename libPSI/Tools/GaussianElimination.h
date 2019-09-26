@@ -60,7 +60,7 @@ namespace osuCrypto {
 	// function to get matrix content 
 	inline static std::vector<std::array<block, prty2SuperBlkSize>> gaussianElimination(std::vector < std::vector<bool>>& mat, std::vector<std::array<block, prty2SuperBlkSize>>& y)
 	{
-		printMatrix(mat,y);
+		//printMatrix(mat,y);
 		int N = mat.size();
 		/* reduction into r.e.f. */
 		int singular_flag = forwardElim(mat, y);
@@ -398,7 +398,7 @@ namespace osuCrypto {
 
 
 		//================Fill D
-		std::cout << graph.mEdgeIdxMap_new.size() << " mEdgeIdxMap_new.size().size()============\n";
+		//std::cout << graph.mEdgeIdxMap_new.size() << " mEdgeIdxMap_new.size().size()============\n";
 
 
 		bool isRoot;

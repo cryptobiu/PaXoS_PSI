@@ -4,7 +4,7 @@
 #include <cryptoTools/Crypto/RandomOracle.h>
 #include <cryptoTools/Network/Channel.h>
 #include "PrtyMDefines.h"
-#include "Tools/mx_132_by_583.h"
+#include "Tools/mx_linear_code.h"
 
 
 namespace osuCrypto
@@ -106,7 +106,7 @@ namespace osuCrypto
         u64 doneIdx = 0;
 
         // a temp that will be used to transpose the sender's matrix
-        std::array<std::array<block, 8>, 128> t;
+        std::array<std::array<block, superBlkSize>, 128> t;
 
         u64 numCols = mGens.size();
 
@@ -177,11 +177,6 @@ namespace osuCrypto
         // compute the codeword. We assume the
         // the codeword is less that 10 block = 1280 bits.
        
-#ifdef PRTY_SHA_HASH
-        //RandomOracle  sha1(destSize);
-#else
-        std::array<block, 10> aesBuff;
-#endif
         // the index of the otIdx'th correction value u = t1 + t0 + c(w)
         // and the associated T value held by the sender.
         auto* corVal = mCorrectionVals.data() + otIdx * mCorrectionVals.stride();
@@ -205,28 +200,6 @@ namespace osuCrypto
 			tVal[2] = tVal[2] ^ t2;
 			tVal[3] = tVal[3] ^ t3;
 
-#ifdef PRTY_SHA_HASH
-            // hash it all to get rid of the correlation.
-           // sha1.Update((u8*)tVal, sizeof(block) * mT.stride());
-           // sha1.Final((u8*)dest);
-            //val = toBlock(hashBuff);
-#else
-            //H(x) = AES_f(H'(x)) + H'(x),     where  H'(x) = AES_f(x_0) + x_0 + ... +  AES_f(x_n) + x_n.
-            mAesFixedKey.ecbEncFourBlocks(codeword.data(), aesBuff.data());
-            codeword[0] = codeword[0] ^ aesBuff[0];
-            codeword[1] = codeword[1] ^ aesBuff[1];
-            codeword[2] = codeword[2] ^ aesBuff[2];
-            codeword[3] = codeword[3] ^ aesBuff[3];
-
-            block val = codeword[0] ^ codeword[1];
-            codeword[2] = codeword[2] ^ codeword[3];
-
-            val = val ^ codeword[2];
-
-            mAesFixedKey.ecbEncBlock(val, codeword[0]);
-            val = val ^ codeword[0];
-            memcpy(dest, &val, std::min<u64>(RandomOracle::HashSize, destSize));
-#endif
         }
         else
         {
@@ -239,23 +212,6 @@ namespace osuCrypto
                     = tVal[i]
                     ^ t1;
             }
-#ifdef PRTY_SHA_HASH
-            // hash it all to get rid of the correlation.
-           // sha1.Update((u8*)tVal, sizeof(block) * mT.stride());
-            //sha1.Final((u8*)dest);
-#else
-            //H(x) = AES_f(H'(x)) + H'(x),     where  H'(x) = AES_f(x_0) + x_0 + ... +  AES_f(x_n) + x_n.
-            mAesFixedKey.ecbEncBlocks(codeword.data(), mT.stride(), aesBuff.data());
-
-            block val = ZeroBlock;
-            for (u64 i = 0; i < mT.stride(); ++i)
-                val = val ^ codeword[i] ^ aesBuff[i];
-
-
-            mAesFixedKey.ecbEncBlock(val, codeword[0]);
-            val = val ^ codeword[0];
-            memcpy(dest, &val, std::min<u64>(RandomOracle::HashSize, destSize));
-#endif
         }
     }
 
@@ -281,7 +237,7 @@ namespace osuCrypto
 #ifdef PRTY_SHA_HASH
 		RandomOracle  sha1(destSize);
 #else
-		std::array<block, 10> aesBuff;
+		std::vector<block> aesBuff(mQx.stride());
 #endif
 		// the index of the otIdx'th correction value u = t1 + t0 + c(w)
 		// and the associated T value held by the sender.
@@ -312,20 +268,19 @@ namespace osuCrypto
 			//val = toBlock(hashBuff);
 #else
 			//H(x) = AES_f(H'(x)) + H'(x),     where  H'(x) = AES_f(x_0) + x_0 + ... +  AES_f(x_n) + x_n.
-			mAesFixedKey.ecbEncFourBlocks(codeword.data(), aesBuff.data());
-			codeword[0] = codeword[0] ^ aesBuff[0];
-			codeword[1] = codeword[1] ^ aesBuff[1];
-			codeword[2] = codeword[2] ^ aesBuff[2];
-			codeword[3] = codeword[3] ^ aesBuff[3];
+			
+			mAesFixedKey.ecbEncBlocks(codeword.data(), mQx.stride(), aesBuff.data());
 
-			block val = codeword[0] ^ codeword[1];
-			codeword[2] = codeword[2] ^ codeword[3];
+			block hx = ZeroBlock, aeshx;
+			for (u64 i = 0; i < mQx.stride(); ++i)
+			{
+				hx = hx ^ codeword[i];
+				hx = hx ^ aesBuff[i];
+			}
 
-			val = val ^ codeword[2];
-
-			mAesFixedKey.ecbEncBlock(val, codeword[0]);
-			val = val ^ codeword[0];
-			memcpy(dest, &val, std::min<u64>(RandomOracle::HashSize, destSize));
+			mAesFixedKey.ecbEncBlock(hx, aeshx);
+			hx = hx ^ aeshx;
+			memcpy(dest, (u8*)& hx, destSize);
 #endif
 		}
 		else
@@ -349,16 +304,18 @@ namespace osuCrypto
 			sha1.Final((u8*)dest);
 #else
 			//H(x) = AES_f(H'(x)) + H'(x),     where  H'(x) = AES_f(x_0) + x_0 + ... +  AES_f(x_n) + x_n.
-			mAesFixedKey.ecbEncBlocks(codeword.data(), mT.stride(), aesBuff.data());
+			mAesFixedKey.ecbEncBlocks(codeword.data(), mQx.stride(), aesBuff.data());
 
-			block val = ZeroBlock;
-			for (u64 i = 0; i < mT.stride(); ++i)
-				val = val ^ codeword[i] ^ aesBuff[i];
+			block hx = ZeroBlock, aeshx;
+			for (u64 i = 0; i < mQx.stride(); ++i)
+			{
+				hx = hx ^ codeword[i];
+				hx = hx ^ aesBuff[i];
+			}
 
-
-			mAesFixedKey.ecbEncBlock(val, codeword[0]);
-			val = val ^ codeword[0];
-			memcpy(dest, &val, std::min<u64>(RandomOracle::HashSize, destSize));
+			mAesFixedKey.ecbEncBlock(hx, aeshx);
+			hx = hx ^ aeshx;
+			memcpy(dest, (u8*)& hx, destSize);
 #endif
 		}
 	}
@@ -389,7 +346,7 @@ namespace osuCrypto
 
 		mCode.encode((u8*)codeword.data(), (u8*)codeword.data());
 
-#ifdef PRTY_SHA_HASH
+#ifdef OOS_SHA_HASH
 		RandomOracle  sha1(destSize);
 #else
 		std::array<block, 10> aesBuff;
@@ -417,7 +374,7 @@ namespace osuCrypto
 			codeword[2] = tVal[2] ^ t2;
 			codeword[3] = tVal[3] ^ t3;
 
-#ifdef PRTY_SHA_HASH
+#ifdef OOS_SHA_HASH
 			// hash it all to get rid of the correlation.
 			sha1.Update((u8*)codeword.data(), sizeof(block) * mT.stride());
 			sha1.Final((u8*)dest);
@@ -451,7 +408,7 @@ namespace osuCrypto
 					= tVal[i]
 					^ t1;
 			}
-#ifdef PRTY_SHA_HASH
+#ifdef OOS_SHA_HASH
 			// hash it all to get rid of the correlation.
 			sha1.Update((u8*)codeword.data(), sizeof(block) * mT.stride());
 			sha1.Final((u8*)dest);
@@ -476,11 +433,27 @@ namespace osuCrypto
         u64 statSecParam,
         u64 inputBitCount)
     {
-        if (inputBitCount <= 132)
-        {
-            mCode.load(mx132by583, sizeof(mx132by583));
-            //mCode.loadTxtFile("C:/Users/peter/repo/libOTe/libOTe/Tools/bch511.txt");
-        }
+		
+		//===========Semi-honest
+		if (inputBitCount == 64)
+			mCode.load(mx64by448, sizeof(mx64by448));
+
+		//else if (inputBitCount == 72)
+		//	mCode.load(mx64, sizeof(mx64by448));
+
+		else if (inputBitCount == 80)
+			mCode.load(mx80by495, sizeof(mx80by495));
+
+		/*else if (inputBitCount == 72)
+			mCode.load(mx64by448, sizeof(mx64by448));*/
+		
+	/*	else if (inputBitCount == 88)
+			mCode.load(mx64by448, sizeof(mx64by448));*/
+
+		//===========Malicous
+		else if (inputBitCount == 132)
+			mCode.load(mx132by583, sizeof(mx132by583));
+		
         else
             throw std::runtime_error(LOCATION);
 
@@ -858,7 +831,7 @@ namespace osuCrypto
                     {
                         //std::cout << "bad OOS16 OT check. " << l << "m " << j << std::endl;
                         //return;
-                        throw std::runtime_error("bad OOS16 OT check. " LOCATION);
+                        //throw std::runtime_error("bad OOS16 OT check. " LOCATION);
                     }
                 }
 

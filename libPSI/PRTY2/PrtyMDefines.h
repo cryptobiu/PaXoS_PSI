@@ -3,3 +3,4 @@
 
 //#define OOS_CHECK_DEBUG
 #define PRTY_SHA_HASH
+#define OOS_SHA_HASH

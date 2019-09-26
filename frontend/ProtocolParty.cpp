@@ -27,50 +27,45 @@ ProtocolParty::ProtocolParty(int argc, char* argv[]) : Protocol("PSI", argc, arg
     MPCCommunication comm;
     string partiesFile = this->getParser().getValueByKey(arguments, "partiesFile");
 
-    reportStatistics = stoi(this->getParser().getValueByKey(arguments, "reportStatistics"));
     isMalicious = stoi(this->getParser().getValueByKey(arguments, "malicious")) == 0 ? false : true;
 cout<<"malicious = "<<isMalicious<<endl;
 
-    if(reportStatistics==0) {
-        otherParty = comm.setCommunication(io_service, partyId, 2, partiesFile)[0];
 
-        ConfigFile cf(partiesFile);
+    otherParty = comm.setCommunication(io_service, partyId, 2, partiesFile)[0];
 
-        string portString, ipString;
-        vector<int> ports(2);
-        vector<string> ips(2);
+    ConfigFile cf(partiesFile);
 
-        for (int i = 0; i < 2; i++) {
-            portString = "party_" + to_string(i) + "_port";
-            ipString = "party_" + to_string(i) + "_ip";
+    string portString, ipString;
+    vector<int> ports(2);
+    vector<string> ips(2);
 
-            //get partys IPs and ports data
-            ports[i] = stoi(cf.Value("", portString));
-            ips[i] = cf.Value("", ipString);
-        }
-        //osuCrypto::IOService ios(0);
-        addressForOT = ips[1];
-        portForOT = ports[1] + 1;
+    for (int i = 0; i < 2; i++) {
+        portString = "party_" + to_string(i) + "_port";
+        ipString = "party_" + to_string(i) + "_ip";
 
-        cout<<"addressForOT = "<<addressForOT<<endl;
-        cout<<"portForOT = "<<portForOT<<endl;
+        //get partys IPs and ports data
+        ports[i] = stoi(cf.Value("", portString));
+        ips[i] = cf.Value("", ipString);
+    }
+    //osuCrypto::IOService ios(0);
+    addressForOT = ips[1];
+    portForOT = ports[1] + 1;
 
-        string tmp = "init times";
-        //cout<<"before sending any data"<<endl;
-        byte tmpBytes[20];
-        if (otherParty->getID() < partyId) {
-            otherParty->getChannel()->write(tmp);
-            otherParty->getChannel()->read(tmpBytes, tmp.size());
-        } else {
-            otherParty->getChannel()->read(tmpBytes, tmp.size());
-            otherParty->getChannel()->write(tmp);
-        }
+    cout<<"addressForOT = "<<addressForOT<<endl;
+    cout<<"portForOT = "<<portForOT<<endl;
+
+    string tmp = "init times";
+    //cout<<"before sending any data"<<endl;
+    byte tmpBytes[20];
+    if (otherParty->getID() < partyId) {
+        otherParty->getChannel()->write(tmp);
+        otherParty->getChannel()->read(tmpBytes, tmp.size());
+    } else {
+        otherParty->getChannel()->read(tmpBytes, tmp.size());
+        otherParty->getChannel()->write(tmp);
     }
 
-
-
     dic = new ObliviousDictionary(hashSize, fieldSize, gamma);
-    dic->setReportStatstics(reportStatistics);
 
     hashSize = dic->getHashSize();
     tableRealSize = dic->getTableSize();
@@ -121,6 +116,7 @@ cout<<"malicious = "<<isMalicious<<endl;
 ProtocolParty::~ProtocolParty(){
 
     delete timer;
+    delete dic;
 }
 
 void ProtocolParty::run() {
@@ -148,7 +144,6 @@ Receiver::Receiver(int argc, char *argv[]): ProtocolParty(argc, argv){
 }
 
 Receiver::~Receiver(){
-    delete dic;
 }
 
 void Receiver::runOnline() {
@@ -195,7 +190,7 @@ void Receiver::runOnline() {
     auto end = high_resolution_clock::now();
 
     duration = duration_cast<milliseconds>(end - start).count();
-    cout << "all protocol took in milliseconds: " << duration << endl;
+    cout << "all PSI protocol took in milliseconds: " << duration << endl;
 
 }
 
@@ -226,21 +221,19 @@ vector<byte> Receiver::createDictionary(){
     duration = duration_cast<milliseconds>(t2-t1).count();
     cout << "calc equations took in milliseconds: " << duration << endl;
 
-    if(reportStatistics==0) {
-        t1 = high_resolution_clock::now();
-        dic->unpeeling();
 
-        t2 = high_resolution_clock::now();
+    t1 = high_resolution_clock::now();
+    dic->unpeeling();
 
-        duration = duration_cast<milliseconds>(t2 - t1).count();
-        cout << "unpeeling took in milliseconds: " << duration << endl;
-    } else{
-        dic->unpeeling();
-    }
+    t2 = high_resolution_clock::now();
+
+    duration = duration_cast<milliseconds>(t2 - t1).count();
+    cout << "unpeeling took in milliseconds: " << duration << endl;
+
     auto end = high_resolution_clock::now();
 
     duration = duration_cast<milliseconds>(end - start).count();
-    cout << "all protocol took in milliseconds: " << duration << endl;
+    cout << "all dictionary protocol took in milliseconds: " << duration << endl;
 
 //        dic->checkOutput();
 
@@ -250,18 +243,11 @@ vector<byte> Receiver::createDictionary(){
 
 void Receiver::runOOS(vector<byte> & sigma){
 
-//    u64 setSize = hashSize;//1 << 5;
-//    u64 numBin = hashSize*2.4; //2.4 * setSize;
-//    u64 numOTs = sigma.size()/fieldSizeBytes;
-
-    std::cout << "in runOOS() " << numOTs << "\n";
 
     std::string name = "n";
     IOService ios(0);
-//    Session ep0(ios, "localhost", 1212, SessionMode::Server, name);
     Session ep1(ios, addressForOT, portForOT, SessionMode::Client, name);
     auto recvChl = ep1.addChannel(name, name);
-//    auto sendChl = ep0.addChannel(name, name);
 
     LinearCode code;
     switch(fieldSize){
@@ -289,7 +275,6 @@ void Receiver::runOOS(vector<byte> & sigma){
 
     }
 
-//    PrtyMOtSender sender;
     recv.configure(isMalicious, 40, fieldSize);
 
     //Base OT - simulated
@@ -305,7 +290,6 @@ void Receiver::runOOS(vector<byte> & sigma){
         baseRecv[i] = baseSend[i][baseChoice[i]];
     }
 
-//    sender.setBaseOts(baseRecv, baseChoice);
     recv.setBaseOts(baseSend);
 
     //OT
@@ -378,12 +362,6 @@ void Receiver::receiveSenderXors(){
     vector<uint64_t> senderOutputs(size);
     otherParty->getChannel()->read((byte*)senderOutputs.data(), size*8);
 
-//    for (int i=0; i<size/blockSize; i++) {
-//        for (int j=0; j<20; j++) {
-//            cout<<(int)(((byte*)(senderOutputs.data() + i*blockSize))[j])<< " ";
-//        }
-//        cout<<endl;
-//    }
 
     uint64_t count = 0;
     for (int i=0; i<hashSize; i++){
@@ -488,17 +466,9 @@ void Sender::runOnline() {
 
 void Sender::runOOS(){
 
-//    u64 setSize = hashSize;//1 << 5;
-//    u64 numBin = hashSize*2.4; //2.4 * setSize;
-//    u64 numOTs = tableRealSize*2 + gamma;
-
-    std::cout << "in runOOS() = " << numOTs << "\n";
-
     std::string name = "n";
     IOService ios(0);
     Session ep0(ios, addressForOT, portForOT, SessionMode::Server, name);
-//    Session ep1(ios, "localhost", 1212, SessionMode::Client, name);
-//    auto recvChl = ep1.addChannel(name, name);
     auto sendChl = ep0.addChannel(name, name);
 
     switch(fieldSize){
@@ -526,15 +496,12 @@ void Sender::runOOS(){
 
     }
 
-
-//    PrtyMOtReceiver recv;
     sender.configure(isMalicious, 40, fieldSize);
 
     //Base OT - simulated
     PRNG prng0(_mm_set_epi32(4253465, 3434565, 234435, 23987045));
     u64 baseCount = sender.getBaseOTCount();
 
-    cout<<"base count = "<<baseCount<<endl;
     std::vector<block> baseRecv(baseCount);
     std::vector<std::array<block, 2>> baseSend(baseCount);
     baseChoice.resize(baseCount);
@@ -546,7 +513,6 @@ void Sender::runOOS(){
     }
 
     sender.setBaseOts(baseRecv, baseChoice);
-//    recv.setBaseOts(baseSend);
 
     //OT
     sender.init(numOTs, prng0, sendChl);
@@ -562,7 +528,6 @@ void Sender::runOOS(){
         {
             sender.otCorrection(i + k);
         }
-//        cout<<"after correction"<<endl;
     }
 
 }

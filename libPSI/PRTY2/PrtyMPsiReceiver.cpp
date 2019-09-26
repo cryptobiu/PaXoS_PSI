@@ -27,15 +27,16 @@ namespace osuCrypto
 		mPrng.SetSeed(prng.get<block>());
 
 		if (isMalicious)
-			mCuckooItemLength = 132;// getMalCodewordSize(myInputSize);
+			mCuckooItemLength =  getMalCodewordSize(myInputSize);
 		else
-			mCuckooItemLength = 132;//getShCodewordSize(myInputSize);
+			mCuckooItemLength = getShCodewordSize(myInputSize);
 
-		mNumBin = getBinSize(mTheirInputSize); //TODO: remove
-		mSigma = getSigma(mTheirInputSize);
+		mNumBin = floor(mMyInputSize *getBinScaleSize(mTheirInputSize)); //TODO: remove
+		mSigma = getSigma(mMyInputSize);
 
 		mNumOTs = mNumBin + mSigma;
-		mPrytOtRecv.configure(isMalicious, psiSecParam, mCuckooItemLength);
+
+		mPrytOtRecv.configure(isMalicious, psiSecParam, mCuckooItemLength.first);
 
 
 		std::vector<block> baseOtRecv(128);
@@ -54,7 +55,12 @@ namespace osuCrypto
 
 
 		mPrytOtRecv.setBaseOts(baseSend);
-		mPrytOtRecv.init(mNumOTs, mPrng, chls[0]);
+		
+		if(isMalicious) //need more 40 OT for consistency check
+			mPrytOtRecv.init(mNumOTs+ psiSecParam, mPrng, chls[0]);
+		else
+			mPrytOtRecv.init(mNumOTs, mPrng, chls[0]);
+
 	}
 
 	void PrtyMPsiReceiver::output(span<block> inputs, span<Channel> chls)
@@ -111,9 +117,9 @@ namespace osuCrypto
 		recvTimer.setTimePoint("r_oos");
 
 
-		//TODO
-		/*if (mIsMalicious)
-			mPrytOtRecv.check(chls[0], mPrng.get<block>());*/
+		//TODO: fix the correctness
+		if (mIsMalicious)
+			mPrytOtRecv.check(chls[0], mPrng.get<block>());
 
 		//=========compute PSI last message
 		Cuckoo_decode(inputs, mPrytOtRecv.mRy, mPrytOtRecv.mT0, mNumBin, mSigma); //Decode(R,y) 
@@ -278,6 +284,12 @@ namespace osuCrypto
 			thrd.join();
 
 		recvTimer.setTimePoint("r_done");
+
+		std::cout << "\n==============Detail==============" << std::endl;
+		std::cout << "\nmNumBin: " << mNumBin 
+			<< "\t " << "mSigma: " << mSigma
+			<< "\t " << "isMalicious: "<< mIsMalicious
+			<< "\n";
 		std::cout << recvTimer << "\n";
 	}
 

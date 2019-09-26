@@ -75,12 +75,6 @@ void ObliviousDictionary::init() {
 //        cout<<endl;
     }
 
-//    int numKeysToCheck = 10;
-//    cout<<"keys to check with the other party"<<endl;
-//    for (int i=0; i<numKeysToCheck; i++){
-//        cout << "key = " << keys[i] << " val = " << vals[keys[i]] << endl;
-//    }
-
     first.clear();
     second.clear();
 }
@@ -107,7 +101,7 @@ ObliviousDictionary::ObliviousDictionary(int hashSize, int fieldSize, int gamma)
     auto end = high_resolution_clock::now();
     auto duration = duration_cast<milliseconds>(end-start).count();
 
-    cout << "time in milliseconds for create sets: " << duration << endl;
+//    cout << "time in milliseconds for create sets: " << duration << endl;
 
 //    firstEncValues.resize(tableRealSize, 0);
 //    secondEncValues.resize(tableRealSize, 0);
@@ -133,16 +127,13 @@ ObliviousDictionary::ObliviousDictionary(int hashSize, int fieldSize, int gamma)
 
 void ObliviousDictionary::fillTables(){
 
+    uint64_t key;
     for (int i=0; i<hashSize; i++){
 
-//            cout<<"key is "<<keys[i]<<endl;
-//        auto pair = first.insert(keys[i]);
-        first.insert(keys[i]);
-        second.insert(keys[i]);
+        key = keys[i];
+        first.insert(key);
+        second.insert(key);
 
-//        if (pair.second == false){
-//            cout<<"key = "<<keys[i]<<" i = "<<i<<endl;
-//        }
     }
 
 }
@@ -169,7 +160,7 @@ void ObliviousDictionary::peeling(){
     auto t2 = high_resolution_clock::now();
     auto duration = duration_cast<milliseconds>(t2-t1).count();
 
-    cout << "time in milliseconds for first loop: " << duration << endl;
+//    cout << "time in milliseconds for first loop: " << duration << endl;
 
     t1 = high_resolution_clock::now();
     //goes on the second hash
@@ -220,13 +211,13 @@ void ObliviousDictionary::peeling(){
     t2 = high_resolution_clock::now();
     duration = duration_cast<milliseconds>(t2-t1).count();
 
-    cout << "time in milliseconds for second loop: " << duration << endl;
+//    cout << "time in milliseconds for second loop: " << duration << endl;
+//
+//    if (hasLoop()){
+//        cout << "remain loops!!!" << endl;
+//    }
 
-    if (hasLoop()){
-        cout << "remain loops!!!" << endl;
-    }
-
-    cout<<"peelingCounter = "<<peelingCounter<<endl;
+//    cout<<"peelingCounter = "<<peelingCounter<<endl;
 
 }
 
@@ -238,12 +229,11 @@ void ObliviousDictionary::generateExternalToolValues(){
 //    byte* matrix = new byte(matrixSize);
 //    memset(matrix, 0, matrixSize);
 //    byte* values = new byte(first.size());
-    auto start = high_resolution_clock::now();
+//    auto start = high_resolution_clock::now();
     int matrixSize = hashSize - peelingCounter;
     GF2EMatrix matrix(matrixSize);
 
-    cout<<"num of rows = "<<matrixSize<<endl;
-    cout<<"num of cols = "<<2*matrixSize + gamma<<endl;
+//    cout<<"num of cols = "<<2*matrixSize + gamma<<endl;
 //    for(size_t i = 0; i < matrixSize; ++i) {
 //        matrix[i].resize(2*tableRealSize+gamma);
 //        for(size_t j = 0; j < 2*tableRealSize+gamma; ++j) {
@@ -252,10 +242,10 @@ void ObliviousDictionary::generateExternalToolValues(){
 //    }
     GF2EVector values(matrixSize);
 
-    auto end = high_resolution_clock::now();
-    auto duration = duration_cast<milliseconds>(end-start).count();
+//    auto end = high_resolution_clock::now();
+//    auto duration = duration_cast<milliseconds>(end-start).count();
 
-    cout << "construct time in milliseconds for protocol: " << duration << endl;
+//    cout << "construct time in milliseconds for protocol: " << duration << endl;
 
     unordered_map<uint64_t, int> firstTableCols;
     unordered_map<uint64_t, int> secondTableCols;
@@ -270,7 +260,7 @@ void ObliviousDictionary::generateExternalToolValues(){
 //    GF2E::init(irreduciblePolynomial);
     //Get all the edges that are in the graph's circles and calc the polynomial values that should be for them.
 
-    start = high_resolution_clock::now();
+//    start = high_resolution_clock::now();
     int rowCounter = 0;
     int firstColsCounter = 0;
     int secondColsCounter = 0;
@@ -324,10 +314,10 @@ void ObliviousDictionary::generateExternalToolValues(){
         }
     }
 
-     end = high_resolution_clock::now();
-     duration = duration_cast<milliseconds>(end-start).count();
+//     end = high_resolution_clock::now();
+//     duration = duration_cast<milliseconds>(end-start).count();
 
-    cout << "fill time in milliseconds for protocol: " << duration << endl;
+//    cout << "fill time in milliseconds for protocol: " << duration << endl;
 
 //    cout<<"matrix:"<<endl;
 //    for (int i=0; i<rowCounter; i++){
@@ -339,19 +329,14 @@ void ObliviousDictionary::generateExternalToolValues(){
 
     cout<<"num of equations =  "<<rowCounter<<endl;
 
-    if(reportStatistics==1) {
-
-        statisticsFile << rowCounter << ", \n";
-    }
-
-    start = high_resolution_clock::now();
+    auto start = high_resolution_clock::now();
 
     GF2EVector variablesSlim(2*matrixSize + gamma);
-    //TODO call the solver and get the results in variables
+    //call the solver and get the results in variables
     solve_api(matrix, values, variablesSlim, fieldSize);
 
-    end = high_resolution_clock::now();
-    duration = duration_cast<milliseconds>(end-start).count();
+    auto end = high_resolution_clock::now();
+    auto duration = duration_cast<milliseconds>(end-start).count();
 
     cout << "solver time in milliseconds for protocol: " << duration << endl;
     for (int i=0; i<tableRealSize; i++) {
@@ -401,14 +386,10 @@ void ObliviousDictionary::generateExternalToolValues(){
 
 
 void ObliviousDictionary::unpeeling(){
-    cout<<"in unpeeling"<<endl;
     uint64_t key;
     byte* randomVal;
     GF2E dhBitsVal;
     GF2X temp;
-
-//    vector<uint64_t> polyVals(peelingCounter);
-//    Poly::evalMersenneMultipoint(polyVals, polynomial, peelingVector);
 
     while (peelingCounter > 0){
 //            cout<<"key = "<<key<<endl;
@@ -421,17 +402,11 @@ void ObliviousDictionary::unpeeling(){
 //cout<<endl;
         dhBitsVal = 0;
         for (int j=2; j<indices.size(); j++){
-//            if (variables[2*tableRealSize+ indices[j]] == 0){
-//                randomVal = prg.getRandom64()  >> 3;
-//                GF2XFromBytes(temp, (byte*)&randomVal ,8);
-//                variables[2*tableRealSize+ indices[j]] = to_GF2E(temp);
-//            }
+
             dhBitsVal += variables[2*tableRealSize+ indices[j]]; //put 1 in the right vertex of the edge
 
-//            cout<<"variable in "<<indices[j]<<" place = "<<variables[2*tableRealSize+ indices[j]]<<endl;
         }
-//        Poly::evalMersenne((ZpMersenneLongElement*)&poliVal, polynomial, (ZpMersenneLongElement*)&key);
-//        poliVal = polyVals[peelingCounter];
+
         if (variables[indices[0]] == 0 && variables[tableRealSize + indices[1]] == 0 && sign[indices[0]] == 0 && sign[tableRealSize + indices[1]] == 0){
             randomVal = prg.getPRGBytesEX(fieldSizeBytes);
             GF2XFromBytes(temp, randomVal ,fieldSizeBytes);

@@ -49,7 +49,7 @@
 #pragma warning(disable: 4800)
 #endif //  _MSC_VER
 #include "libOTe/Tools/bch511.h"
-#include "Tools/mx_132_by_583.h"
+#include "Tools/mx_linear_code.h"
 
 
 using namespace osuCrypto;
@@ -137,7 +137,7 @@ namespace tests_libOTe
 		auto e3 = boost::add_edge(2, 0, g);  //triagnle 012  //3
 		mEdgeIdxMap.insert(pair<std::set<int>, int>({ 2,0 }, 3));
 
-		
+
 		//mEdgeIdxMap.insert(pair<EdgeID, int>(e2.first, 3));
 
 		//mEdgeIdxMap.insert(pair<pair<int,int>, int>(make_pair(2,0), 3));
@@ -149,7 +149,7 @@ namespace tests_libOTe
 
 		auto  p = mEdgeIdxMap.find({ 0,5 });
 
-		if (p ==mEdgeIdxMap.end())
+		if (p == mEdgeIdxMap.end())
 		{
 			std::cout << "not found \n";
 		}
@@ -201,7 +201,7 @@ namespace tests_libOTe
 				{
 					std::cout << "tree_edge: " << dfs_circles[i][k] << " == ";
 					auto key = Edge2StringIncr(dfs_circles[i][k], graph.mNumBins);
-				//	std::cout << graph.mEdgeIdxMap[key] << '\n';
+					//	std::cout << graph.mEdgeIdxMap[key] << '\n';
 
 				}
 			}
@@ -215,7 +215,7 @@ namespace tests_libOTe
 		{
 			std::cout << "tree_edge: " << *it << " == ";
 			auto key = Edge2StringIncr(*it, graph.mNumBins);
-		//	std::cout << graph.mEdgeIdxMap[key] << "\n";
+			//	std::cout << graph.mEdgeIdxMap[key] << "\n";
 
 		}
 		/*	for (int i = 0; i < dfs_connected_component.size(); ++i)
@@ -301,7 +301,7 @@ namespace tests_libOTe
 	void Cuckoo_OKVS_Test()
 	{
 
-		u64 setSize = 1<<5;
+		u64 setSize = 1 << 5;
 		u64 numBin = 1.1 * setSize;
 		u64 sigma = 20;
 		std::cout << "input_size = " << setSize << "\n";
@@ -319,20 +319,20 @@ namespace tests_libOTe
 				yInputs[idxItem][k] = xInputs[idxItem];
 		}
 
-		Cuckoo_encode(xInputs, yInputs, tblCuckoo,numBin, sigma);
-		Cuckoo_decode( xInputs, yOutputs, tblCuckoo, numBin);
+		Cuckoo_encode(xInputs, yInputs, tblCuckoo, numBin, sigma);
+		Cuckoo_decode(xInputs, yOutputs, tblCuckoo, numBin);
 
 		std::cout << "\n";
 		for (int i = 0; i < xInputs.size(); ++i)
 		{
 			auto k = 0;
-		//	for (int k = 0; k < prty2SuperBlkSize; k++)
-				if (neq(yOutputs[i][k], yInputs[i][k]))
-				{
-					std::cout << i << " :" << yOutputs[i][k] << " decodedecode vs " << yInputs[i][k] << "\n";
-					//throw UnitTestFail();
+			//	for (int k = 0; k < prty2SuperBlkSize; k++)
+			if (neq(yOutputs[i][k], yInputs[i][k]))
+			{
+				std::cout << i << " :" << yOutputs[i][k] << " decodedecode vs " << yInputs[i][k] << "\n";
+				//throw UnitTestFail();
 
-				}
+			}
 		}
 
 #if 0
@@ -459,16 +459,16 @@ namespace tests_libOTe
 			auto edge = *it;
 			auto keyEgdeMapping = Edge2StringIncr(edge, graph.mNumBins);
 			auto idxItem = graph.mEdgeIdxMap[keyEgdeMapping];
-			
+
 			bool isRoot = eq(L[edge.m_source], AllOneBlock);
 			if (isRoot) //root
 			{
-				L[edge.m_source] =  prng.get<block>();
-				std::cout <<idxItem << " , ";
+				L[edge.m_source] = prng.get<block>();
+				std::cout << idxItem << " , ";
 
 			}
-			
-			
+
+
 
 			//compute h2
 			if (eq(L[edge.m_target], AllOneBlock))
@@ -523,84 +523,99 @@ namespace tests_libOTe
 	{
 		PRNG prng(ZeroBlock);
 		LinearCode code;
-		code.load(mx132by583, sizeof(mx132by583));
+		std::vector<std::pair<u64,u64>> linear_code_length
+		{ 
+			std::make_pair<u64, u64>(64,448),
+		std::make_pair<u64, u64>(132, 583)
+		};
 
-		u64 plain_txt_bits = code.plaintextBitSize();
-		if (plain_txt_bits != 132) {
-			cout << "Invalid plain text bit-size " << plain_txt_bits << endl;
-			throw UnitTestFail("bad out size reported by code");
-		}
+		for (u64 i = 0; i < linear_code_length.size(); i++)
+		{
+			std::cout << "=======linear_code_length " << linear_code_length[i].first << " ========\n";
+		
+			if (linear_code_length[i].first == 64)
+				code.load(mx64by448, sizeof(mx64by448));
+			else if (linear_code_length[i].first == 132)
+				code.load(mx132by583, sizeof(mx132by583));
 
-		u64 plain_txt_blocks = code.plaintextBlkSize();
-		if (plain_txt_blocks != 2) {
-			cout << "Invalid plain text block-size " << plain_txt_bits << endl;
-			throw UnitTestFail("bad out size reported by code");
-		}
-
-		u64 code_word_bits = code.codewordBitSize();
-		if (code_word_bits != 583) {
-			cout << "Invalid code word bit-size " << code_word_bits << endl;
-			throw UnitTestFail("bad out size reported by code");
-		}
-
-		u64 code_word_blocks = code.codewordBlkSize();
-		if (code_word_blocks != 5) {
-			cout << "Invalid code word block-size " << code_word_bits << endl;
-			throw UnitTestFail("bad out size reported by code");
-		}
-
-
-		for (size_t testk = 0; testk < 2; ++testk) {
-			cout << "lctest begin" << endl;
-
-			std::vector<block> plainTextA(plain_txt_blocks), codewordA(code_word_blocks);
-			std::vector<block> plainTextB(plain_txt_blocks), codewordB(code_word_blocks);
-			std::vector<block> plainTextC(plain_txt_blocks), codewordC(code_word_blocks);
-
-			for (size_t i = 0; i < plain_txt_blocks; ++i) {
-				plainTextA[i] = prng.get<block>();
-				plainTextB[i] = prng.get<block>();
-				plainTextC[i] = plainTextA[i] ^ plainTextB[i];
+			u64 plain_txt_bits = code.plaintextBitSize();
+			if (plain_txt_bits != linear_code_length[i].first) {
+				cout << "Invalid plain text bit-size " << plain_txt_bits << endl;
+				throw UnitTestFail("bad out size reported by code");
 			}
 
-		/*	zero_block_ls_bits(plainTextA[plain_txt_blocks - 1], (8 * sizeof(osuCrypto::block) * plain_txt_blocks) % plain_txt_bits);
-			zero_block_ls_bits(plainTextB[plain_txt_blocks - 1], (8 * sizeof(osuCrypto::block) * plain_txt_blocks) % plain_txt_bits);
-			zero_block_ls_bits(plainTextC[plain_txt_blocks - 1], (8 * sizeof(osuCrypto::block) * plain_txt_blocks) % plain_txt_bits);
-*/
-			code.encode(plainTextA, codewordA);
-			code.encode(plainTextB, codewordB);
-			code.encode(plainTextC, codewordC);
+			u64 plain_txt_blocks = code.plaintextBlkSize();
 
-			/*zero_block_ls_bits(codewordA[code_word_blocks - 1], (8 * sizeof(osuCrypto::block) * code_word_blocks) % code_word_bits);
-			zero_block_ls_bits(codewordB[code_word_blocks - 1], (8 * sizeof(osuCrypto::block) * code_word_blocks) % code_word_bits);
-			zero_block_ls_bits(codewordC[code_word_blocks - 1], (8 * sizeof(osuCrypto::block) * code_word_blocks) % code_word_bits);
-*/
-			bool mismatch = false;
-			for (size_t i = 0; i < code_word_blocks; ++i) {
+			/*if (plain_txt_blocks != 2) {
+				cout << "Invalid plain text block-size " << plain_txt_bits << endl;
+				throw UnitTestFail("bad out size reported by code");
+			}*/
 
-				if (!eq(codewordA[i] ^ codewordB[i], codewordC[i])) {
-					cout << "Test " << testk << " linear mismatch @" << i << endl;
-					mismatch = true;
+			u64 code_word_bits = code.codewordBitSize();
+			if (code_word_bits != linear_code_length[i].second) {
+				cout << "Invalid code word bit-size " << code_word_bits << endl;
+				throw UnitTestFail("bad out size reported by code");
+			}
+
+			u64 code_word_blocks = code.codewordBlkSize();
+			/*if (code_word_blocks != 5) {
+				cout << "Invalid code word block-size " << code_word_bits << endl;
+				throw UnitTestFail("bad out size reported by code");
+			}*/
+
+
+			for (size_t testk = 0; testk < 2; ++testk) {
+				cout << "lctest begin" << endl;
+
+				std::vector<block> plainTextA(plain_txt_blocks), codewordA(code_word_blocks);
+				std::vector<block> plainTextB(plain_txt_blocks), codewordB(code_word_blocks);
+				std::vector<block> plainTextC(plain_txt_blocks), codewordC(code_word_blocks);
+
+				for (size_t i = 0; i < plain_txt_blocks; ++i) {
+					plainTextA[i] = prng.get<block>();
+					plainTextB[i] = prng.get<block>();
+					plainTextC[i] = plainTextA[i] ^ plainTextB[i];
+				}
+
+				/*	zero_block_ls_bits(plainTextA[plain_txt_blocks - 1], (8 * sizeof(osuCrypto::block) * plain_txt_blocks) % plain_txt_bits);
+					zero_block_ls_bits(plainTextB[plain_txt_blocks - 1], (8 * sizeof(osuCrypto::block) * plain_txt_blocks) % plain_txt_bits);
+					zero_block_ls_bits(plainTextC[plain_txt_blocks - 1], (8 * sizeof(osuCrypto::block) * plain_txt_blocks) % plain_txt_bits);
+		*/
+				code.encode(plainTextA, codewordA);
+				code.encode(plainTextB, codewordB);
+				code.encode(plainTextC, codewordC);
+
+				/*zero_block_ls_bits(codewordA[code_word_blocks - 1], (8 * sizeof(osuCrypto::block) * code_word_blocks) % code_word_bits);
+				zero_block_ls_bits(codewordB[code_word_blocks - 1], (8 * sizeof(osuCrypto::block) * code_word_blocks) % code_word_bits);
+				zero_block_ls_bits(codewordC[code_word_blocks - 1], (8 * sizeof(osuCrypto::block) * code_word_blocks) % code_word_bits);
+	*/
+				bool mismatch = false;
+				for (size_t i = 0; i < code_word_blocks; ++i) {
+
+					if (!eq(codewordA[i] ^ codewordB[i], codewordC[i])) {
+						cout << "Test " << testk << " linear mismatch @" << i << endl;
+						mismatch = true;
+					}
+				}
+				if (!mismatch) {
+					cout << "Test " << testk << " linear match." << endl;
+				}
+				else {
+					cout << "A:" << endl;
+					for (size_t i = 0; i < code_word_blocks; ++i) {
+						cout << codewordA[i] << endl;
+					}
+					cout << "B:" << endl;
+					for (size_t i = 0; i < code_word_blocks; ++i) {
+						cout << codewordB[i] << endl;
+					}
+					cout << "C:" << endl;
+					for (size_t i = 0; i < code_word_blocks; ++i) {
+						cout << codewordC[i] << endl;
+					}
 				}
 			}
-			if (!mismatch) {
-				cout << "Test " << testk << " linear match." << endl;
-			}
-			else {
-				cout << "A:" << endl;
-				for (size_t i = 0; i < code_word_blocks; ++i) {
-					cout << codewordA[i] << endl;
-	}
-				cout << "B:" << endl;
-				for (size_t i = 0; i < code_word_blocks; ++i) {
-					cout << codewordB[i] << endl;
-				}
-				cout << "C:" << endl;
-				for (size_t i = 0; i < code_word_blocks; ++i) {
-					cout << codewordC[i] << endl;
-				}
 		}
-	}
 
 
 
@@ -670,7 +685,7 @@ namespace tests_libOTe
 
 #endif
 
-	}
+					}
 
 
 
@@ -689,7 +704,7 @@ namespace tests_libOTe
 			for (int k = 0; k < prty2SuperBlkSize; k++)
 			{
 				inputs[i][k] = prng0.get<block>();
-			//	std::cout << inputs[0][k] << "\n";
+				//	std::cout << inputs[0][k] << "\n";
 			}
 		std::string name = "n";
 		IOService ios(0);
@@ -731,9 +746,9 @@ namespace tests_libOTe
 			sender.init(numOTs, prng0, sendChl);
 
 			// Get the random OT messages
-			for (u64 i = 0; i < numOTs; i += stepSize)
+			for (u64 i = 0; i < numOTs- 40; i += stepSize)
 			{
-				auto curStepSize = std::min<u64>(stepSize, numOTs - i);
+				auto curStepSize = std::min<u64>(stepSize, numOTs - 40 - i);
 				sender.recvCorrection(sendChl, curStepSize);
 				for (u64 k = 0; k < curStepSize; ++k)
 				{
@@ -742,17 +757,17 @@ namespace tests_libOTe
 					sender.encode(i + k, &inputs[k + i], (u8*)& encoding2[k + i], sizeof(block));
 				}
 			}
-			
-			//sender.check(sendChl, toBlock(322334));
+
+			sender.check(sendChl, toBlock(322334));
 
 			});
 
 		recv.init(numOTs, prng1, recvChl);
 
 		// Get the random OT messages
-		for (u64 i = 0; i < numOTs; i += stepSize)
+		for (u64 i = 0; i < numOTs-40; i += stepSize)
 		{
-			auto curStepSize = std::min<u64>(stepSize, numOTs - i);
+			auto curStepSize = std::min<u64>(stepSize, numOTs - 40 - i);
 			for (u64 k = 0; k < curStepSize; ++k)
 			{
 				recv.otCorrection(i + k, &inputs[k + i]);
@@ -761,7 +776,7 @@ namespace tests_libOTe
 			recv.sendCorrection(recvChl, curStepSize);
 		}
 
-		//recv.check(recvChl, toBlock(322334));
+		recv.check(recvChl, toBlock(322334));
 
 		thrd.join();
 
@@ -781,9 +796,9 @@ namespace tests_libOTe
 		//v.get();
 
 		// Get the random OT messages
-		for (u64 i = 0; i < numOTs; i ++)
+		for (u64 i = 0; i < numOTs; i++)
 		{
-				// check that we do in fact get the same value
+			// check that we do in fact get the same value
 			if (neq(encoding1[i], encoding2[i]))
 			{
 				std::cout << encoding1[i] << " vs " << encoding2[i] << "\n";
@@ -804,10 +819,10 @@ namespace tests_libOTe
 		u64 setSize = 1 << 5;
 		u64 numBin = 2.9 * setSize;
 		u64 sigma = 40;
-		
+
 		std::cout << "input_size = " << setSize << "\n";
 		std::cout << "bin_size = " << numBin << "\n";
-		
+
 		std::vector<block> inputs(setSize);
 		prng0.get(inputs.data(), inputs.size());
 
@@ -870,7 +885,7 @@ namespace tests_libOTe
 		auto thrd = std::thread([&]() {
 			setThreadName("Sender");
 			sender.init(numOTs, prng0, sendChl);
-			
+
 			// Get the random OT messages
 			for (u64 i = 0; i < numOTs; i += stepSize)
 			{
@@ -929,7 +944,7 @@ namespace tests_libOTe
 					sender.encode_prty(i + k, &yInputs[k + i], (u8*)& prtyEncoding1[k + i], sizeof(block));
 				}
 			}
-		});
+			});
 
 		//==========receiver
 		Cuckoo_decode(inputs, recv.mRy, recv.mT0, numBin, sigma); //Decode(R,y)
@@ -954,7 +969,7 @@ namespace tests_libOTe
 			if (neq(prtyEncoding1[i], prtyEncoding2[i]))
 			{
 				std::cout << i << ": " << prtyEncoding1[i] << " vs " << prtyEncoding2[i] << "\n";
-//				throw UnitTestFail("prty[" + ToString(i) + "]  not equal " LOCATION);
+				//				throw UnitTestFail("prty[" + ToString(i) + "]  not equal " LOCATION);
 			}
 		}
 
@@ -963,6 +978,7 @@ namespace tests_libOTe
 
 	void Prty2_Real_PSI_impl()
 	{
+		u64 isMalicious = false;
 		setThreadName("Sender");
 		u64 setSenderSize = 1 << 5, setRecvSize = 1 << 5, psiSecParam = 40, numThreads(1);
 
@@ -1001,11 +1017,11 @@ namespace tests_libOTe
 		PrtyMPsiReceiver recv;
 
 		auto thrd = std::thread([&]() {
-			recv.init(recvSet.size(), sendSet.size(), 40, prng1, recvChls,true);
+			recv.init(recvSet.size(), sendSet.size(), 40, prng1, recvChls, isMalicious);
 			recv.output(recvSet, recvChls);
 			});
 
-		sender.init(sendSet.size(), recvSet.size(), 40, prng0, sendChls, true);
+		sender.init(sendSet.size(), recvSet.size(), 40, prng0, sendChls, isMalicious);
 		sender.output(sendSet, sendChls);
 
 		thrd.join();
@@ -1032,4 +1048,4 @@ namespace tests_libOTe
 	}
 
 
-}
+				}

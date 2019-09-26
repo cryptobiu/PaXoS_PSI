@@ -43,9 +43,6 @@ protected:
     vector<uint64_t> peelingVector;
     int peelingCounter;
 
-    int reportStatistics=0;
-    ofstream statisticsFile;
-
     unordered_set<uint64_t, Hasher> first;
     unordered_set<uint64_t, Hasher> second;
 
@@ -62,10 +59,6 @@ public:
     ObliviousDictionary(int hashSize, int fieldSize, int gamma);
 
      ~ObliviousDictionary(){
-         if (reportStatistics == 1) {
-
-             statisticsFile.close();
-         }
     }
 
     void setKeysAndVals(vector<uint64_t>& keys, vector<byte>& values){
@@ -98,15 +91,6 @@ public:
     void checkOutput();
 
     bool hasLoop();
-
-    void setReportStatstics(int flag){
-        reportStatistics = flag;
-        if (reportStatistics == 1) {
-
-            cout<<"statistics file created"<<endl;
-            statisticsFile.open("statistics.csv");
-            statisticsFile << "-------------Statistics-----------.\n";
-        }};
 
     void init();
 

@@ -7,7 +7,7 @@
 #include "PrtyMDefines.h"
 
 #include <cryptoTools/Common/BitVector.h>
-#include "Tools/mx_132_by_583.h"
+#include "Tools/mx_linear_code.h"
 
 using namespace std;
 
@@ -51,8 +51,8 @@ namespace osuCrypto
         // this will be used as temporary buffers of 128 columns,
         // each containing 1024 bits. Once transposed, they will be copied
         // into the T1, T0 buffers for long term storage.
-        std::array<std::array<block, 8>, 128> t0;
-        std::array<std::array<block, 8>, 128> t1;
+        std::array<std::array<block, superBlkSize>, 128> t0;
+        std::array<std::array<block, superBlkSize>, 128> t1;
 
         // round up and add the extra OT used in the check at the end
         numOtExt = roundUpTo(numOtExt + mStatSecParam, 128);
@@ -198,7 +198,6 @@ namespace osuCrypto
 		
 		//std::cout << idx << ": " << ryVal[0] << " - " << ryVal[1]<<" recv.ryVal\n";
 
-
 #ifdef PRTY_SHA_HASH
 			RandomOracle  sha1(destSize);
 			// now hash it to remove the correlation.
@@ -207,20 +206,20 @@ namespace osuCrypto
 			sha1.Final((u8*)dest);
 #else
 			//H(x) = AES_f(H'(x)) + H'(x), where  H'(x) = AES_f(x_0) + x_0 + ... +  AES_f(x_n) + x_n.
-			mAesFixedKey.ecbEncFourBlocks(t0Val, codeword.data());
+			std::vector<block> aesBuff(mRy.stride());
+			mAesFixedKey.ecbEncBlocks(ryVal, mRy.stride(), aesBuff.data());
 
-			codeword[0] = codeword[0] ^ t0Val[0];
-			codeword[1] = codeword[1] ^ t0Val[1];
-			codeword[2] = codeword[2] ^ t0Val[2];
-			codeword[3] = codeword[3] ^ t0Val[3];
+			block hx = ZeroBlock, aeshx;
+			for (u64 i = 0; i < mRy.stride(); ++i)
+			{
+				hx = hx ^ ryVal[i];
+				hx = hx ^ aesBuff[i];
+			}
 
-			val = codeword[0] ^ codeword[1];
-			codeword[2] = codeword[2] ^ codeword[3];
+			mAesFixedKey.ecbEncBlock(hx, aeshx);
+			hx = hx ^ aeshx;
+			memcpy(dest,(u8*)&hx, destSize);
 
-			val = val ^ codeword[2];
-
-			mAesFixedKey.ecbEncBlock(val, codeword[0]);
-			val = val ^ codeword[0];
 #endif
 	}
 
@@ -306,7 +305,7 @@ namespace osuCrypto
         block* t0Val = mT0.data() + mT0.stride() * otIdx;
      
 
-#ifdef PRTY_SHA_HASH
+#ifdef OOS_SHA_HASH
 		RandomOracle  sha1;
 		u8 hashBuff[RandomOracle::HashSize];
 		// now hash it to remove the correlation.
@@ -377,14 +376,28 @@ namespace osuCrypto
         u64 statSecParam,
         u64 inputBitCount)
     {
-        if (inputBitCount <= 132)
-        {
+		//===========Semi-honest
+		if (inputBitCount == 64)
+			mCode.load(mx64by448, sizeof(mx64by448));
 
-            //mCode.loadTxtFile("C:/Users/peter/repo/libOTe/libOTe/Tools/bch511.txt");
-            mCode.load(mx132by583, sizeof(mx132by583));
-        }
-        else
-            throw std::runtime_error(LOCATION);
+		//else if (inputBitCount == 72)
+		//	mCode.load(mx64, sizeof(mx64by448));
+
+		else if (inputBitCount == 80)
+			mCode.load(mx80by495, sizeof(mx80by495));
+
+		/*else if (inputBitCount == 72)
+			mCode.load(mx64by448, sizeof(mx64by448));*/
+
+			/*	else if (inputBitCount == 88)
+					mCode.load(mx64by448, sizeof(mx64by448));*/
+
+					//===========Malicous
+		else if (inputBitCount == 132)
+			mCode.load(mx132by583, sizeof(mx132by583));
+
+		else
+			throw std::runtime_error(LOCATION);
 
 
         mInputByteCount = (inputBitCount + 7) / 8;
@@ -463,7 +476,8 @@ namespace osuCrypto
                 prng.get((u8*)words[i].data(), mInputByteCount);
 
                 // the correction value is stored internally
-                encode(mCorrectionIdx + i, words[i].data(), (u8*)&_);
+				otCorrection(mCorrectionIdx + i, words[i].data());
+                //encode(mCorrectionIdx + i, words[i].data(), (u8*)&_);
 
                 // initialize the tSum array with the T0 value used to encode these
                 // random words.
@@ -668,8 +682,9 @@ namespace osuCrypto
                         }
                     }
 
-                    if (mW.stride() != 1)
-                        throw std::runtime_error("generalize this code vvvvvv " LOCATION);
+					//TODO: make it work with > blocks
+                    /*if (mW.stride() != 1)
+                        throw std::runtime_error("generalize this code vvvvvv " LOCATION);*/
 
                     xIter = byteView;
                     for (u64 i = 0; i < stopIdx; ++i, ++mWIter)

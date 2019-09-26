@@ -1,6 +1,7 @@
 #pragma once
 #include <cryptoTools/Common/Defines.h>
 #include <cryptoTools/Common/Log.h>
+#include <cryptoTools/Crypto/AES.h>
 #define NTL_Threads
 #define  DEBUG
 #include "PsiDefines.h"
@@ -8,8 +9,6 @@
 #include <NTL/vec_ZZ_p.h>
 #include <NTL/ZZ_pX.h>
 #include <NTL/ZZ.h>
-
-#include <cryptoTools/Crypto/AES.h>
 using namespace NTL;
 #define NTL_Threads_ON
 #ifdef _MSC_VER
@@ -43,51 +42,49 @@ namespace osuCrypto
 	static const ZZ mPrime184 = to_ZZ("24519928653854221733733552434404946937899825954937634843");  //nextprime(2^184)
 	static const ZZ mPrime188 = to_ZZ("392318858461667547739736838950479151006397215279002157113");  //nextprime(2^188)
 
-	inline u64 getMalCodewordSize(u64 setSize)
+	inline std::pair<u64,u64> getMalCodewordSize(u64 setSize)
 	{
 
-		if (setSize <= (1 << 10))
-			return 416;
-		else if (setSize <= (1 << 12))
-			return 420;
-		else if (setSize <= (1 << 14))
-			return 424;
-		else if (setSize <= (1 << 16))
-			return 428;
-		else if (setSize <= (1 << 18))
-			return 432;
-		else if (setSize <= (1 << 20))
-			return 436;
-		else if (setSize <= (1 << 22))
-			return 436;
-		else if (setSize <= (1 << 24))
-			return 444;
-
-		return 444;
-	}
-	inline u64 getShCodewordSize(u64 setSize)
-	{
+		return std::make_pair<u64, u64>(132, 583);
 
 		if (setSize <= (1 << 12))
-			return 448;
-		else if (setSize <= (1 << 16))
-			return 473;
-		else if (setSize <= (1 << 18))
-			return 432;
-		else if (setSize <= (1 << 20))
-			return 436;
-		else if (setSize <= (1 << 22))
-			return 436;
-		else if (setSize <= (1 << 24))
-			return 444;
+			return std::make_pair<u64, u64>(64,448);
 
-		return 444;
+		else if (setSize <= (1 << 16))
+			return std::make_pair<u64, u64>(72, 473);
+
+		else if (setSize <= (1 << 20))
+			return std::make_pair<u64, u64>(80, 495);
+
+		else if (setSize <= (1 << 24))
+			return std::make_pair<u64, u64>(88, 506);
+
+		return std::make_pair<u64, u64>(88, 506);;
 	}
 
-	inline u64 getBinSize(u64 setSize)
+	inline  std::pair<u64, u64> getShCodewordSize(u64 setSize)
 	{
-		u64 scale = 2.4;
-		return scale * setSize;
+		return std::make_pair<u64, u64>(64, 448);
+
+		if (setSize <= (1 << 12))
+			return std::make_pair<u64, u64>(64, 448);
+
+		else if (setSize <= (1 << 16))
+			return std::make_pair<u64, u64>(72, 473);
+
+		else if (setSize <= (1 << 20))
+			return std::make_pair<u64, u64>(80, 495);
+
+		else if (setSize <= (1 << 24))
+			return std::make_pair<u64, u64>(88, 506);
+
+		return std::make_pair<u64, u64>(88, 506);;
+	}
+
+	inline double getBinScaleSize(u64 setSize)
+	{
+		double scale =2.4;
+		return scale;
 
 		if (setSize <= (1 << 12))
 			return setSize;
@@ -107,7 +104,7 @@ namespace osuCrypto
 
 	inline u64 getSigma(u64 setSize)
 	{
-		return 80;
+		return 40+ log2(setSize);
 	}
 
 	inline u64 getFieldSizeInBits(u64 setSize)

@@ -43,7 +43,6 @@ protected:
     int times; //number of times to run the run function
     int iteration; //number of the current iteration
     int numOTs, tableRealSize, hashSize, fieldSize, fieldSizeBytes;
-    int reportStatistics = 0;
     int gamma;
     bool isMalicious;
 
