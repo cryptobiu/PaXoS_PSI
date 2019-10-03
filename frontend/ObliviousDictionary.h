@@ -94,8 +94,8 @@ public:
 
     void init();
 
-    vector<byte> getVariables() {
-        vector<byte> sigma(variables.size()*fieldSizeBytes);
+    void getVariables(vector<byte>& sigma) {
+        sigma.resize(variables.size()*fieldSizeBytes);
         for (int i=0; i<variables.size(); i++){
 //            cout<<"variables["<<i<<"] = "<<variables[i]<<endl;
             BytesFromGF2X(sigma.data() + i*fieldSizeBytes, rep(variables[i]), fieldSizeBytes);
@@ -104,8 +104,6 @@ public:
 //            }
 //            cout<<endl;
         }
-
-        return sigma;
     }
 
     int getHashSize(){return hashSize;}

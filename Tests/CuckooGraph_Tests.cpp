@@ -533,10 +533,10 @@ namespace tests_libOTe
 		{
 			std::cout << "=======linear_code_length " << linear_code_length[i].first << " ========\n";
 		
-			if (linear_code_length[i].first == 64)
+			/*if (linear_code_length[i].first == 64)
 				code.load(mx64by448, sizeof(mx64by448));
 			else if (linear_code_length[i].first == 132)
-				code.load(mx132by583, sizeof(mx132by583));
+				code.load(mx132by583, sizeof(mx132by583));*/
 
 			u64 plain_txt_bits = code.plaintextBitSize();
 			if (plain_txt_bits != linear_code_length[i].first) {

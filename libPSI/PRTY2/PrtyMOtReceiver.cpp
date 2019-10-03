@@ -73,6 +73,8 @@ namespace osuCrypto
         mT0 = Matrix<block>();
         mT1 = Matrix<block>();
         mW.resize(numOtExt, mCode.plaintextBlkSize());
+        cout<<"numOtExt = "<<numOtExt<<endl;
+        cout<<"mCode.plaintextBlkSize() = "<<mCode.plaintextBlkSize()<<endl;
         mT0.resize(numOtExt, numCols / 128);
         mT1.resize(numOtExt, numCols / 128);
 
@@ -244,6 +246,7 @@ namespace osuCrypto
 		block* t0Val = mT0.data() + mT0.stride() * otIdx;
 		block* t1Val = mT1.data() + mT0.stride() * otIdx;
 		block* wVal = mW.data() + mW.stride() * otIdx;
+//		cout<<"mw index = "<<mW.stride() * otIdx<<" all mW.size() = "<<mW.size()<<endl;
 		memcpy(wVal, input, mInputByteCount);
 
 		// use this for two thing, to store the code word and
@@ -376,28 +379,44 @@ namespace osuCrypto
         u64 statSecParam,
         u64 inputBitCount)
     {
-		//===========Semi-honest
-		if (inputBitCount == 64)
-			mCode.load(mx64by448, sizeof(mx64by448));
+        //===========Semi-honest
+        if (inputBitCount == 65)
+            mCode.load(mx65by448, sizeof(mx65by448));
 
-		//else if (inputBitCount == 72)
-		//	mCode.load(mx64, sizeof(mx64by448));
+        else if (inputBitCount == 72)
+            mCode.load(mx72by462, sizeof(mx72by462));
 
-		else if (inputBitCount == 80)
-			mCode.load(mx80by495, sizeof(mx80by495));
+        else if (inputBitCount == 84)
+            mCode.load(mx84by495, sizeof(mx84by495));
 
-		/*else if (inputBitCount == 72)
-			mCode.load(mx64by448, sizeof(mx64by448));*/
+        else if (inputBitCount == 90)
+            mCode.load(mx90by495, sizeof(mx90by495));
 
-			/*	else if (inputBitCount == 88)
-					mCode.load(mx64by448, sizeof(mx64by448));*/
-
-					//===========Malicous
-		else if (inputBitCount == 132)
-			mCode.load(mx132by583, sizeof(mx132by583));
-
-		else
-			throw std::runtime_error(LOCATION);
+            //===========Malicous
+        else if (inputBitCount == 132)
+            mCode.load(mx132by583, sizeof(mx132by583));
+        else if (inputBitCount == 138)
+            mCode.load(mx138by594, sizeof(mx138by594));
+        else if (inputBitCount == 144)
+            mCode.load(mx144by605, sizeof(mx144by605));
+        else if (inputBitCount == 150)
+            mCode.load(mx150by616, sizeof(mx150by616));
+        else if (inputBitCount == 156)
+            mCode.load(mx156by627, sizeof(mx156by627));
+        else if (inputBitCount == 162)
+            mCode.load(mx162by638, sizeof(mx162by638));
+        else if (inputBitCount == 168)
+            mCode.load(mx168by649, sizeof(mx168by649));
+        else if (inputBitCount == 174)
+            mCode.load(mx174by660, sizeof(mx174by660));
+        else if (inputBitCount == 210)
+            mCode.load(mx210by732, sizeof(mx210by732));
+        else if (inputBitCount == 217)
+            mCode.load(mx217by744, sizeof(mx217by744));
+        else if (inputBitCount == 231)
+            mCode.load(mx231by768, sizeof(mx231by768));
+        else if (inputBitCount == 238)
+            mCode.load(mx238by776, sizeof(mx238by776));
 
 
         mInputByteCount = (inputBitCount + 7) / 8;

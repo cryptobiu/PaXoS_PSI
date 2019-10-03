@@ -16,10 +16,6 @@ ProtocolParty::ProtocolParty(int argc, char* argv[]) : Protocol("PSI", argc, arg
     int zeroBits = 8 - fieldSize % 8;
     unsigned char zeroMask = 0xff >> zeroBits;
 
-    cout << "fieldSizeBytes: " << fieldSizeBytes << endl;
-    cout << "zeroBits: " << zeroBits << endl;
-    cout << "zero mask: " << (int)zeroMask << "  " << std::bitset<8>(zeroMask) << endl;
-
     gamma = 60;
     vector<string> subTaskNames{"Online", "CreateDictionary", "OT", "ComputeXors", "ReceiveAndCalc"};
     timer = new Measurement(*this, subTaskNames);
@@ -28,9 +24,6 @@ ProtocolParty::ProtocolParty(int argc, char* argv[]) : Protocol("PSI", argc, arg
     string partiesFile = this->getParser().getValueByKey(arguments, "partiesFile");
 
     isMalicious = stoi(this->getParser().getValueByKey(arguments, "malicious")) == 0 ? false : true;
-cout<<"malicious = "<<isMalicious<<endl;
-
-
     otherParty = comm.setCommunication(io_service, partyId, 2, partiesFile)[0];
 
     ConfigFile cf(partiesFile);
@@ -69,9 +62,7 @@ cout<<"malicious = "<<isMalicious<<endl;
 
     hashSize = dic->getHashSize();
     tableRealSize = dic->getTableSize();
-    numOTs = tableRealSize*2.4 + gamma;
-    cout<<"after create dictionary. hashSize = "<<hashSize<<endl;
-    cout<<"after create dictionary. tableRealSize = "<<tableRealSize<<endl;
+    numOTs = tableRealSize*2 + gamma;
     keys.resize(hashSize);
     vals.resize(hashSize*fieldSizeBytes);
 
@@ -87,7 +78,7 @@ cout<<"malicious = "<<isMalicious<<endl;
     }
     prg.getPRGBytes(vals, 0, hashSize*fieldSizeBytes);
 
-    cout << "masking the values so they will not have random in the padding bits" << endl;
+    //masking the values so they will not have random in the padding bits
     for (int i=0; i<hashSize; i++){
 //        cout << "key = " << keys[i] << " val = ";
 //        for (int j=0; j<fieldSizeBytes; j++){
@@ -110,6 +101,73 @@ cout<<"malicious = "<<isMalicious<<endl;
     vector<byte> fixedKey(128);
     prg.getPRGBytes(fixedKey, 0, 128);
     EVP_EncryptInit(aes, cipher, fixedKey.data(), NULL);
+
+    switch(fieldSize){
+        case 65:
+            code.load(mx65by448, sizeof(mx65by448));
+            cout<<"load mx65by448"<<endl;
+            break;
+        case 72:
+            code.load(mx72by462, sizeof(mx72by462));
+            cout<<"load mx72by462"<<endl;
+            break;
+        case 84:
+            code.load(mx84by495, sizeof(mx84by495));
+            cout<<"load mx84by495"<<endl;
+            break;
+        case 90:
+            code.load(mx90by495, sizeof(mx90by495));
+            cout<<"load mx90by495"<<endl;
+            break;
+        case 132:
+            code.load(mx132by583, sizeof(mx132by583));
+            cout<<"load mx132by583"<<endl;
+            break;
+        case 138:
+            code.load(mx138by594, sizeof(mx138by594));
+            cout<<"load mx138by594"<<endl;
+            break;
+        case 144:
+            code.load(mx144by605, sizeof(mx144by605));
+            cout<<"load mx144by605"<<endl;
+            break;
+        case 150:
+            code.load(mx150by616, sizeof(mx150by616));
+            cout<<"load mx150by616"<<endl;
+            break;
+        case 156:
+            code.load(mx156by627, sizeof(mx156by627));
+            cout<<"load mx156by627"<<endl;
+            break;
+        case 162:
+            code.load(mx162by638, sizeof(mx162by638));
+            cout<<"load mx162by638"<<endl;
+            break;
+        case 168:
+            code.load(mx168by649, sizeof(mx168by649));
+            cout<<"load mx168by649"<<endl;
+            break;
+        case 174:
+            code.load(mx174by660, sizeof(mx174by660));
+            cout<<"load mx174by660"<<endl;
+            break;
+        case 210:
+            code.load(mx210by732, sizeof(mx210by732));
+            cout<<"load mx210by732"<<endl;
+            break;
+        case 217:
+            code.load(mx217by744, sizeof(mx217by744));
+            cout<<"load mx217by744"<<endl;
+            break;
+        case 231:
+            code.load(mx231by768, sizeof(mx231by768));
+            cout<<"load mx231by768"<<endl;
+            break;
+        case 238:
+            code.load(mx238by776, sizeof(mx238by776));
+            cout<<"load mx238by776"<<endl;
+            break;
+    }
 
 }
 
@@ -152,7 +210,7 @@ void Receiver::runOnline() {
     auto t1 = high_resolution_clock::now();
 
     timer->startSubTask("CreateDictionary", iteration);
-    auto sigma = createDictionary();
+    createDictionary();
     timer->endSubTask("CreateDictionary", iteration);
     auto t2 = high_resolution_clock::now();
 
@@ -162,7 +220,7 @@ void Receiver::runOnline() {
     t1 = high_resolution_clock::now();
 
     timer->startSubTask("OT", iteration);
-    runOOS(sigma);
+    runOOS();
     timer->endSubTask("OT", iteration);
     t2 = high_resolution_clock::now();
 
@@ -191,10 +249,9 @@ void Receiver::runOnline() {
 
     duration = duration_cast<milliseconds>(end - start).count();
     cout << "all PSI protocol took in milliseconds: " << duration << endl;
-
 }
 
-vector<byte> Receiver::createDictionary(){
+void Receiver::createDictionary(){
     dic->init();
 
     auto start = high_resolution_clock::now();
@@ -238,42 +295,15 @@ vector<byte> Receiver::createDictionary(){
 //        dic->checkOutput();
 
 
-    return dic->getVariables();
 }
 
-void Receiver::runOOS(vector<byte> & sigma){
+void Receiver::runOOS(){
 
 
     std::string name = "n";
     IOService ios(0);
     Session ep1(ios, addressForOT, portForOT, SessionMode::Client, name);
     auto recvChl = ep1.addChannel(name, name);
-
-    LinearCode code;
-    switch(fieldSize){
-        case 64:
-            code.load(mx65by448, sizeof(mx65by448));
-            cout<<"load mx65by448"<<endl;
-            break;
-        case 72:
-            code.load(mx72by462, sizeof(mx72by462));
-            cout<<"load mx72by462"<<endl;
-            break;
-        case 84:
-            code.load(mx84by495, sizeof(mx84by495));
-            cout<<"load mx84by495"<<endl;
-            break;
-        case 90:
-            code.load(mx90by495, sizeof(mx90by495));
-            cout<<"load mx90by495"<<endl;
-            break;
-        case 132:
-            code.load(mx132by583, sizeof(mx132by583));
-            cout<<"load mx132by583"<<endl;
-            break;
-
-
-    }
 
     recv.configure(isMalicious, 40, fieldSize);
 
@@ -292,21 +322,20 @@ void Receiver::runOOS(vector<byte> & sigma){
 
     recv.setBaseOts(baseSend);
 
+    vector<byte> sigma;
+    dic->getVariables(sigma);
     //OT
     PRNG prng1(_mm_set_epi32(4253465, 3434565, 234435, 23987025));
     recv.init(numOTs, prng1, recvChl);
 
     for (u64 i = 0; i < numOTs; i += stepSize)
     {
-//        cout<<"step size "<<i<<endl;
         auto curStepSize = std::min<u64>(stepSize, numOTs - i);
-//        cout<<"curStepSize "<<curStepSize<<endl;
         for (u64 k = 0; k < curStepSize; ++k)
         {
             recv.otCorrection(i + k, &sigma[fieldSizeBytes*(k + i)]);
         }
         recv.sendCorrection(recvChl, curStepSize);
-//        cout<<"after send correction"<<endl;
     }
 }
 
@@ -321,7 +350,6 @@ void Receiver::computeXors(){
 
     xorsSet = unordered_set<uint64_t>(hashSize);
 
-//    cout<<"baseCount = "<<baseCount<<endl;
 //    cout<<"Xors:"<<endl;
     for (int i=0; i<hashSize; i++){
 
@@ -339,7 +367,6 @@ void Receiver::computeXors(){
 
 
         EVP_EncryptUpdate(aes, temp.data(), &size, (byte*)output.data(), blockSize*16);
-//cout<<"size = "<<size<<endl;
         xorsSet.insert(((uint64_t*)temp.data())[0]);
 
 //        for (int j=0; j<20;j++){
@@ -433,7 +460,6 @@ void Sender::runOnline() {
 
     auto start = high_resolution_clock::now();
     auto t1 = high_resolution_clock::now();
-
     runOOS();
     auto t2 = high_resolution_clock::now();
 
@@ -460,8 +486,6 @@ void Sender::runOnline() {
     duration = duration_cast<milliseconds>(end-start).count();
     cout << "all protocol took in milliseconds: " << duration << endl;
 
-
-
 }
 
 void Sender::runOOS(){
@@ -470,31 +494,6 @@ void Sender::runOOS(){
     IOService ios(0);
     Session ep0(ios, addressForOT, portForOT, SessionMode::Server, name);
     auto sendChl = ep0.addChannel(name, name);
-
-    switch(fieldSize){
-        case 64:
-            code.load(mx65by448, sizeof(mx65by448));
-            cout<<"load mx65by448"<<endl;
-            break;
-        case 72:
-            code.load(mx72by462, sizeof(mx72by462));
-            cout<<"load mx72by462"<<endl;
-            break;
-        case 84:
-            code.load(mx84by495, sizeof(mx84by495));
-            cout<<"load mx84by495"<<endl;
-            break;
-        case 90:
-            code.load(mx90by495, sizeof(mx90by495));
-            cout<<"load mx90by495"<<endl;
-            break;
-        case 132:
-            code.load(mx132by583, sizeof(mx132by583));
-            cout<<"load mx132by583"<<endl;
-            break;
-
-
-    }
 
     sender.configure(isMalicious, 40, fieldSize);
 
@@ -520,9 +519,7 @@ void Sender::runOOS(){
     // Get the random OT messages
     for (u64 i = 0; i < numOTs; i += stepSize)
     {
-//        cout<<"step size "<<i<<endl;
         auto curStepSize = std::min<u64>(stepSize, numOTs - i);
-//        cout<<"curStepSize "<<curStepSize<<endl;
         sender.recvCorrection(sendChl, curStepSize);
         for (u64 k = 0; k < curStepSize; ++k)
         {

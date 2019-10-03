@@ -45,26 +45,26 @@ namespace osuCrypto
 	inline std::pair<u64,u64> getMalCodewordSize(u64 setSize)
 	{
 
-		return std::make_pair<u64, u64>(132, 583);
+		//return std::make_pair<u64, u64>(132, 583);
 
 		if (setSize <= (1 << 12))
-			return std::make_pair<u64, u64>(64,448);
+			return std::make_pair<u64, u64>(144,605);
 
 		else if (setSize <= (1 << 16))
-			return std::make_pair<u64, u64>(72, 473);
+			return std::make_pair<u64, u64>(139, 605);
 
 		else if (setSize <= (1 << 20))
-			return std::make_pair<u64, u64>(80, 495);
+			return std::make_pair<u64, u64>(134, 594);
 
 		else if (setSize <= (1 << 24))
-			return std::make_pair<u64, u64>(88, 506);
+			return std::make_pair<u64, u64>(129, 508);
 
-		return std::make_pair<u64, u64>(88, 506);;
+		return std::make_pair<u64, u64>(129, 508);;
 	}
 
 	inline  std::pair<u64, u64> getShCodewordSize(u64 setSize)
 	{
-		return std::make_pair<u64, u64>(64, 448);
+		//return std::make_pair<u64, u64>(64, 448);
 
 		if (setSize <= (1 << 12))
 			return std::make_pair<u64, u64>(64, 448);

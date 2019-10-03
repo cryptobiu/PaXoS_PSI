@@ -77,6 +77,11 @@ void ObliviousDictionary::init() {
 
     first.clear();
     second.clear();
+
+    variables.clear();
+    variables.resize(2*tableRealSize + gamma, to_GF2E(0));
+    cout<<"tableRealSize = "<<tableRealSize<<endl;
+    cout<<"variables.size = "<<variables.size()<<endl;
 }
 
 
@@ -106,6 +111,8 @@ ObliviousDictionary::ObliviousDictionary(int hashSize, int fieldSize, int gamma)
 //    firstEncValues.resize(tableRealSize, 0);
 //    secondEncValues.resize(tableRealSize, 0);
     variables.resize(2*tableRealSize + gamma, to_GF2E(0));
+    cout<<"tableRealSize = "<<tableRealSize<<endl;
+    cout<<"variables.size = "<<variables.size()<<endl;
     sign.resize(2*tableRealSize, 0);
 //    keys.resize(hashSize);
 //    vals.reserve(hashSize);
