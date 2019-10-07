@@ -76,7 +76,7 @@ public:
 
      }
 
-    vector<uint64_t> dec(uint64_t key);
+    int dec(uint64_t key, vector<int>& indices);
 
     void createSets();
 

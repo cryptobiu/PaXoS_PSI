@@ -198,6 +198,7 @@ void ProtocolParty::run() {
 Receiver::Receiver(int argc, char *argv[]): ProtocolParty(argc, argv){
 
     dic->setKeysAndVals(keys, vals);
+    xorsSet = unordered_set<uint64_t>(hashSize);
 
 }
 
@@ -348,18 +349,21 @@ void Receiver::computeXors(){
     vector<byte> temp(blockSize*16);
     int size;
 
-    xorsSet = unordered_set<uint64_t>(hashSize);
+
+
+    vector<int> indices(gamma+2);
+    int indicesSize;
 
 //    cout<<"Xors:"<<endl;
     for (int i=0; i<hashSize; i++){
 
-        auto indices = dic->dec(keys[i]);
+        indicesSize = dic->dec(keys[i], indices);
 
         for (int j=0; j<blockSize; j++) {
             output[j] = _mm_xor_si128(*(recv.mT0.data(indices[0]) + j),*(recv.mT0.data(tableRealSize + indices[1]) + j));
         }
 
-        for (int k=2; k<indices.size(); k++) {
+        for (int k=2; k<indicesSize; k++) {
             for (int j = 0; j < blockSize; j++) {
                 output[j] = _mm_xor_si128(output[j], *(recv.mT0.data(2*tableRealSize + indices[k]) + j));
             }
@@ -415,39 +419,40 @@ void Receiver::checkVariables(vector<byte> & variables){
 //    cout<<"baseCount = "<<baseCount<<endl;
 //    cout<<"Xors:"<<endl;
 
-    bool error = false;
-    vector<byte> check(fieldSizeBytes);
-    for (int i=0; i<hashSize; i++){
-
-        auto indices = dic->dec(keys[i]);
-
-        for (int j=0; j<fieldSizeBytes; j++) {
-            check[j] = variables[indices[0]*fieldSizeBytes + j] ^ variables[tableRealSize*fieldSizeBytes + indices[1]*fieldSizeBytes + j];
-        }
-
-        for (int k=2; k<indices.size(); k++) {
-            for (int j=0; j<fieldSizeBytes; j++) {
-                check[j] = check[j] ^ variables[2*tableRealSize*fieldSizeBytes + indices[k]*fieldSizeBytes + j];
-            }
-        }
-
-        for (int j=0; j<fieldSizeBytes; j++) {
-            if (check[j] != vals[i*fieldSizeBytes + j]){
-                error = true;
-                cout<<"error in check! xor of D values is not equal to val"<<endl;
-            }
-        }
-
-    }
-
-    if (error ==  false){
-        cout<<"success!!! all D values equal to val"<<endl;
-    }
+//    bool error = false;
+//    vector<byte> check(fieldSizeBytes);
+//    for (int i=0; i<hashSize; i++){
+//
+//        auto indices = dic->dec(keys[i]);
+//
+//        for (int j=0; j<fieldSizeBytes; j++) {
+//            check[j] = variables[indices[0]*fieldSizeBytes + j] ^ variables[tableRealSize*fieldSizeBytes + indices[1]*fieldSizeBytes + j];
+//        }
+//
+//        for (int k=2; k<indices.size(); k++) {
+//            for (int j=0; j<fieldSizeBytes; j++) {
+//                check[j] = check[j] ^ variables[2*tableRealSize*fieldSizeBytes + indices[k]*fieldSizeBytes + j];
+//            }
+//        }
+//
+//        for (int j=0; j<fieldSizeBytes; j++) {
+//            if (check[j] != vals[i*fieldSizeBytes + j]){
+//                error = true;
+//                cout<<"error in check! xor of D values is not equal to val"<<endl;
+//            }
+//        }
+//
+//    }
+//
+//    if (error ==  false){
+//        cout<<"success!!! all D values equal to val"<<endl;
+//    }
 
 }
 
 
 Sender::Sender(int argc, char *argv[]) : ProtocolParty(argc, argv){
+    xors.resize(hashSize);
 }
 
 Sender::~Sender() {
@@ -535,20 +540,20 @@ void Sender::computeXors(){
     int blockSize = baseCount/128;
     vector<block> output(blockSize);
 
-    xors.resize(hashSize);
-
     vector<byte> temp(blockSize*16);
     int size;
+    vector<int> indices(gamma+2);
+    int indicesSize;
 
     for (int i=0; i<hashSize; i++){
 
-        auto indices = dic->dec(keys[i]);
+        indicesSize = dic->dec(keys[i], indices);
 
         for (int j=0; j<blockSize; j++) {
             output[j] = _mm_xor_si128(*(sender.mT.data(indices[0]) + j),*(sender.mT.data(tableRealSize + indices[1]) + j));
         }
 
-        for (int k=2; k<indices.size(); k++) {
+        for (int k=2; k<indicesSize; k++) {
             for (int j = 0; j < blockSize; j++) {
                 output[j] = _mm_xor_si128(output[j], *(sender.mT.data(2*tableRealSize + indices[k]) + j));
             }

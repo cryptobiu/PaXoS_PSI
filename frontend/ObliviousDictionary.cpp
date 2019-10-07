@@ -22,22 +22,24 @@ void ObliviousDictionary::createSets(){
 //    hashSize = tableRealSize/1.2;
 }
 
-vector<uint64_t> ObliviousDictionary::dec(uint64_t key){
+int ObliviousDictionary::dec(uint64_t key, vector<int>& indices){
 
-    vector<uint64_t> indices;
-    indices.push_back(first.bucket(key));
-    indices.push_back(second.bucket(key));
+    memset(indices.data(), 0, indices.size());
+    indices[0] = first.bucket(key);
+    indices[1] = second.bucket(key);
 
+    int counter = 2;
     auto dhBits = getDHBits(key);
     uint64_t mask = 1;
     for (int j=0; j<gamma; j++){
         if ((dhBits & mask) == 1){
-            indices.push_back(j); //put 1 in the right vertex of the edge
+            indices[counter++] = j; //put 1 in the right vertex of the edge
         }
         dhBits = dhBits >> 1;
     }
 
-    return indices;
+    return counter;
+
 }
 
 uint64_t ObliviousDictionary::getDHBits(uint64_t key){
@@ -134,12 +136,10 @@ ObliviousDictionary::ObliviousDictionary(int hashSize, int fieldSize, int gamma)
 
 void ObliviousDictionary::fillTables(){
 
-    uint64_t key;
     for (int i=0; i<hashSize; i++){
 
-        key = keys[i];
-        first.insert(key);
-        second.insert(key);
+        first.insert({keys[i]});
+        second.insert({keys[i]});
 
     }
 
@@ -397,18 +397,21 @@ void ObliviousDictionary::unpeeling(){
     byte* randomVal;
     GF2E dhBitsVal;
     GF2X temp;
+    int indicesSize;
+
+    vector<int> indices(gamma+2);
 
     while (peelingCounter > 0){
 //            cout<<"key = "<<key<<endl;
         key = peelingVector[--peelingCounter];
-        auto indices = dec(key);
+        indicesSize = dec(key, indices);
 //cout<<"indices = "<<endl;
 //for (int i=0; i<indices.size(); i++){
 //    cout<<indices[i]<<" ";
 //}
 //cout<<endl;
         dhBitsVal = 0;
-        for (int j=2; j<indices.size(); j++){
+        for (int j=2; j<indicesSize; j++){
 
             dhBitsVal += variables[2*tableRealSize+ indices[j]]; //put 1 in the right vertex of the edge
 
@@ -449,15 +452,17 @@ void ObliviousDictionary::checkOutput(){
 
     uint64_t key;
     GF2E val, dhBitsVal;
+    vector<int> indices(gamma+2);
+    int indicesSize;
 
     for (int i=0; i<hashSize; i++){
         key = keys[i];
         val = vals[key];
 
-        auto indices = dec(key);
+        indicesSize = dec(key, indices);
 
         dhBitsVal = 0;
-        for (int j=2; j<indices.size(); j++){
+        for (int j=2; j<indicesSize; j++){
             dhBitsVal += variables[2*tableRealSize+ indices[j]]; //put 1 in the right vertex of the edge
 
         }
