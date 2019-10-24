@@ -217,7 +217,12 @@ void Receiver::runOnline() {
 
     auto duration = duration_cast<milliseconds>(t2-t1).count();
     cout << "createDictionary took in milliseconds: " << duration << endl;
+
+//    cout<<"before check"<<endl;
+//    vector<byte> sigma;
+//    dic->getVariables(sigma);
 //    checkVariables(sigma);
+//    cout<<"after check"<<endl;
     t1 = high_resolution_clock::now();
 
     timer->startSubTask("OT", iteration);
@@ -410,43 +415,46 @@ void Receiver::receiveSenderXors(){
 
 
 void Receiver::checkVariables(vector<byte> & variables){
+    recv.configure(isMalicious, 40, fieldSize);
+    u64 baseCount = recv.getBaseOTCount();
+    int blockSize = baseCount/128;
 
-//    u64 baseCount = recv.getBaseOTCount();
-//    int blockSize = baseCount/128;
-//
-//    vector<vector<block>> outputs(keys.size(), vector<block>(blockSize));
-//
-//    cout<<"baseCount = "<<baseCount<<endl;
-//    cout<<"Xors:"<<endl;
+    vector<vector<block>> outputs(keys.size(), vector<block>(blockSize));
 
-//    bool error = false;
-//    vector<byte> check(fieldSizeBytes);
-//    for (int i=0; i<hashSize; i++){
-//
-//        auto indices = dic->dec(keys[i]);
-//
-//        for (int j=0; j<fieldSizeBytes; j++) {
-//            check[j] = variables[indices[0]*fieldSizeBytes + j] ^ variables[tableRealSize*fieldSizeBytes + indices[1]*fieldSizeBytes + j];
-//        }
-//
-//        for (int k=2; k<indices.size(); k++) {
-//            for (int j=0; j<fieldSizeBytes; j++) {
-//                check[j] = check[j] ^ variables[2*tableRealSize*fieldSizeBytes + indices[k]*fieldSizeBytes + j];
-//            }
-//        }
-//
-//        for (int j=0; j<fieldSizeBytes; j++) {
-//            if (check[j] != vals[i*fieldSizeBytes + j]){
-//                error = true;
-//                cout<<"error in check! xor of D values is not equal to val"<<endl;
-//            }
-//        }
-//
-//    }
-//
-//    if (error ==  false){
-//        cout<<"success!!! all D values equal to val"<<endl;
-//    }
+    cout<<"baseCount = "<<baseCount<<endl;
+    cout<<"Xors:"<<endl;
+
+    vector<int> indices(gamma+2);
+    int indicesSize;
+
+    bool error = false;
+    vector<byte> check(fieldSizeBytes);
+    for (int i=0; i<hashSize; i++){
+
+        indicesSize = dic->dec(keys[i], indices);
+
+        for (int j=0; j<fieldSizeBytes; j++) {
+            check[j] = variables[indices[0]*fieldSizeBytes + j] ^ variables[tableRealSize*fieldSizeBytes + indices[1]*fieldSizeBytes + j];
+        }
+
+        for (int k=2; k<indicesSize; k++) {
+            for (int j=0; j<fieldSizeBytes; j++) {
+                check[j] = check[j] ^ variables[2*tableRealSize*fieldSizeBytes + indices[k]*fieldSizeBytes + j];
+            }
+        }
+
+        for (int j=0; j<fieldSizeBytes; j++) {
+            if (check[j] != vals[i*fieldSizeBytes + j]){
+                error = true;
+                cout<<"error in check! xor of D values is not equal to val"<<endl;
+            }
+        }
+
+    }
+
+    if (error ==  false){
+        cout<<"success!!! all D values equal to val"<<endl;
+    }
 
 }
 

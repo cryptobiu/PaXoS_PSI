@@ -37,7 +37,7 @@ endif()
 
 
 # Select flags.
-SET(CMAKE_CXX_FLAGS_RELEASE "-O3 -DNDEBUG")
+SET(CMAKE_CXX_FLAGS_RELEASE "-O3 -g -DNDEBUG")
 SET(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-O2 -g -ggdb -rdynamic")
 SET(CMAKE_CXX_FLAGS_DEBUG  "-O0 -g3 -ggdb -rdynamic")
 
@@ -79,13 +79,6 @@ include_directories("${BOOST_ROOT}")
 #############################################
 add_subdirectory(libPSI)
 include_directories(libPSI)
-
-
-#############################################
-#           Build libPSI Tests              #
-#############################################
-add_subdirectory(Tests)
-include_directories(Tests)
 
 
 #############################################

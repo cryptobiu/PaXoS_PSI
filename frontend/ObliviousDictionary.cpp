@@ -468,8 +468,8 @@ void ObliviousDictionary::checkOutput(){
         }
 
         if ((variables[indices[0]] + variables[tableRealSize + indices[1]] + dhBitsVal) == val) {
-//            if (i%100000 == 0)
-//                cout<<"good value!!! val = "<<val<<endl;
+            if (i%100000 == 0)
+                cout<<"good value!!! val = "<<val<<endl;
         } else {//if (!hasLoop()){
             cout<<"invalid value :( val = "<<val<<" wrong val = "<<(variables[indices[0]] + variables[tableRealSize + indices[1]] + dhBitsVal)<<endl;
             cout<<"variables["<<indices[0]<<"] = "<<variables[indices[0]]<<endl;

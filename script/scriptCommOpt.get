@@ -1,4 +1,0 @@
-/scratch/setup-network status >> outputBigPoly
-echo "======================================================="  >> outputBigPoly
-./bin/frontend.exe -r 1 -N 16 -n 11041 -t 1 & ./bin/frontend.exe -r 0 -N 16 -n 11041 -t 1 >> outputBigPoly1
-sleep 10
