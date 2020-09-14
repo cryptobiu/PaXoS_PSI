@@ -1,4 +1,4 @@
-# Install script for directory: /home/moriya/PaXoS_PSI_New
+# Install script for directory: /home/ubuntu/PaXoS_PSI
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,9 +39,9 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/moriya/PaXoS_PSI_New/libPSI/cmake_install.cmake")
-  include("/home/moriya/PaXoS_PSI_New/Tests/cmake_install.cmake")
-  include("/home/moriya/PaXoS_PSI_New/frontend/cmake_install.cmake")
+  include("/home/ubuntu/PaXoS_PSI/libPSI/cmake_install.cmake")
+  include("/home/ubuntu/PaXoS_PSI/Tests/cmake_install.cmake")
+  include("/home/ubuntu/PaXoS_PSI/frontend/cmake_install.cmake")
 
 endif()
 
@@ -53,5 +53,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/moriya/PaXoS_PSI_New/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/ubuntu/PaXoS_PSI/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

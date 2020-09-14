@@ -4,21 +4,21 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/moriya/PaXoS_PSI_New/frontend/CLP.cpp" "/home/moriya/PaXoS_PSI_New/frontend/CMakeFiles/frontend.exe.dir/CLP.cpp.o"
-  "/home/moriya/PaXoS_PSI_New/frontend/Hasher.cpp" "/home/moriya/PaXoS_PSI_New/frontend/CMakeFiles/frontend.exe.dir/Hasher.cpp.o"
-  "/home/moriya/PaXoS_PSI_New/frontend/ObliviousDictionary.cpp" "/home/moriya/PaXoS_PSI_New/frontend/CMakeFiles/frontend.exe.dir/ObliviousDictionary.cpp.o"
-  "/home/moriya/PaXoS_PSI_New/frontend/ProtocolParty.cpp" "/home/moriya/PaXoS_PSI_New/frontend/CMakeFiles/frontend.exe.dir/ProtocolParty.cpp.o"
-  "/home/moriya/PaXoS_PSI_New/frontend/ecdhMain.cpp" "/home/moriya/PaXoS_PSI_New/frontend/CMakeFiles/frontend.exe.dir/ecdhMain.cpp.o"
-  "/home/moriya/PaXoS_PSI_New/frontend/gf2e_mat_solve.cpp" "/home/moriya/PaXoS_PSI_New/frontend/CMakeFiles/frontend.exe.dir/gf2e_mat_solve.cpp.o"
-  "/home/moriya/PaXoS_PSI_New/frontend/main.cpp" "/home/moriya/PaXoS_PSI_New/frontend/CMakeFiles/frontend.exe.dir/main.cpp.o"
-  "/home/moriya/PaXoS_PSI_New/frontend/signalHandle.cpp" "/home/moriya/PaXoS_PSI_New/frontend/CMakeFiles/frontend.exe.dir/signalHandle.cpp.o"
-  "/home/moriya/PaXoS_PSI_New/frontend/util.cpp" "/home/moriya/PaXoS_PSI_New/frontend/CMakeFiles/frontend.exe.dir/util.cpp.o"
+  "/home/ubuntu/PaXoS_PSI/frontend/CLP.cpp" "/home/ubuntu/PaXoS_PSI/frontend/CMakeFiles/frontend.exe.dir/CLP.cpp.o"
+  "/home/ubuntu/PaXoS_PSI/frontend/Hasher.cpp" "/home/ubuntu/PaXoS_PSI/frontend/CMakeFiles/frontend.exe.dir/Hasher.cpp.o"
+  "/home/ubuntu/PaXoS_PSI/frontend/ObliviousDictionary.cpp" "/home/ubuntu/PaXoS_PSI/frontend/CMakeFiles/frontend.exe.dir/ObliviousDictionary.cpp.o"
+  "/home/ubuntu/PaXoS_PSI/frontend/ProtocolParty.cpp" "/home/ubuntu/PaXoS_PSI/frontend/CMakeFiles/frontend.exe.dir/ProtocolParty.cpp.o"
+  "/home/ubuntu/PaXoS_PSI/frontend/ecdhMain.cpp" "/home/ubuntu/PaXoS_PSI/frontend/CMakeFiles/frontend.exe.dir/ecdhMain.cpp.o"
+  "/home/ubuntu/PaXoS_PSI/frontend/gf2e_mat_solve.cpp" "/home/ubuntu/PaXoS_PSI/frontend/CMakeFiles/frontend.exe.dir/gf2e_mat_solve.cpp.o"
+  "/home/ubuntu/PaXoS_PSI/frontend/main.cpp" "/home/ubuntu/PaXoS_PSI/frontend/CMakeFiles/frontend.exe.dir/main.cpp.o"
+  "/home/ubuntu/PaXoS_PSI/frontend/signalHandle.cpp" "/home/ubuntu/PaXoS_PSI/frontend/CMakeFiles/frontend.exe.dir/signalHandle.cpp.o"
+  "/home/ubuntu/PaXoS_PSI/frontend/util.cpp" "/home/ubuntu/PaXoS_PSI/frontend/CMakeFiles/frontend.exe.dir/util.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_CXX
-  "SOLUTION_DIR=\"/home/moriya/PaXoS_PSI_New\""
+  "SOLUTION_DIR=\"/home/ubuntu/PaXoS_PSI\""
   )
 
 # The include file search paths:
@@ -34,7 +34,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "libPSI"
   "Tests"
   "frontend"
-  "/home/moriya"
+  "/home/ubuntu"
   "frontend/xxHash"
   "libOTe/cryptoTools/cryptoTools"
   "libOTe/cryptoTools/cryptoTools/Crypto"
@@ -42,7 +42,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/moriya/PaXoS_PSI_New/libPSI/CMakeFiles/libPSI.dir/DependInfo.cmake"
+  "/home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/libPSI.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

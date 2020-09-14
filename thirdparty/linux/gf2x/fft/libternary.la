@@ -17,7 +17,7 @@ old_library='libternary.a'
 inherited_linker_flags=''
 
 # Libraries that this one depends upon.
-dependency_libs=' /home/moriya/PaXoS_PSI/thirdparty/linux/gf2x/libgf2x.la'
+dependency_libs=' /home/ubuntu/PaXoS_PSI/thirdparty/linux/gf2x/libgf2x.la'
 
 # Names of additional weak libraries provided by this library
 weak_library_names=''
@@ -39,4 +39,4 @@ dlpreopen=''
 
 # Directory that this library needs to be installed in:
 libdir=''
-relink_command="(cd /home/moriya/PaXoS_PSI/thirdparty/linux/gf2x/fft; /bin/bash \"/home/moriya/PaXoS_PSI/thirdparty/linux/gf2x/libtool\"  --tag CC --mode=relink gcc -DENGINE_TERNARY -m64 -O2 -Wall -W -msse2 -msse3 -mssse3 -msse4.1 -mpclmul -o libternary.la libternary_la-gf2x-ternary-fft.lo ../libgf2x.la @inst_prefix_dir@)"
+relink_command="(cd /home/ubuntu/PaXoS_PSI/thirdparty/linux/gf2x/fft; /bin/bash \"/home/ubuntu/PaXoS_PSI/thirdparty/linux/gf2x/libtool\"  --tag CC --mode=relink gcc -DENGINE_TERNARY -m64 -O2 -Wall -W -msse2 -msse3 -mssse3 -msse4.1 -mpclmul -o libternary.la libternary_la-gf2x-ternary-fft.lo ../libgf2x.la @inst_prefix_dir@)"

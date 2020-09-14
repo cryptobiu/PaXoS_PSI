@@ -1,4 +1,4 @@
-# Install script for directory: /home/moriya/PaXoS_PSI_New/libPSI
+# Install script for directory: /home/ubuntu/PaXoS_PSI/libPSI
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -4,23 +4,23 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/moriya/PaXoS_PSI_New/Tests/AknOt_Tests.cpp" "/home/moriya/PaXoS_PSI_New/Tests/CMakeFiles/libOTe_Tests.dir/AknOt_Tests.cpp.o"
-  "/home/moriya/PaXoS_PSI_New/Tests/BaseOT_Tests.cpp" "/home/moriya/PaXoS_PSI_New/Tests/CMakeFiles/libOTe_Tests.dir/BaseOT_Tests.cpp.o"
-  "/home/moriya/PaXoS_PSI_New/Tests/Common.cpp" "/home/moriya/PaXoS_PSI_New/Tests/CMakeFiles/libOTe_Tests.dir/Common.cpp.o"
-  "/home/moriya/PaXoS_PSI_New/Tests/CuckooGraph_Tests.cpp" "/home/moriya/PaXoS_PSI_New/Tests/CMakeFiles/libOTe_Tests.dir/CuckooGraph_Tests.cpp.o"
-  "/home/moriya/PaXoS_PSI_New/Tests/NcoOT_Tests.cpp" "/home/moriya/PaXoS_PSI_New/Tests/CMakeFiles/libOTe_Tests.dir/NcoOT_Tests.cpp.o"
-  "/home/moriya/PaXoS_PSI_New/Tests/OTOracleReceiver.cpp" "/home/moriya/PaXoS_PSI_New/Tests/CMakeFiles/libOTe_Tests.dir/OTOracleReceiver.cpp.o"
-  "/home/moriya/PaXoS_PSI_New/Tests/OTOracleSender.cpp" "/home/moriya/PaXoS_PSI_New/Tests/CMakeFiles/libOTe_Tests.dir/OTOracleSender.cpp.o"
-  "/home/moriya/PaXoS_PSI_New/Tests/OT_Tests.cpp" "/home/moriya/PaXoS_PSI_New/Tests/CMakeFiles/libOTe_Tests.dir/OT_Tests.cpp.o"
-  "/home/moriya/PaXoS_PSI_New/Tests/PSI_Tests.cpp" "/home/moriya/PaXoS_PSI_New/Tests/CMakeFiles/libOTe_Tests.dir/PSI_Tests.cpp.o"
-  "/home/moriya/PaXoS_PSI_New/Tests/UnitTests.cpp" "/home/moriya/PaXoS_PSI_New/Tests/CMakeFiles/libOTe_Tests.dir/UnitTests.cpp.o"
-  "/home/moriya/PaXoS_PSI_New/Tests/nOPRF_Tests.cpp" "/home/moriya/PaXoS_PSI_New/Tests/CMakeFiles/libOTe_Tests.dir/nOPRF_Tests.cpp.o"
+  "/home/ubuntu/PaXoS_PSI/Tests/AknOt_Tests.cpp" "/home/ubuntu/PaXoS_PSI/Tests/CMakeFiles/libOTe_Tests.dir/AknOt_Tests.cpp.o"
+  "/home/ubuntu/PaXoS_PSI/Tests/BaseOT_Tests.cpp" "/home/ubuntu/PaXoS_PSI/Tests/CMakeFiles/libOTe_Tests.dir/BaseOT_Tests.cpp.o"
+  "/home/ubuntu/PaXoS_PSI/Tests/Common.cpp" "/home/ubuntu/PaXoS_PSI/Tests/CMakeFiles/libOTe_Tests.dir/Common.cpp.o"
+  "/home/ubuntu/PaXoS_PSI/Tests/CuckooGraph_Tests.cpp" "/home/ubuntu/PaXoS_PSI/Tests/CMakeFiles/libOTe_Tests.dir/CuckooGraph_Tests.cpp.o"
+  "/home/ubuntu/PaXoS_PSI/Tests/NcoOT_Tests.cpp" "/home/ubuntu/PaXoS_PSI/Tests/CMakeFiles/libOTe_Tests.dir/NcoOT_Tests.cpp.o"
+  "/home/ubuntu/PaXoS_PSI/Tests/OTOracleReceiver.cpp" "/home/ubuntu/PaXoS_PSI/Tests/CMakeFiles/libOTe_Tests.dir/OTOracleReceiver.cpp.o"
+  "/home/ubuntu/PaXoS_PSI/Tests/OTOracleSender.cpp" "/home/ubuntu/PaXoS_PSI/Tests/CMakeFiles/libOTe_Tests.dir/OTOracleSender.cpp.o"
+  "/home/ubuntu/PaXoS_PSI/Tests/OT_Tests.cpp" "/home/ubuntu/PaXoS_PSI/Tests/CMakeFiles/libOTe_Tests.dir/OT_Tests.cpp.o"
+  "/home/ubuntu/PaXoS_PSI/Tests/PSI_Tests.cpp" "/home/ubuntu/PaXoS_PSI/Tests/CMakeFiles/libOTe_Tests.dir/PSI_Tests.cpp.o"
+  "/home/ubuntu/PaXoS_PSI/Tests/UnitTests.cpp" "/home/ubuntu/PaXoS_PSI/Tests/CMakeFiles/libOTe_Tests.dir/UnitTests.cpp.o"
+  "/home/ubuntu/PaXoS_PSI/Tests/nOPRF_Tests.cpp" "/home/ubuntu/PaXoS_PSI/Tests/CMakeFiles/libOTe_Tests.dir/nOPRF_Tests.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_CXX
-  "SOLUTION_DIR=\"/home/moriya/PaXoS_PSI_New\""
+  "SOLUTION_DIR=\"/home/ubuntu/PaXoS_PSI\""
   )
 
 # The include file search paths:

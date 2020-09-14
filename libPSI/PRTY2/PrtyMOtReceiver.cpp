@@ -7,7 +7,25 @@
 #include "PrtyMDefines.h"
 
 #include <cryptoTools/Common/BitVector.h>
-#include "Tools/mx_132_by_583.h"
+//#include "Tools/mx_132_by_583.h"
+
+#include <libPSI/Tools/mx_72_by_462.h>
+#include <libPSI/Tools/mx_84_by_495.h>
+#include <libPSI/Tools/mx_90_by_495.h>
+#include <libPSI/Tools/mx_65_by_448.h>
+#include <libPSI/Tools/mx_132_by_583.h>
+#include <libPSI/Tools/mx_138_by_594.h>
+#include <libPSI/Tools/mx_144_by_605.h>
+#include <libPSI/Tools/mx_150_by_616.h>
+#include <libPSI/Tools/mx_156_by_627.h>
+#include <libPSI/Tools/mx_162_by_638.h>
+#include <libPSI/Tools/mx_168_by_649.h>
+#include <libPSI/Tools/mx_174_by_660.h>
+#include <libPSI/Tools/mx_210_by_732.h>
+#include <libPSI/Tools/mx_217_by_744.h>
+#include <libPSI/Tools/mx_231_by_768.h>
+#include <libPSI/Tools/mx_238_by_776.h>
+
 
 using namespace std;
 
@@ -372,11 +390,58 @@ namespace osuCrypto
             throw std::runtime_error("must call configure(...) before getBaseOTCount() " LOCATION);
     }
 
+
+
+void PrtyMOtReceiver::configure(
+        bool maliciousSecure,
+        u64 statSecParam,
+        u64 inputBitCount)
+    {
+		//===========Semi-honest
+		if (inputBitCount == 64)
+			mCode.load(mx65by448, sizeof(mx65by448));
+
+		else if (inputBitCount == 72)
+			mCode.load(mx72by462, sizeof(mx72by462));
+
+		else if (inputBitCount == 80)
+			mCode.load(mx84by495, sizeof(mx84by495));
+
+		else if (inputBitCount == 88)
+			mCode.load(mx90by495, sizeof(mx90by495));
+
+		else if (inputBitCount == 88)
+			mCode.load(mx90by495, sizeof(mx90by495));
+
+		//===========Malicous
+		else if (inputBitCount == 144)
+			mCode.load(mx144by605, sizeof(mx144by605));
+		else if (inputBitCount == 139)
+			mCode.load(mx138by594, sizeof(mx138by594));
+		else if (inputBitCount == 134)
+			mCode.load(mx132by583, sizeof(mx132by583));
+		else if (inputBitCount == 129)
+			mCode.load(mx132by583, sizeof(mx132by583));
+
+		else
+			mCode.load(mx132by583, sizeof(mx132by583));
+
+
+        mInputByteCount = (inputBitCount + 7) / 8;
+        mStatSecParam = statSecParam;
+        mMalicious = maliciousSecure;
+        mGens.resize(roundUpTo(mCode.codewordBitSize(), 128));
+    }
+
+
+
+/*    
     void PrtyMOtReceiver::configure(
         bool maliciousSecure,
         u64 statSecParam,
         u64 inputBitCount)
     {
+
         if (inputBitCount <= 132)
         {
 
@@ -386,12 +451,14 @@ namespace osuCrypto
         else
             throw std::runtime_error(LOCATION);
 
-
         mInputByteCount = (inputBitCount + 7) / 8;
         mStatSecParam = statSecParam;
         mMalicious = maliciousSecure;
         mGens.resize(roundUpTo(mCode.codewordBitSize(), 128));
     }
+
+*/
+
 
     void PrtyMOtReceiver::sendCorrection(Channel & chl, u64 sendCount)
     {
