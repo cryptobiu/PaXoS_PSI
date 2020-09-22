@@ -104,6 +104,7 @@ INSTALL(FILES ${MIRACL_LIB} DESTINATION lib)
 ###########################################################################
 
 set(BOOST_ROOT "${CMAKE_CURRENT_SOURCE_DIR}/../thirdparty/linux/boost/")
+message("BOOST_ROOT=" ${BOOST_ROOT})
 
 set(Boost_USE_STATIC_LIBS        ON) # only find static libs
 set(Boost_USE_MULTITHREADED      ON)
