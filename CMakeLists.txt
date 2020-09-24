@@ -91,5 +91,5 @@ include_directories(Tests)
 #############################################
 #              Build Frontend               #
 #############################################
-add_subdirectory(frontend)
+#add_subdirectory(frontend)
 
