@@ -41,6 +41,6 @@ find_library(
     NAMES tests_cryptoTools
     HINTS "${libOTe_Dirs}/lib/")
 
-target_link_libraries(frontend libPSI libboost_system.a
-        ${CMAKE_SOURCE_DIR}/frontend/xxHash/cmake_unofficial/libxxhash.so givaro blas gomp linbox libntl.a gmp
+target_link_libraries(frontend libPSI ${Boost_LIBRARIES}
+        ${CMAKE_SOURCE_DIR}/frontend/xxHash/cmake_unofficial/libxxhash.so givaro blas gomp linbox ${CMAKE_SOURCE_DIR}/thirdparty/linux/ntl/src/libntl.a gmp
         $ENV{HOME}/libscapi/libscapi.a crypto)
