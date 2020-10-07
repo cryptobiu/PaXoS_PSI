@@ -4,6 +4,7 @@
 
 #include "ProtocolParty.h"
 #include "cryptoTools/Crypto/RandomOracle.h"
+#include "libOTe/Base/naor-pinkas.h"
 
 ProtocolParty::ProtocolParty(int argc, char* argv[]) : Protocol("PSI", argc, argv)
 {
@@ -334,12 +335,14 @@ void Receiver::runOOS(){
     std::vector<std::array<block, 2>> baseSend(baseCount);
     BitVector baseChoice(baseCount);
     baseChoice.randomize(prng0);
-    prng0.get((u8*)baseSend.data()->data(), sizeof(block) * 2 * baseSend.size());
-    for (u64 i = 0; i < baseCount; ++i)
-    {
-        baseRecv[i] = baseSend[i][baseChoice[i]];
-    }
+    //prng0.get((u8*)baseSend.data()->data(), sizeof(block) * 2 * baseSend.size());
+    //for (u64 i = 0; i < baseCount; ++i)
+    //{
+    //    baseRecv[i] = baseSend[i][baseChoice[i]];
+    //}
 
+    oc::NaorPinkas base;
+    base.send(baseSend, prng0, recvChl);
     recv.setBaseOts(baseSend);
 
     vector<byte> sigma;
@@ -357,6 +360,8 @@ void Receiver::runOOS(){
         }
         recv.sendCorrection(recvChl, curStepSize);
     }
+
+    std::cout << "sent OT matrix, " << recv.mT1.size() << " = " << recv.mT1.rows() << " x " << recv.mT1.stride() << std::endl;
 }
 
 void Receiver::computeXors(){
@@ -542,11 +547,15 @@ void Sender::runOOS(){
     std::vector<std::array<block, 2>> baseSend(baseCount);
     baseChoice.resize(baseCount);
     baseChoice.randomize(prng0);
-    prng0.get((u8*)baseSend.data()->data(), sizeof(block) * 2 * baseSend.size());
-    for (u64 i = 0; i < baseCount; ++i)
-    {
-        baseRecv[i] = baseSend[i][baseChoice[i]];
-    }
+    //prng0.get((u8*)baseSend.data()->data(), sizeof(block) * 2 * baseSend.size());
+    //for (u64 i = 0; i < baseCount; ++i)
+    //{
+    //    baseRecv[i] = baseSend[i][baseChoice[i]];
+    //}
+
+
+    oc::NaorPinkas base;
+    base.receive(baseChoice, baseRecv, prng0, sendChl);
 
     sender.setBaseOts(baseRecv, baseChoice);
 
@@ -627,7 +636,9 @@ void Sender::sendXors(){
 
     otherParty->getChannel()->write((byte*)&size, 8);
     otherParty->getChannel()->write((byte*)&bytesPer, 8);
-    otherParty->getChannel()->write((byte*)xors2.data(), size);
+    otherParty->getChannel()->write((byte*)xors2.data(), xors2.size());
+
+    std::cout << "sending final encoding, " << xors2.size() << " = " << size << " x " << bytesPer << std::endl;
 }
 
 
