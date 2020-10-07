@@ -81,6 +81,8 @@ ProtocolParty::ProtocolParty(int argc, char* argv[]) : Protocol("PSI", argc, arg
     keys.resize(hashSize);
     vals.resize(hashSize*fieldSizeBytes);
 
+    xors2.resize(hashSize, bytesPerHash);
+
 
     //    auto key = prg.generateKey(128);
     prg = PrgFromOpenSSLAES(hashSize*fieldSizeBytes*2);
@@ -398,7 +400,7 @@ void Receiver::computeXors(){
         //EVP_EncryptUpdate(aes, temp.data(), &size, (byte*)output.data(), blockSize*16);
         ro.Reset();
         ro.Update((byte*)output.data(), blockSize * 16);
-        ro.Final(temp.data());
+        ro.Final((byte*)temp.data());
 
         xorsSet.insert(((uint64_t*)temp.data())[0]);
 
@@ -421,7 +423,7 @@ std::vector<u64> Receiver::receiveSenderXors(){
 
 
     //vector<uint64_t> senderOutputs(size);
-    oc::Matrix<byte> senderOutputs(size, bytesPer)
+    oc::Matrix<byte> senderOutputs(size, bytesPer);
     otherParty->getChannel()->read((byte*)senderOutputs.data(), senderOutputs.size());
 
     std::vector<u64> ret;
@@ -489,7 +491,6 @@ void Receiver::checkVariables(vector<byte> & variables){
 
 
 Sender::Sender(int argc, char *argv[]) : ProtocolParty(argc, argv){
-    xors2.resize(hashSize, bytePerHash);
 }
 
 Sender::~Sender() {
@@ -615,7 +616,7 @@ void Sender::computeXors(){
         //EVP_EncryptUpdate(aes, temp.data(), &size, (byte*)output.data(), blockSize*16);
         ro.Reset();
         ro.Update((byte*)output.data(), blockSize * 16);
-        ro.Final(xors2[i].data());
+        ro.Final((byte*)xors2[i].data());
         //xors[i] = ((uint64_t*)temp.data())[0];
         //memcpy(xors2[i].data(), temp.data(), blockSize * 16);
 //        for (int j=0; j<20;j++){

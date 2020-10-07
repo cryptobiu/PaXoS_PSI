@@ -75,6 +75,8 @@ protected:
 
     LinearCode code;
 
+    oc::Matrix<uint64_t> xors2;
+
 public:
 
     ProtocolParty(int argc, char *argv[]);
@@ -122,8 +124,6 @@ private :
     PrtyMOtSender sender;
     BitVector baseChoice;
 
-
-    oc::Matrix<uint64_t> xors2;
 
     void runOOS();
 
