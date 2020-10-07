@@ -363,7 +363,7 @@ void Receiver::runOOS(){
         recv.sendCorrection(recvChl, curStepSize);
     }
 
-    std::cout << "sent OT matrix, " << recv.mT1.size() << " = " << recv.mT1.rows() << " x " << recv.mT1.stride() << std::endl;
+    std::cout << "sent OT matrix, " << sizeof(block) * recv.mT1.size() << " = " << recv.mT1.rows() << " x " << sizeof(block) * recv.mT1.stride() << std::endl;
 }
 
 void Receiver::computeXors(){
