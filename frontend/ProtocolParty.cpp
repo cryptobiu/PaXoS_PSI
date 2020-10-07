@@ -30,7 +30,7 @@ ProtocolParty::ProtocolParty(int argc, char* argv[]) : Protocol("PSI", argc, arg
 
     if (isMalicious)
     {
-        bytesPerHash = 32 / 8;
+        bytesPerHash = 256 / 8;
     }
     else
     {
