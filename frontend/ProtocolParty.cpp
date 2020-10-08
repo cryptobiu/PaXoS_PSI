@@ -3,6 +3,8 @@
 //
 
 #include "ProtocolParty.h"
+#include "cryptoTools/Crypto/RandomOracle.h"
+#include "libOTe/Base/naor-pinkas.h"
 
 ProtocolParty::ProtocolParty(int argc, char* argv[]) : Protocol("PSI", argc, argv)
 {
@@ -25,6 +27,19 @@ ProtocolParty::ProtocolParty(int argc, char* argv[]) : Protocol("PSI", argc, arg
 
     isMalicious = stoi(this->getParser().getValueByKey(arguments, "malicious")) == 0 ? false : true;
     otherParty = comm.setCommunication(io_service, partyId, 2, partiesFile)[0];
+
+    if (isMalicious)
+    {
+        bytesPerHash = 256 / 8;
+    }
+    else
+    {
+        bytesPerHash = (40 + 2 * std::log2(hashSize) + 7 ) / 8;
+
+        // some logic requires at least 8 bytes.
+        if (bytesPerHash < 8)
+            bytesPerHash = 8;
+    }
 
     ConfigFile cf(partiesFile);
 
@@ -65,6 +80,8 @@ ProtocolParty::ProtocolParty(int argc, char* argv[]) : Protocol("PSI", argc, arg
     numOTs = tableRealSize*2 + gamma;
     keys.resize(hashSize);
     vals.resize(hashSize*fieldSizeBytes);
+
+    xors2.resize(hashSize, bytesPerHash);
 
 
     //    auto key = prg.generateKey(128);
@@ -320,12 +337,14 @@ void Receiver::runOOS(){
     std::vector<std::array<block, 2>> baseSend(baseCount);
     BitVector baseChoice(baseCount);
     baseChoice.randomize(prng0);
-    prng0.get((u8*)baseSend.data()->data(), sizeof(block) * 2 * baseSend.size());
-    for (u64 i = 0; i < baseCount; ++i)
-    {
-        baseRecv[i] = baseSend[i][baseChoice[i]];
-    }
+    //prng0.get((u8*)baseSend.data()->data(), sizeof(block) * 2 * baseSend.size());
+    //for (u64 i = 0; i < baseCount; ++i)
+    //{
+    //    baseRecv[i] = baseSend[i][baseChoice[i]];
+    //}
 
+    oc::NaorPinkas base;
+    base.send(baseSend, prng0, recvChl);
     recv.setBaseOts(baseSend);
 
     vector<byte> sigma;
@@ -343,6 +362,8 @@ void Receiver::runOOS(){
         }
         recv.sendCorrection(recvChl, curStepSize);
     }
+
+    std::cout << "sent OT matrix, " << sizeof(block) * recv.mT1.size() << " = " << recv.mT1.rows() << " x " << sizeof(block) * recv.mT1.stride() << std::endl;
 }
 
 void Receiver::computeXors(){
@@ -351,13 +372,14 @@ void Receiver::computeXors(){
     int blockSize = baseCount/128;
 
     vector<block> output(blockSize);
-    vector<byte> temp(blockSize*16);
+    vector<byte> temp(xors2.stride());
     int size;
 
 
 
     vector<int> indices(gamma+2);
     int indicesSize;
+    oc::RandomOracle ro(xors2.stride());
 
 //    cout<<"Xors:"<<endl;
     for (int i=0; i<hashSize; i++){
@@ -375,7 +397,11 @@ void Receiver::computeXors(){
         }
 
 
-        EVP_EncryptUpdate(aes, temp.data(), &size, (byte*)output.data(), blockSize*16);
+        //EVP_EncryptUpdate(aes, temp.data(), &size, (byte*)output.data(), blockSize*16);
+        ro.Reset();
+        ro.Update((byte*)output.data(), blockSize * 16);
+        ro.Final((byte*)temp.data());
+
         xorsSet.insert(((uint64_t*)temp.data())[0]);
 
 //        for (int j=0; j<20;j++){
@@ -389,27 +415,32 @@ void Receiver::computeXors(){
 
 }
 
-void Receiver::receiveSenderXors(){
+std::vector<u64> Receiver::receiveSenderXors(){
 
-    uint64_t size;
+    uint64_t size, bytesPer;
     otherParty->getChannel()->read((byte*)&size, 8);
+    otherParty->getChannel()->read((byte*)&bytesPer, 8);
 
 
-    vector<uint64_t> senderOutputs(size);
-    otherParty->getChannel()->read((byte*)senderOutputs.data(), size*8);
+    //vector<uint64_t> senderOutputs(size);
+    oc::Matrix<byte> senderOutputs(size, bytesPer);
+    otherParty->getChannel()->read((byte*)senderOutputs.data(), senderOutputs.size());
 
-
+    std::vector<u64> ret;
     uint64_t count = 0;
     for (int i=0; i<hashSize; i++){
-        if (xorsSet.find(senderOutputs[i]) != xorsSet.end()){
+        //auto val = 
+        uint64_t vv = *(uint64_t*)senderOutputs[i].data();
+        if (xorsSet.find(vv) != xorsSet.end()){
             count++;
+            ret.push_back(i);
 //            cout<<"element "<<i<<" is in the intersection"<<endl;
         }
     }
 
     cout<<"found "<<count<<" matches"<<endl;
 
-
+    return ret;
 }
 
 
@@ -460,7 +491,6 @@ void Receiver::checkVariables(vector<byte> & variables){
 
 
 Sender::Sender(int argc, char *argv[]) : ProtocolParty(argc, argv){
-    xors.resize(hashSize);
 }
 
 Sender::~Sender() {
@@ -518,11 +548,15 @@ void Sender::runOOS(){
     std::vector<std::array<block, 2>> baseSend(baseCount);
     baseChoice.resize(baseCount);
     baseChoice.randomize(prng0);
-    prng0.get((u8*)baseSend.data()->data(), sizeof(block) * 2 * baseSend.size());
-    for (u64 i = 0; i < baseCount; ++i)
-    {
-        baseRecv[i] = baseSend[i][baseChoice[i]];
-    }
+    //prng0.get((u8*)baseSend.data()->data(), sizeof(block) * 2 * baseSend.size());
+    //for (u64 i = 0; i < baseCount; ++i)
+    //{
+    //    baseRecv[i] = baseSend[i][baseChoice[i]];
+    //}
+
+
+    oc::NaorPinkas base;
+    base.receive(baseChoice, baseRecv, prng0, sendChl);
 
     sender.setBaseOts(baseRecv, baseChoice);
 
@@ -552,7 +586,7 @@ void Sender::computeXors(){
     int size;
     vector<int> indices(gamma+2);
     int indicesSize;
-
+    oc::RandomOracle ro(xors2.stride());
     for (int i=0; i<hashSize; i++){
 
         indicesSize = dic->dec(keys[i], indices);
@@ -579,9 +613,12 @@ void Sender::computeXors(){
             output[j] = _mm_xor_si128(output[j], codeword[j]);
         }
 
-        EVP_EncryptUpdate(aes, temp.data(), &size, (byte*)output.data(), blockSize*16);
-
-        xors[i] = ((uint64_t*)temp.data())[0];
+        //EVP_EncryptUpdate(aes, temp.data(), &size, (byte*)output.data(), blockSize*16);
+        ro.Reset();
+        ro.Update((byte*)output.data(), blockSize * 16);
+        ro.Final((byte*)xors2[i].data());
+        //xors[i] = ((uint64_t*)temp.data())[0];
+        //memcpy(xors2[i].data(), temp.data(), blockSize * 16);
 //        for (int j=0; j<20;j++){
 //            cout<<(int)(((byte*)output.data())[j])<<" ";
 //        }
@@ -595,10 +632,14 @@ void Sender::computeXors(){
 
 void Sender::sendXors(){
 
-    int64_t size = xors.size();
+    int64_t size = xors2.rows();
+    int64_t bytesPer = xors2.stride();
 
     otherParty->getChannel()->write((byte*)&size, 8);
-    otherParty->getChannel()->write((byte*)xors.data(), size*8);
+    otherParty->getChannel()->write((byte*)&bytesPer, 8);
+    otherParty->getChannel()->write((byte*)xors2.data(), xors2.size());
+
+    std::cout << "sending final encoding, " << xors2.size() << " = " << size << " x " << bytesPer << std::endl;
 }
 
 

@@ -30,6 +30,7 @@
 #include <cryptoTools/Network/Channel.h>
 #include <cryptoTools/Network/Endpoint.h>
 #include <cryptoTools/Common/Log.h>
+#include <cryptoTools/Common/Matrix.h>
 
 #include <libscapi/include/comm/MPCCommunication.hpp>
 #include <libscapi/include/cryptoInfra/Protocol.hpp>
@@ -54,7 +55,7 @@ protected:
     int partyId;
     int times; //number of times to run the run function
     int iteration; //number of the current iteration
-    int numOTs, tableRealSize, hashSize, fieldSize, fieldSizeBytes;
+    int numOTs, tableRealSize, hashSize, fieldSize, fieldSizeBytes, bytesPerHash;
     int gamma;
     bool isMalicious;
 
@@ -73,6 +74,8 @@ protected:
     boost::asio::io_service io_service;
 
     LinearCode code;
+
+    oc::Matrix<uint64_t> xors2;
 
 public:
 
@@ -107,7 +110,7 @@ private :
     void computeXors();
     void checkVariables(vector<byte> & variables);
 
-    void receiveSenderXors();
+    std::vector<u64> receiveSenderXors();
 public:
 
     Receiver(int argc, char *argv[]);
@@ -121,8 +124,6 @@ private :
     PrtyMOtSender sender;
     BitVector baseChoice;
 
-
-    vector<uint64_t> xors;
 
     void runOOS();
 
