@@ -398,33 +398,43 @@ void PrtyMOtReceiver::configure(
         u64 inputBitCount)
     {
 		//===========Semi-honest
-		if (inputBitCount == 64)
+		if (inputBitCount == 65)
 			mCode.load(mx65by448, sizeof(mx65by448));
 
 		else if (inputBitCount == 72)
 			mCode.load(mx72by462, sizeof(mx72by462));
 
-		else if (inputBitCount == 80)
+		else if (inputBitCount == 84)
 			mCode.load(mx84by495, sizeof(mx84by495));
 
-		else if (inputBitCount == 88)
-			mCode.load(mx90by495, sizeof(mx90by495));
-
-		else if (inputBitCount == 88)
+		else if (inputBitCount == 90)
 			mCode.load(mx90by495, sizeof(mx90by495));
 
 		//===========Malicous
+        else if (inputBitCount == 132)
+            mCode.load(mx132by583, sizeof(mx132by583));
+        else if (inputBitCount == 138)
+            mCode.load(mx138by594, sizeof(mx138by594));
 		else if (inputBitCount == 144)
 			mCode.load(mx144by605, sizeof(mx144by605));
-		else if (inputBitCount == 139)
-			mCode.load(mx138by594, sizeof(mx138by594));
-		else if (inputBitCount == 134)
-			mCode.load(mx132by583, sizeof(mx132by583));
-		else if (inputBitCount == 129)
-			mCode.load(mx132by583, sizeof(mx132by583));
-
-		else
-			mCode.load(mx132by583, sizeof(mx132by583));
+        else if (inputBitCount == 150)
+            mCode.load(mx150by616, sizeof(mx150by616));
+        else if (inputBitCount == 156)
+            mCode.load(mx156by627, sizeof(mx156by627));
+        else if (inputBitCount == 162)
+            mCode.load(mx162by638, sizeof(mx162by638));
+        else if (inputBitCount == 168)
+            mCode.load(mx168by649, sizeof(mx168by649));
+        else if (inputBitCount == 174)
+            mCode.load(mx174by660, sizeof(mx174by660));
+        else if (inputBitCount == 210)
+            mCode.load(mx210by732, sizeof(mx210by732));
+        else if (inputBitCount == 217)
+            mCode.load(mx217by744, sizeof(mx217by744));
+        else if (inputBitCount == 231)
+            mCode.load(mx231by768, sizeof(mx231by768));
+        else if (inputBitCount == 238)
+            mCode.load(mx238by776, sizeof(mx238by776));
 
 
         mInputByteCount = (inputBitCount + 7) / 8;
