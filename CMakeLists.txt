@@ -84,5 +84,5 @@ include_directories(libPSI)
 #############################################
 #              Build Frontend               #
 #############################################
-add_subdirectory(frontend)
+#add_subdirectory(frontend)
 

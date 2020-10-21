@@ -1,2 +1,0 @@
-Cannot generate 'Debug' into /home/moriya/PaXoS_PSI_New/cmake-build-debug
-CMakeCache.txt is found in the project dir, only in-source generation will be performed.

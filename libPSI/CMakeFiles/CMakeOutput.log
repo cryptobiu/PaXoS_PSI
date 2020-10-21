@@ -1,4 +1,4 @@
-The system is: Linux - 4.15.0-64-generic - x86_64
+The system is: Linux - 4.15.0-1044-aws - x86_64
 Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
 Compiler: /usr/bin/cc 
 Build flags: 
@@ -10,7 +10,7 @@ The output was:
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
 
-The C compiler identification is GNU, found in "/home/moriya/PaXoS_PSI/libPSI/CMakeFiles/3.10.2/CompilerIdC/a.out"
+The C compiler identification is GNU, found in "/home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/3.10.2/CompilerIdC/a.out"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
 Compiler: /usr/bin/c++ 
@@ -23,33 +23,33 @@ The output was:
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
 
-The CXX compiler identification is GNU, found in "/home/moriya/PaXoS_PSI/libPSI/CMakeFiles/3.10.2/CompilerIdCXX/a.out"
+The CXX compiler identification is GNU, found in "/home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/3.10.2/CompilerIdCXX/a.out"
 
 Determining if the C compiler works passed with the following output:
-Change Dir: /home/moriya/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp
+Change Dir: /home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_814f1/fast"
-/usr/bin/make -f CMakeFiles/cmTC_814f1.dir/build.make CMakeFiles/cmTC_814f1.dir/build
-make[1]: Entering directory '/home/moriya/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_814f1.dir/testCCompiler.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_814f1.dir/testCCompiler.c.o   -c /home/moriya/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_814f1
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_814f1.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_814f1.dir/testCCompiler.c.o  -o cmTC_814f1 
-make[1]: Leaving directory '/home/moriya/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_49d7e/fast"
+/usr/bin/make -f CMakeFiles/cmTC_49d7e.dir/build.make CMakeFiles/cmTC_49d7e.dir/build
+make[1]: Entering directory '/home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_49d7e.dir/testCCompiler.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_49d7e.dir/testCCompiler.c.o   -c /home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_49d7e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_49d7e.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_49d7e.dir/testCCompiler.c.o  -o cmTC_49d7e 
+make[1]: Leaving directory '/home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
 
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: /home/moriya/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp
+Change Dir: /home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_3d4f5/fast"
-/usr/bin/make -f CMakeFiles/cmTC_3d4f5.dir/build.make CMakeFiles/cmTC_3d4f5.dir/build
-make[1]: Entering directory '/home/moriya/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_3d4f5.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_3d4f5.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c
-Linking C executable cmTC_3d4f5
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3d4f5.dir/link.txt --verbose=1
-/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_3d4f5.dir/CMakeCCompilerABI.c.o  -o cmTC_3d4f5 
+Run Build Command:"/usr/bin/make" "cmTC_8c040/fast"
+/usr/bin/make -f CMakeFiles/cmTC_8c040.dir/build.make CMakeFiles/cmTC_8c040.dir/build
+make[1]: Entering directory '/home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8c040.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_8c040.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_8c040
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8c040.dir/link.txt --verbose=1
+/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_8c040.dir/CMakeCCompilerABI.c.o  -o cmTC_8c040 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper
@@ -61,24 +61,24 @@ Thread model: posix
 gcc version 7.4.0 (Ubuntu 7.4.0-1ubuntu1~18.04.1) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_3d4f5' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccu31gVo.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_3d4f5 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_3d4f5.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_3d4f5' '-mtune=generic' '-march=x86-64'
-make[1]: Leaving directory '/home/moriya/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_8c040' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccJItU2t.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_8c040 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_8c040.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_8c040' '-mtune=generic' '-march=x86-64'
+make[1]: Leaving directory '/home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
 
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/moriya/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_3d4f5/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_3d4f5.dir/build.make CMakeFiles/cmTC_3d4f5.dir/build]
-  ignore line: [make[1]: Entering directory '/home/moriya/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_3d4f5.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTC_3d4f5.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTC_3d4f5]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3d4f5.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_3d4f5.dir/CMakeCCompilerABI.c.o  -o cmTC_3d4f5 ]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_8c040/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_8c040.dir/build.make CMakeFiles/cmTC_8c040.dir/build]
+  ignore line: [make[1]: Entering directory '/home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_8c040.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTC_8c040.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_8c040]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8c040.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_8c040.dir/CMakeCCompilerABI.c.o  -o cmTC_8c040 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper]
@@ -90,13 +90,13 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 7.4.0 (Ubuntu 7.4.0-1ubuntu1~18.04.1) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_3d4f5' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccu31gVo.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_3d4f5 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_3d4f5.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_8c040' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccJItU2t.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_8c040 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_8c040.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccu31gVo.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccJItU2t.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -116,7 +116,7 @@ Parsed C implicit link information from above output:
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_3d4f5] ==> ignore
+    arg [cmTC_8c040] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o] ==> ignore
@@ -128,7 +128,7 @@ Parsed C implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/7/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../..]
-    arg [CMakeFiles/cmTC_3d4f5.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_8c040.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--push-state] ==> ignore
     arg [--as-needed] ==> ignore
@@ -158,17 +158,17 @@ Parsed C implicit link information from above output:
 
 
 Detecting C [-std=c11] compiler features compiled with the following output:
-Change Dir: /home/moriya/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp
+Change Dir: /home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_f9348/fast"
-/usr/bin/make -f CMakeFiles/cmTC_f9348.dir/build.make CMakeFiles/cmTC_f9348.dir/build
-make[1]: Entering directory '/home/moriya/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_f9348.dir/feature_tests.c.o
-/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_f9348.dir/feature_tests.c.o   -c /home/moriya/PaXoS_PSI/libPSI/CMakeFiles/feature_tests.c
-Linking C executable cmTC_f9348
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f9348.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_f9348.dir/feature_tests.c.o  -o cmTC_f9348 
-make[1]: Leaving directory '/home/moriya/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_262b0/fast"
+/usr/bin/make -f CMakeFiles/cmTC_262b0.dir/build.make CMakeFiles/cmTC_262b0.dir/build
+make[1]: Entering directory '/home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_262b0.dir/feature_tests.c.o
+/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_262b0.dir/feature_tests.c.o   -c /home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/feature_tests.c
+Linking C executable cmTC_262b0
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_262b0.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_262b0.dir/feature_tests.c.o  -o cmTC_262b0 
+make[1]: Leaving directory '/home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -178,17 +178,17 @@ make[1]: Leaving directory '/home/moriya/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
 
 
 Detecting C [-std=c99] compiler features compiled with the following output:
-Change Dir: /home/moriya/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp
+Change Dir: /home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_da020/fast"
-/usr/bin/make -f CMakeFiles/cmTC_da020.dir/build.make CMakeFiles/cmTC_da020.dir/build
-make[1]: Entering directory '/home/moriya/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_da020.dir/feature_tests.c.o
-/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_da020.dir/feature_tests.c.o   -c /home/moriya/PaXoS_PSI/libPSI/CMakeFiles/feature_tests.c
-Linking C executable cmTC_da020
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_da020.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_da020.dir/feature_tests.c.o  -o cmTC_da020 
-make[1]: Leaving directory '/home/moriya/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_ccabf/fast"
+/usr/bin/make -f CMakeFiles/cmTC_ccabf.dir/build.make CMakeFiles/cmTC_ccabf.dir/build
+make[1]: Entering directory '/home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ccabf.dir/feature_tests.c.o
+/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_ccabf.dir/feature_tests.c.o   -c /home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/feature_tests.c
+Linking C executable cmTC_ccabf
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ccabf.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_ccabf.dir/feature_tests.c.o  -o cmTC_ccabf 
+make[1]: Leaving directory '/home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -198,17 +198,17 @@ make[1]: Leaving directory '/home/moriya/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
 
 
 Detecting C [-std=c90] compiler features compiled with the following output:
-Change Dir: /home/moriya/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp
+Change Dir: /home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_acacb/fast"
-/usr/bin/make -f CMakeFiles/cmTC_acacb.dir/build.make CMakeFiles/cmTC_acacb.dir/build
-make[1]: Entering directory '/home/moriya/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_acacb.dir/feature_tests.c.o
-/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_acacb.dir/feature_tests.c.o   -c /home/moriya/PaXoS_PSI/libPSI/CMakeFiles/feature_tests.c
-Linking C executable cmTC_acacb
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_acacb.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_acacb.dir/feature_tests.c.o  -o cmTC_acacb 
-make[1]: Leaving directory '/home/moriya/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_609f0/fast"
+/usr/bin/make -f CMakeFiles/cmTC_609f0.dir/build.make CMakeFiles/cmTC_609f0.dir/build
+make[1]: Entering directory '/home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_609f0.dir/feature_tests.c.o
+/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_609f0.dir/feature_tests.c.o   -c /home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/feature_tests.c
+Linking C executable cmTC_609f0
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_609f0.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_609f0.dir/feature_tests.c.o  -o cmTC_609f0 
+make[1]: Leaving directory '/home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -216,30 +216,30 @@ make[1]: Leaving directory '/home/moriya/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
     Feature record: C_FEATURE:0c_static_assert
     Feature record: C_FEATURE:0c_variadic_macros
 Determining if the CXX compiler works passed with the following output:
-Change Dir: /home/moriya/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp
+Change Dir: /home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_0a7ae/fast"
-/usr/bin/make -f CMakeFiles/cmTC_0a7ae.dir/build.make CMakeFiles/cmTC_0a7ae.dir/build
-make[1]: Entering directory '/home/moriya/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_0a7ae.dir/testCXXCompiler.cxx.o
-/usr/bin/c++     -o CMakeFiles/cmTC_0a7ae.dir/testCXXCompiler.cxx.o -c /home/moriya/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_0a7ae
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0a7ae.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_0a7ae.dir/testCXXCompiler.cxx.o  -o cmTC_0a7ae 
-make[1]: Leaving directory '/home/moriya/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_9708c/fast"
+/usr/bin/make -f CMakeFiles/cmTC_9708c.dir/build.make CMakeFiles/cmTC_9708c.dir/build
+make[1]: Entering directory '/home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_9708c.dir/testCXXCompiler.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTC_9708c.dir/testCXXCompiler.cxx.o -c /home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_9708c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9708c.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_9708c.dir/testCXXCompiler.cxx.o  -o cmTC_9708c 
+make[1]: Leaving directory '/home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: /home/moriya/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp
+Change Dir: /home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_851d9/fast"
-/usr/bin/make -f CMakeFiles/cmTC_851d9.dir/build.make CMakeFiles/cmTC_851d9.dir/build
-make[1]: Entering directory '/home/moriya/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_851d9.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++     -o CMakeFiles/cmTC_851d9.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_851d9
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_851d9.dir/link.txt --verbose=1
-/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_851d9.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_851d9 
+Run Build Command:"/usr/bin/make" "cmTC_ec491/fast"
+/usr/bin/make -f CMakeFiles/cmTC_ec491.dir/build.make CMakeFiles/cmTC_ec491.dir/build
+make[1]: Entering directory '/home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_ec491.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++     -o CMakeFiles/cmTC_ec491.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_ec491
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ec491.dir/link.txt --verbose=1
+/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_ec491.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_ec491 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper
@@ -251,24 +251,24 @@ Thread model: posix
 gcc version 7.4.0 (Ubuntu 7.4.0-1ubuntu1~18.04.1) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_851d9' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccZtj8KR.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_851d9 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_851d9.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_851d9' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
-make[1]: Leaving directory '/home/moriya/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_ec491' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccI5rOxV.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_ec491 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_ec491.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_ec491' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+make[1]: Leaving directory '/home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
 
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/moriya/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_851d9/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_851d9.dir/build.make CMakeFiles/cmTC_851d9.dir/build]
-  ignore line: [make[1]: Entering directory '/home/moriya/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_851d9.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTC_851d9.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTC_851d9]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_851d9.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_851d9.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_851d9 ]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_ec491/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_ec491.dir/build.make CMakeFiles/cmTC_ec491.dir/build]
+  ignore line: [make[1]: Entering directory '/home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_ec491.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTC_ec491.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_ec491]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ec491.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_ec491.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_ec491 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper]
@@ -280,13 +280,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 7.4.0 (Ubuntu 7.4.0-1ubuntu1~18.04.1) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_851d9' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccZtj8KR.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_851d9 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_851d9.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_ec491' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccI5rOxV.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_ec491 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_ec491.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccZtj8KR.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccI5rOxV.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -306,7 +306,7 @@ Parsed CXX implicit link information from above output:
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_851d9] ==> ignore
+    arg [cmTC_ec491] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o] ==> ignore
@@ -318,7 +318,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/7/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../..]
-    arg [CMakeFiles/cmTC_851d9.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_ec491.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -344,17 +344,17 @@ Parsed CXX implicit link information from above output:
 
 
 Detecting CXX [-std=c++1z] compiler features compiled with the following output:
-Change Dir: /home/moriya/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp
+Change Dir: /home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_eeb76/fast"
-/usr/bin/make -f CMakeFiles/cmTC_eeb76.dir/build.make CMakeFiles/cmTC_eeb76.dir/build
-make[1]: Entering directory '/home/moriya/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_eeb76.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++1z -o CMakeFiles/cmTC_eeb76.dir/feature_tests.cxx.o -c /home/moriya/PaXoS_PSI/libPSI/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_eeb76
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_eeb76.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_eeb76.dir/feature_tests.cxx.o  -o cmTC_eeb76 
-make[1]: Leaving directory '/home/moriya/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_758dd/fast"
+/usr/bin/make -f CMakeFiles/cmTC_758dd.dir/build.make CMakeFiles/cmTC_758dd.dir/build
+make[1]: Entering directory '/home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_758dd.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++1z -o CMakeFiles/cmTC_758dd.dir/feature_tests.cxx.o -c /home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_758dd
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_758dd.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_758dd.dir/feature_tests.cxx.o  -o cmTC_758dd 
+make[1]: Leaving directory '/home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -417,17 +417,17 @@ make[1]: Leaving directory '/home/moriya/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
-Change Dir: /home/moriya/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp
+Change Dir: /home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_da5de/fast"
-/usr/bin/make -f CMakeFiles/cmTC_da5de.dir/build.make CMakeFiles/cmTC_da5de.dir/build
-make[1]: Entering directory '/home/moriya/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_da5de.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTC_da5de.dir/feature_tests.cxx.o -c /home/moriya/PaXoS_PSI/libPSI/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_da5de
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_da5de.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_da5de.dir/feature_tests.cxx.o  -o cmTC_da5de 
-make[1]: Leaving directory '/home/moriya/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_91b07/fast"
+/usr/bin/make -f CMakeFiles/cmTC_91b07.dir/build.make CMakeFiles/cmTC_91b07.dir/build
+make[1]: Entering directory '/home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_91b07.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTC_91b07.dir/feature_tests.cxx.o -c /home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_91b07
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_91b07.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_91b07.dir/feature_tests.cxx.o  -o cmTC_91b07 
+make[1]: Leaving directory '/home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -490,17 +490,17 @@ make[1]: Leaving directory '/home/moriya/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
-Change Dir: /home/moriya/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp
+Change Dir: /home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_f7a3d/fast"
-/usr/bin/make -f CMakeFiles/cmTC_f7a3d.dir/build.make CMakeFiles/cmTC_f7a3d.dir/build
-make[1]: Entering directory '/home/moriya/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_f7a3d.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_f7a3d.dir/feature_tests.cxx.o -c /home/moriya/PaXoS_PSI/libPSI/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_f7a3d
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f7a3d.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_f7a3d.dir/feature_tests.cxx.o  -o cmTC_f7a3d 
-make[1]: Leaving directory '/home/moriya/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_ea032/fast"
+/usr/bin/make -f CMakeFiles/cmTC_ea032.dir/build.make CMakeFiles/cmTC_ea032.dir/build
+make[1]: Entering directory '/home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_ea032.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_ea032.dir/feature_tests.cxx.o -c /home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_ea032
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ea032.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_ea032.dir/feature_tests.cxx.o  -o cmTC_ea032 
+make[1]: Leaving directory '/home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -563,17 +563,17 @@ make[1]: Leaving directory '/home/moriya/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
-Change Dir: /home/moriya/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp
+Change Dir: /home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_f5e68/fast"
-/usr/bin/make -f CMakeFiles/cmTC_f5e68.dir/build.make CMakeFiles/cmTC_f5e68.dir/build
-make[1]: Entering directory '/home/moriya/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_f5e68.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_f5e68.dir/feature_tests.cxx.o -c /home/moriya/PaXoS_PSI/libPSI/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_f5e68
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f5e68.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_f5e68.dir/feature_tests.cxx.o  -o cmTC_f5e68 
-make[1]: Leaving directory '/home/moriya/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_ef7c1/fast"
+/usr/bin/make -f CMakeFiles/cmTC_ef7c1.dir/build.make CMakeFiles/cmTC_ef7c1.dir/build
+make[1]: Entering directory '/home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_ef7c1.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_ef7c1.dir/feature_tests.cxx.o -c /home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_ef7c1
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ef7c1.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_ef7c1.dir/feature_tests.cxx.o  -o cmTC_ef7c1 
+make[1]: Leaving directory '/home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -633,3 +633,31 @@ make[1]: Leaving directory '/home/moriya/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
     Feature record: CXX_FEATURE:0cxx_variable_templates
     Feature record: CXX_FEATURE:0cxx_variadic_macros
     Feature record: CXX_FEATURE:0cxx_variadic_templates
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_26618/fast"
+/usr/bin/make -f CMakeFiles/cmTC_26618.dir/build.make CMakeFiles/cmTC_26618.dir/build
+make[1]: Entering directory '/home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_26618.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_26618.dir/CheckIncludeFile.c.o   -c /home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_26618
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_26618.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_26618.dir/CheckIncludeFile.c.o  -o cmTC_26618 
+make[1]: Leaving directory '/home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
+
+
+Determining if the function pthread_create exists in the pthread passed with the following output:
+Change Dir: /home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_3d082/fast"
+/usr/bin/make -f CMakeFiles/cmTC_3d082.dir/build.make CMakeFiles/cmTC_3d082.dir/build
+make[1]: Entering directory '/home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3d082.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_3d082.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_3d082
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3d082.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_3d082.dir/CheckFunctionExists.c.o  -o cmTC_3d082 -lpthread 
+make[1]: Leaving directory '/home/ubuntu/PaXoS_PSI/libPSI/CMakeFiles/CMakeTmp'
+
+

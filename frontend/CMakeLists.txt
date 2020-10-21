@@ -15,7 +15,7 @@ SET(CMAKE_CXX_FLAGS_DEBUG  "-O0 -g3 -ggdb -rdynamic")
 
 file(GLOB_RECURSE SRC_FRONTEND ${CMAKE_SOURCE_DIR}/frontend/*.cpp)
 include_directories(${CMAKE_SOURCE_DIR}/frontend/ $ENV{HOME} xxHash ${CMAKE_SOURCE_DIR}/libOTe
-        ${CMAKE_SOURCE_DIR}/libOTe/cryptoTools/cryptoTools ${CMAKE_SOURCE_DIR}/libOTe/cryptoTools/cryptoTools/Crypto)
+	${CMAKE_SOURCE_DIR}/libOTe/cryptoTools/cryptoTools ${CMAKE_SOURCE_DIR}/libOTe/cryptoTools/cryptoTools/Crypto $ENV{HOME}/PaXoS_PSI/thirdparty/linux/ntl/include/)
 
 add_executable(frontend.exe ${SRC_FRONTEND})
 
@@ -42,5 +42,5 @@ find_library(
     HINTS "${libOTe_Dirs}/lib/")
 
 target_link_libraries(frontend.exe libPSI libboost_system.a
-        $ENV{HOME}/PaXoS_PSI_New/frontend/xxHash/cmake_unofficial/libxxhash.so givaro blas linbox iml libntl.a gmp
+        $ENV{HOME}/PaXoS_PSI/frontend/xxHash/libxxhash.so givaro blas linbox iml $ENV{HOME}/PaXoS_PSI/thirdparty/linux/ntl/src/libntl.a gmp
         $ENV{HOME}/libscapi/libscapi.a crypto)

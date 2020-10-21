@@ -8,11 +8,11 @@
 #include <libPSI/PsiDefines.h>
 #include <libPSI/PRTY2/PrtyMOtReceiver.h>
 #include <libPSI/PRTY2/PrtyMOtSender.h>
-#include <libPSI/Tools/mx_132_by_583.h>
 #include <libPSI/Tools/mx_72_by_462.h>
 #include <libPSI/Tools/mx_84_by_495.h>
 #include <libPSI/Tools/mx_90_by_495.h>
 #include <libPSI/Tools/mx_65_by_448.h>
+#include <libPSI/Tools/mx_132_by_583.h>
 #include <libPSI/Tools/mx_138_by_594.h>
 #include <libPSI/Tools/mx_144_by_605.h>
 #include <libPSI/Tools/mx_150_by_616.h>
@@ -24,7 +24,6 @@
 #include <libPSI/Tools/mx_217_by_744.h>
 #include <libPSI/Tools/mx_231_by_768.h>
 #include <libPSI/Tools/mx_238_by_776.h>
-
 #include <libOTe/Tools/Tools.h>
 #include <libOTe/Tools/LinearCode.h>
 #include <cryptoTools/Network/Channel.h>
